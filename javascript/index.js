@@ -533,10 +533,10 @@ function runwayChallenge() {
     let challenge = new RunwayChallenge();
     challenge.generateDescription();
     challenge.rankPerformances();
-    let slay = currentCast.filter(function (queen) { return queen.performanceScore < 6; });
-    let great = currentCast.filter(function (queen) { return queen.performanceScore >= 6 && queen.performanceScore < 16; });
-    let good = currentCast.filter(function (queen) { return queen.performanceScore >= 16 && queen.performanceScore < 26; });
-    let bad = currentCast.filter(function (queen) { return queen.performanceScore >= 26; });
+    let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 8; });
+    let great = currentCast.filter(function (queen) { return queen.performanceScore > 8 && queen.performanceScore <= 16; });
+    let good = currentCast.filter(function (queen) { return queen.performanceScore > 16 && queen.performanceScore <= 26; });
+    let bad = currentCast.filter(function (queen) { return queen.performanceScore > 26; });
     createRunwayDesc(slay, great, good, bad);
     challengeScreen.createButton("Proceed", "judging()");
 }
@@ -850,7 +850,7 @@ function girlgroup() {
     challengeScreen.createBold("", "Description");
     let challenge = new GirlGroup();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 50 && currentCast.length > 6 && currentCast.length <= 15 && !isTeamChallenge && regularFormat && episodeCount > 3) {
+    if (randomNumber(0, 100) >= 10 && currentCast.length > 6 && currentCast.length <= 15 && !isTeamChallenge && regularFormat && episodeCount > 3) {
         isTeamChallenge = true;
         teamMaking();
         challenge.rankPerformances();
@@ -898,11 +898,11 @@ function queensPerformances() {
     let performanceScreen = new Scene();
     performanceScreen.createHorizontalLine();
     performanceScreen.createBigText("Queens' performances...");
-    let slay = currentCast.filter(function (queen) { return queen.performanceScore < 6; });
-    let great = currentCast.filter(function (queen) { return queen.performanceScore >= 6 && queen.performanceScore < 16; });
-    let good = currentCast.filter(function (queen) { return queen.performanceScore >= 16 && queen.performanceScore < 26; });
-    let bad = currentCast.filter(function (queen) { return queen.performanceScore >= 26 && queen.performanceScore < 31; });
-    let flop = currentCast.filter(function (queen) { return queen.performanceScore >= 31 && queen.performanceScore < 50; });
+    let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 8; });
+    let great = currentCast.filter(function (queen) { return queen.performanceScore > 8 && queen.performanceScore <= 16; });
+    let good = currentCast.filter(function (queen) { return queen.performanceScore > 16 && queen.performanceScore <= 26; });
+    let bad = currentCast.filter(function (queen) { return queen.performanceScore > 26 && queen.performanceScore <= 31; });
+    let flop = currentCast.filter(function (queen) { return queen.performanceScore > 31 && queen.performanceScore <= 50; });
     createPerformanceDesc(slay, great, good, bad, flop);
     if (isDesignChallenge == true || episodeChallenges[episodeChallenges.length - 1] == "Design") {
         performanceScreen.createButton("Proceed", "judging()");
@@ -932,8 +932,8 @@ function maxiWin() {
         currentCast[1].favoritism += 4;
         currentCast[0].maxiT = true;
         currentCast[1].maxiT = true;
-        screen.createImage(currentCast[0].image, "darkblue");
-        screen.createImage(currentCast[1].image, "darkblue");
+        screen.createImage(currentCast[0].image, "royalblue");
+        screen.createImage(currentCast[1].image, "royalblue");
         screen.createBold(currentCast[0].getName() + ", " + currentCast[1].getName() + ", condragulations, You are the winners of this weeks Maxi Challenge!");
     } else {
         screen.createImage(currentCast[0].image, "cyan");
@@ -1173,7 +1173,7 @@ function createPerformanceDesc(slay, great, good, bad, flop) {
     let screen = new Scene();
     if (slay.length !== 0) {
         for (let i = 0; i < slay.length; i++)
-            screen.createImage(slay[i].image, "darkblue");
+            screen.createImage(slay[i].image, "royalblue");
         screen.createBold("", "slay");
         let slayText = document.getElementById("slay");
         for (let i = 0; i < slay.length; i++)
@@ -1228,13 +1228,13 @@ let s14LaLaPaRUZa = false;
 let s14LaLaPaRUZaCheck = false;
 
 function CheckForSpecialEvents(slay, great, good, bad, flop) {
-    if (slay.length === 0 && great.length === 0 && currentCast.length >= 8 && !floppersCheck && randomNumber(0, 100) >= 80 && !conjoinedCheck)
+    if (slay.length === 0 && great.length === 0 && currentCast.length >= 8 && !floppersCheck && randomNumber(0, 100) >= 1 && !conjoinedCheck)
         floppers = true;
     if (slay.length == currentCast.length && !slayersCheck && !conjoinedCheck)
         slayers = true;
     else if (slay.length + great.length == currentCast.length && !slayersCheck && randomNumber(0, 100) >= 70 && !conjoinedCheck)
         slayers = true;
-    if (flop.length + bad.length >= 5 && flop.length + bad.length < 7 && currentCast.length >= 9 && !bottom6WayLipsyncCheck && randomNumber(0, 100) >= 70 && !conjoinedCheck)
+    if (flop.length + bad.length >= 5 && flop.length + bad.length < 7 && currentCast.length >= 9 && !bottom6WayLipsyncCheck && randomNumber(0, 100) >= 99 && !conjoinedCheck)
         bottom6WayLipsync = true;
     if (flop.length + bad.length >= 7 && great.length + slay.length + good.length > 0 && currentCast.length > 7 && currentCast.length < 10 &&!s14LaLaPaRUZaCheck && randomNumber(0, 100) >= 70 && !conjoinedCheck)
         s14LaLaPaRUZa = true;
@@ -1243,7 +1243,7 @@ function createRunwayDesc(slay, great, good, bad) {
     let screen = new Scene();
     if (slay.length !== 0) {
         for (let i = 0; i < slay.length; i++) {
-            screen.createImage(slay[i].image, "darkblue");
+            screen.createImage(slay[i].image, "royalblue");
             slay[i].runwayScore = 10;
         }
         screen.createBold("", "slayR");
@@ -1966,8 +1966,8 @@ function finaleLS() {
         currentCast.splice(currentCast.indexOf(q2), 1);
     }
     screen.createBigText("The preliminaries will be: ");
-    screen.createImage(firstLS[0].image, "darkblue");
-    screen.createImage(firstLS[1].image, "darkblue");
+    screen.createImage(firstLS[0].image, "royalblue");
+    screen.createImage(firstLS[1].image, "royalblue");
     screen.createBold(firstLS[0].getName() + " vs. " + firstLS[1].getName());
     screen.createParagraph("and");
     screen.createImage(secondLS[0].image, "darkred");
@@ -2767,8 +2767,8 @@ function canadaS2Finale() {
         currentCast.splice(currentCast.indexOf(q2), 1);
     }
     screen.createBigText("The lipsyncs will be: ");
-    screen.createImage(firstLS[0].image, "darkblue");
-    screen.createImage(firstLS[1].image, "darkblue");
+    screen.createImage(firstLS[0].image, "royalblue");
+    screen.createImage(firstLS[1].image, "royalblue");
     screen.createBold(firstLS[0].getName() + " vs. " + firstLS[1].getName());
     screen.createParagraph("and");
     screen.createImage(secondLS[0].image, "darkred");
@@ -3057,7 +3057,7 @@ function contestantProgress() {
                     placement.setAttribute("style", "background-color: purple; color:white;");
             }
             else if (placement.innerHTML == " WIN") {
-                placement.setAttribute("style", "font-weight: bold; background-color: darkblue; color: white;");
+                placement.setAttribute("style", "font-weight: bold; background-color: royalblue; color: white;");
             }
             else if (placement.innerHTML == "DISQ") {
                 placement.setAttribute("style", "font-weight: bold; background-color: black; color: white;");
@@ -3318,7 +3318,7 @@ function contestantProgress() {
                         placement.setAttribute("style", "background-color: purple; color:white;");
                 }
                 else if (placement.innerHTML == " WIN") {
-                    placement.setAttribute("style", "font-weight: bold; background-color: darkblue; color: white;");
+                    placement.setAttribute("style", "font-weight: bold; background-color: royalblue; color: white;");
                 }
                 else if (placement.innerHTML == "DISQ") {
                     placement.setAttribute("style", "font-weight: bold; background-color: black; color: white;");
@@ -3615,7 +3615,7 @@ function contestantProgress() {
                     placement.setAttribute("style", "background-color: purple; color:white;");
             }
             else if (placement.innerHTML == " WIN") {
-                placement.setAttribute("style", "font-weight: bold; background-color: darkblue; color: white;");
+                placement.setAttribute("style", "font-weight: bold; background-color: royalblue; color: white;");
             }
             else if (placement.innerHTML == "DISQ") {
                 placement.setAttribute("style", "font-weight: bold; background-color: black; color: white;");
@@ -4997,8 +4997,8 @@ function thaiWinBottom2() {
         topQueens[0].ppe += 5;
         topQueens[1].favoritism += 5;
         topQueens[1].ppe += 5;
-        screen.createImage(topQueens[0].image, "darkblue");
-        screen.createImage(topQueens[1].image, "darkblue");
+        screen.createImage(topQueens[0].image, "royalblue");
+        screen.createImage(topQueens[1].image, "royalblue");
         screen.createBold(topQueens[0].getName() + ", " + topQueens[1].getName() + ", condragulations, you're the winners of today's runway!");
         if (conjoinedQueens && conjoinedCheck){
             conjoinedReturn(topQueens[0], topQueens[1]);
@@ -5239,8 +5239,8 @@ function lipsyncs14() {
         }
         lipSync.sort(function (a, b) { return (b.lipsyncScore - a.lipsyncScore); });
         if (lipSync[0].lipsyncScore >= lipSync[1].lipsyncScore && lipSync[0].lipsyncScore > 7 && lipSync[1].lipsyncScore > 7) {
-            screen.createImage(lipSync[0].image, "darkblue");
-            screen.createImage(lipSync[1].image, "darkblue");
+            screen.createImage(lipSync[0].image, "royalblue");
+            screen.createImage(lipSync[1].image, "royalblue");
             screen.createBold("Shantay, you both stay baby!");
             queen1.addToTrackRecord("SAFE<br><small>Round 3</small>");
             queen2.addToTrackRecord("SAFE<br><small>Round 3</small>");
@@ -5335,8 +5335,8 @@ function s9judgingScreen() {
         topQueens[1].addToTrackRecord(" WIN");
         topQueens[1].favoritism += 5;
         topQueens[1].ppe += 5;
-        screen.createImage(topQueens[0].image, "darkblue");
-        screen.createImage(topQueens[1].image, "darkblue");
+        screen.createImage(topQueens[0].image, "royalblue");
+        screen.createImage(topQueens[1].image, "royalblue");
         screen.createBold(topQueens[0].getName() + ", " + topQueens[1].getName() + ", condragulations, you're the winners of today's challenge!");
         topQueens.splice(0, 2);
     }
@@ -5439,15 +5439,15 @@ function winAndBtm6() {
         topQueens.splice(0, 1);
     }
     //double win:
-    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 60) {
+    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 50) {
         topQueens[0].addToTrackRecord(" WIN");
         topQueens[0].favoritism += 5;
         topQueens[0].ppe += 5;
         topQueens[1].addToTrackRecord(" WIN");
         topQueens[1].favoritism += 5;
         topQueens[1].ppe += 5;
-        screen.createImage(topQueens[0].image, "darkblue");
-        screen.createImage(topQueens[1].image, "darkblue");
+        screen.createImage(topQueens[0].image, "royalblue");
+        screen.createImage(topQueens[1].image, "royalblue");
         screen.createBold(topQueens[0].getName() + ", " + topQueens[1].getName() + ", condragulations, you're the winners of today's challenge!");
         topQueens.splice(0, 2);
     }
@@ -5506,7 +5506,7 @@ function bottom6() {
         bottomQueens[i].unfavoritism += 3;
         bottomQueens[i].ppe += 1;
     }
-    if (score1 < 4 && score2 < 4 && randomNumber(0, 100) <= 10 && !doubleSashay && currentCast.length > 6 && noDouble == false) {
+    if (score1 < 4 && score2 < 4 && randomNumber(0, 100) <= 1 && !doubleSashay && currentCast.length > 6 && noDouble == false) {
         screen.createImage(bottomQueens[4].image, "darkred");
         screen.createImage(bottomQueens[5].image, "darkred");
         if (chocolateBarTwist  && !chocolateBarTwistCheck) {
@@ -5926,7 +5926,7 @@ function winAndBtm2() {
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     if (isTeamChallenge) {
-        if (episodeChallenges[episodeChallenges.length - 1] == "Girl Group" && randomNumber(0, 100) >= 60) {
+        if (episodeChallenges[episodeChallenges.length - 1] == "Girl Group" && randomNumber(0, 100) >= 10) {
             let names = "";
             for (let i = 0; i < topQueens.length; i++) {
                 topQueens[i].addToTrackRecord(" WIN");
@@ -5949,8 +5949,8 @@ function winAndBtm2() {
             topQueens[1].addToTrackRecord(" WIN");
             topQueens[1].favoritism += 5;
             topQueens[1].ppe += 5;
-            screen.createImage(topQueens[0].image, "darkblue");
-            screen.createImage(topQueens[1].image, "darkblue");
+            screen.createImage(topQueens[0].image, "royalblue");
+            screen.createImage(topQueens[1].image, "royalblue");
             screen.createBold(topQueens[0].getName() + ", " + topQueens[1].getName() + ", condragulations, you're the winners of today's challenge!");
             topQueens.splice(0, 2);
         }else {
@@ -5962,15 +5962,15 @@ function winAndBtm2() {
             topQueens.splice(0, 1);
         }
     }//double win:
-    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 60) {
+    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 50) {
         topQueens[0].addToTrackRecord(" WIN");
         topQueens[0].favoritism += 5;
         topQueens[0].ppe += 5;
         topQueens[1].addToTrackRecord(" WIN");
         topQueens[1].favoritism += 5;
         topQueens[1].ppe += 5;
-        screen.createImage(topQueens[0].image, "darkblue");
-        screen.createImage(topQueens[1].image, "darkblue");
+        screen.createImage(topQueens[0].image, "royalblue");
+        screen.createImage(topQueens[1].image, "royalblue");
         screen.createBold(topQueens[0].getName() + ", " + topQueens[1].getName() + ", condragulations, you're the winners of today's challenge!");
         if (conjoinedQueens && conjoinedCheck){
             conjoinedReturn(topQueens[0], topQueens[1]);
@@ -6672,8 +6672,8 @@ function lipSync() {
             }
         }
     } else {
-        if (score1 > 7 && score2 > 7 && randomNumber(0, 100) <= 50 && !doubleShantay && noDouble == false && currentCast.length > 5) {
-            if (randomNumber(0, 100) >= 95) {
+        if (score1 > 6 && score2 > 6 && randomNumber(0, 100) <= 95 && !doubleShantay && noDouble == false && currentCast.length > 5) {
+            if (randomNumber(0, 100) >= 80) {
                 screen.createImage(bottomQueens[0].image, "tomato");
                 screen.createBold(bottomQueens[0].getName() + ", shantay you stay.");
                 screen.createImage(bottomQueens[1].image, "red");
@@ -6699,7 +6699,7 @@ function lipSync() {
                 doubleShantay = true;
             }
         }
-        else if (score1 < 4 && score2 < 4 && randomNumber(0, 100) <= 10 && !doubleSashay && currentCast.length > 6 && noDouble == false) {
+        else if (score1 < 4 && score2 < 4 && randomNumber(0, 100) <= 1 && !doubleSashay && currentCast.length > 6 && noDouble == false) {
             screen.createImage(bottomQueens[0].image, "darkred");
             screen.createImage(bottomQueens[1].image, "darkred");
             if (chocolateBarTwist  && !chocolateBarTwistCheck) {
@@ -6958,8 +6958,8 @@ function asLipSync() {
     top2.sort((a, b) => (b.lipsyncScore - a.lipsyncScore));
     screen.createHeader("Ladies, I've made my decision...");
     if (top2[0].lipsyncScore == top2[1].lipsyncScore && top2[0].lipsyncScore > 6 && top2[1].lipsyncScore > 6 && currentCast.length > 6 && !noDouble) {
-        screen.createImage(top2[0].image, "darkblue");
-        screen.createImage(top2[1].image, "darkblue");
+        screen.createImage(top2[0].image, "royalblue");
+        screen.createImage(top2[1].image, "royalblue");
         screen.createBold("Condragulations, you're both winners baby!");
         top2[0].favoritism += 5;
         top2[0].ppe += 5;
@@ -7089,7 +7089,7 @@ function asLipSync() {
             }
         }
     }
-    else if (randomNumber(0, 1000) >= 995 && disqOrDept == false && currentCast.length > 6 && !smackdown) {
+    else if (randomNumber(0, 1000) >= 999 && disqOrDept == false && currentCast.length > 6 && !smackdown) {
         screen.createImage(top2[0].image, "royalblue");
         screen.createBold(top2[0].getName() + ", you're a winner, baby!");
         if (conjoinedQueens && conjoinedCheck){
@@ -7224,8 +7224,8 @@ function lsaLipSync() {
     top2.sort((a, b) => (b.lipsyncScore - a.lipsyncScore));
     if (top2[0].lipsyncScore == top2[1].lipsyncScore && top2[0].lipsyncScore > 6 && top2[1].lipsyncScore > 6 && currentCast.length > 6 && !noDouble) {
         backToWinner = false;
-        screen.createImage(top2[0].image, "darkblue");
-        screen.createImage(top2[1].image, "darkblue");
+        screen.createImage(top2[0].image, "royalblue");
+        screen.createImage(top2[1].image, "royalblue");
         screen.createBold("Condragulations, you're both winners baby!");
         top2[0].favoritism += 5;
         top2[0].ppe += 5;
@@ -7351,7 +7351,7 @@ function lsaLipSync() {
             }
         }
     } else {
-        screen.createImage(top2[0].image, "darkblue");
+        screen.createImage(top2[0].image, "royalblue");
         screen.createBold(top2[0].getName() + ", you're a winner baby!");
         if (top2[0] == assassin) {
             screen.createImage(top2[1].image, "cyan");
@@ -7454,8 +7454,8 @@ function awLipsync(giveAway) {
     screen.createBold("Ladies, I've made my decision...");
     if (top2[0].lipsyncScore == top2[1].lipsyncScore && top2[0].lipsyncScore > 6 && top2[1].lipsyncScore > 6 && currentCast.length > 5) {
         dragBlocked = who2Block(top2[0], top2[1]);
-        screen.createImage(top2[0].image, "darkblue");
-        screen.createImage(top2[1].image, "darkblue");
+        screen.createImage(top2[0].image, "royalblue");
+        screen.createImage(top2[1].image, "royalblue");
         screen.createBold("Condragulations, you're both winners baby!");
         top2[0].favoritism += 5;
         top2[0].ppe += 5;
@@ -7467,7 +7467,7 @@ function awLipsync(giveAway) {
         if (episodeCount == 10 && currentCast.length <= 10 || episodeCount == 11 && currentCast.length <= 10 || episodeCount == 13 && currentCast.length > 10 || episodeCount == 14 && currentCast.length > 10) {
             screen.createBold("No one is getting blocked tonight!");
         } else {
-            screen.createImage(top2[0].image, "darkblue");
+            screen.createImage(top2[0].image, "royalblue");
             screen.createImage(dragBlocked.image, "red");
             screen.createBold(top2[0].getName() + " has given the platinum plunger to... " + dragBlocked.getName());
             dragBlocked.blocked = true;
@@ -7480,7 +7480,7 @@ function awLipsync(giveAway) {
                 screen.createBold("<i>" + dragBlocked.getName() + " took it great, they weren't too mad.</i>");
             }
             dragBlocked = who2Block(top2[1], top2[0]);
-            screen.createImage(top2[1].image, "darkblue");
+            screen.createImage(top2[1].image, "royalblue");
             screen.createImage(dragBlocked.image, "red");
             screen.createBold(top2[1].getName() + " has given the platinum plunger to... " + dragBlocked.getName());
             dragBlocked.blocked = true;
@@ -7509,7 +7509,7 @@ function awLipsync(giveAway) {
         if (episodeCount == 10 && currentCast.length <= 10 || episodeCount == 11 && currentCast.length <= 10 || episodeCount == 13 && currentCast.length > 10 || episodeCount == 14 && currentCast.length > 10) {
             screen.createBold("No one is getting blocked tonight!");
         } else {
-            screen.createImage(top2[0].image, "darkblue");
+            screen.createImage(top2[0].image, "royalblue");
             screen.createImage(dragBlocked.image, "red");
             screen.createBold(top2[0].getName() + " has given the platinum plunger to... " + dragBlocked.getName());
             dragBlocked.blocked = true;
@@ -7604,47 +7604,47 @@ class Queen {
         return this._lipsyncStat;
     }
     getActing() {
-        this.performanceScore = this._calculateScores(15, 35, this._actingStat);
+        this.performanceScore = this._calculateScores(15, 30, this._actingStat);
     }
     getComedy() {
-        this.performanceScore = this._calculateScores(15, 35, this._comedyStat);
+        this.performanceScore = this._calculateScores(15, 30, this._comedyStat);
     }
     getMarketing() {
-        this.performanceScore = this._calculateScores(45, 65, this._comedyStat + this._actingStat + this._brandingStat);
+        this.performanceScore = this._calculateScores(45, 60, this._comedyStat + this._actingStat + this._brandingStat);
     }
     getDance() {
-        this.performanceScore = this._calculateScores(15, 35, this._danceStat);
+        this.performanceScore = this._calculateScores(15, 30, this._danceStat);
     }
     getDesign() {
-        this.performanceScore = this._calculateScores(15, 35, this._designStat);
+        this.performanceScore = this._calculateScores(15, 30, this._designStat);
     }
     getRunwayChallenge() {
-        this.performanceScore = this._calculateScores(15, 35, this._runwayStat);
+        this.performanceScore = this._calculateScores(15, 30, this._runwayStat);
     }
     getImprov() {
-        this.performanceScore = this._calculateScores(15, 35, this._improvStat);
+        this.performanceScore = this._calculateScores(15, 30, this._improvStat);
     }
     //special 'gets':
     getSnatch() {
-        this.performanceScore = this._calculateScores(35, 65, this._improvStat + this._comedyStat + this._actingStat);
+        this.performanceScore = this._calculateScores(35, 60, this._improvStat + this._comedyStat + this._actingStat);
     }
     getRusical() {
-        this.performanceScore = this._calculateScores(25, 45, this._danceStat + this._lipsyncStat);
+        this.performanceScore = this._calculateScores(25, 40, this._danceStat + this._lipsyncStat);
     }
     getBall() {
-        this.performanceScore = this._calculateScores(25, 45, this._designStat + this._runwayStat);
+        this.performanceScore = this._calculateScores(25, 40, this._designStat + this._runwayStat);
     }
     getRumix() {
-        this.performanceScore = this._calculateScores(35, 65, this._danceStat + this._improvStat + this._charismaStat);
+        this.performanceScore = this._calculateScores(35, 55, this._danceStat + this._brandingStat + this._charismaStat);
     }
     getTalentShow() {
-        this.performanceScore = this._calculateScores(15, 35, randomNumber(1, 35));
+        this.performanceScore = this._calculateScores(15, 30, randomNumber(1, 30));
     }
     getFinale() {
         this.finaleScore = this.favoritism - this.unfavoritism;
     }
     getRunway() {
-        this.runwayScore = this._calculateScores(12, 35, this._runwayStat);
+        this.runwayScore = this._calculateScores(12, 30, this._runwayStat);
     }
     getLipsync() {
         this.lipsyncScore = this._calculateScores(0, this._lipsyncStat, this.unfavoritism) + this.favoritism;
@@ -8513,8 +8513,8 @@ function lipsyncSmackdown(word = "") {
             }
             lipsync.sort(function (a, b) { return (b.lipsyncScore - a.lipsyncScore); });
             if (lipsync[0].lipsyncScore >= lipsync[1].lipsyncScore && lipsync[0].lipsyncScore > 7 && lipsync[1].lipsyncScore > 7 && smack.length <= 2) {
-                screen.createImage(lipsync[0].image, "darkblue");
-                screen.createImage(lipsync[1].image, "darkblue");
+                screen.createImage(lipsync[0].image, "royalblue");
+                screen.createImage(lipsync[1].image, "royalblue");
                 screen.createBold("Shantay, you both stay baby!");
                 double = true;
             } else {
@@ -8679,8 +8679,8 @@ function LaLaPaRUza(sena = "") {
                 queen1.lipsyncScore -= 4;
                 lipSync.sort(function (a, b) { return (b.lipsyncScore - a.lipsyncScore); });
                 if (lipSync[0].lipsyncScore == lipSync[1].lipsyncScore && lipSync[0].lipsyncScore > 6 && lipSync[1].lipsyncScore > 6) {
-                    screen.createImage(queen1.image, "darkblue");
-                    screen.createImage(queen2.image, "darkblue");
+                    screen.createImage(queen1.image, "royalblue");
+                    screen.createImage(queen2.image, "royalblue");
                     screen.createBold("Shantay, you both stay baby!");
                     currentCast.push(queen1);
                     queen1.addToTrackRecord("RTRN ");
@@ -8787,11 +8787,11 @@ function queensofComedy(pord = "") {
         screen.createHorizontalLine();
         sortPerformances(pairs);
         screen.createBigText("Queens' performances...");
-        let slay = allofthem.filter(function (queen) { return queen.performanceScore < 6; });
-        let great = allofthem.filter(function (queen) { return queen.performanceScore >= 6 && queen.performanceScore < 16; });
-        let good = allofthem.filter(function (queen) { return queen.performanceScore >= 16 && queen.performanceScore < 26; });
-        let bad = allofthem.filter(function (queen) { return queen.performanceScore >= 26 && queen.performanceScore < 31; });
-        let flop = allofthem.filter(function (queen) { return queen.performanceScore >= 31 && queen.performanceScore < 50; });
+        let slay = allofthem.filter(function (queen) { return queen.performanceScore <= 8; });
+        let great = allofthem.filter(function (queen) { return queen.performanceScore > 8 && queen.performanceScore <= 16; });
+        let good = allofthem.filter(function (queen) { return queen.performanceScore > 16 && queen.performanceScore <= 26; });
+        let bad = allofthem.filter(function (queen) { return queen.performanceScore > 26 && queen.performanceScore <= 31; });
+        let flop = allofthem.filter(function (queen) { return queen.performanceScore > 31 && queen.performanceScore <= 50; });
         createPerformanceDesc(slay, great, good, bad, flop);
         comedyChallengeCounter++;
         screen.createHorizontalLine();
@@ -8870,8 +8870,8 @@ function queensOfComedyLipsyn() {
     screen.createHorizontalLine();
     screen.createBold("Ladies, I've made my decision...");
     if (top2[0].lipsyncScore == top2[1].lipsyncScore && top2[0].lipsyncScore > 6 && top2[1].lipsyncScore > 6 && currentCast.length > 5) {
-        screen.createImage(top2[0].image, "darkblue");
-        screen.createImage(top2[1].image, "darkblue");
+        screen.createImage(top2[0].image, "royalblue");
+        screen.createImage(top2[1].image, "royalblue");
         screen.createBold("Condragulations, you're both winners baby!");
         top2[0].favoritism += 5;
         top2[0].ppe += 5;
@@ -9115,11 +9115,11 @@ function kittygirlGroup(cena = "") {
         sortPerformances(dragUpYourLife);
         sortPerformances(sittingOnASecret);
         screen.createBigText("Queens' performances...");
-        let slay = allofthem.filter(function (queen) { return queen.performanceScore < 6; });
-        let great = allofthem.filter(function (queen) { return queen.performanceScore >= 6 && queen.performanceScore < 16; });
-        let good = allofthem.filter(function (queen) { return queen.performanceScore >= 16 && queen.performanceScore < 26; });
-        let bad = allofthem.filter(function (queen) { return queen.performanceScore >= 26 && queen.performanceScore < 31; });
-        let flop = allofthem.filter(function (queen) { return queen.performanceScore >= 31 && queen.performanceScore < 50; });
+        let slay = allofthem.filter(function (queen) { return queen.performanceScore <= 8; });
+        let great = allofthem.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 16; });
+        let good = allofthem.filter(function (queen) { return queen.performanceScore > 16 && queen.performanceScore <= 26; });
+        let bad = allofthem.filter(function (queen) { return queen.performanceScore > 26 && queen.performanceScore <= 31; });
+        let flop = allofthem.filter(function (queen) { return queen.performanceScore > 31 && queen.performanceScore <= 50; });
         createPerformanceDesc(slay, great, good, bad, flop);
         screen.createHorizontalLine();
         screen.createBold("Ladies, I've made my decision...");
@@ -9203,8 +9203,8 @@ function topKittyWinLipsync(sittingOnASecret) {
     screen.createHorizontalLine();
     screen.createBold("Ladies, I've made my decision...");
     if (top2[0].lipsyncScore == top2[1].lipsyncScore && top2[0].lipsyncScore > 6 && top2[1].lipsyncScore > 6) {
-        screen.createImage(top2[0].image, "darkblue");
-        screen.createImage(top2[1].image, "darkblue");
+        screen.createImage(top2[0].image, "royalblue");
+        screen.createImage(top2[1].image, "royalblue");
         screen.createBold("Condragulations, you're both winners baby!");
         top2[0].favoritism += 5;
         top2[0].ppe += 5;
@@ -9454,8 +9454,8 @@ function eliminatedKittyWinLipsync() {
     screen.createHorizontalLine();
     screen.createBold("Ladies, I've made my decision...");
     if (top2[0].lipsyncScore == top2[1].lipsyncScore && top2[0].lipsyncScore > 6 && top2[1].lipsyncScore > 6) {
-        screen.createImage(top2[0].image, "darkblue");
-        screen.createImage(top2[1].image, "darkblue");
+        screen.createImage(top2[0].image, "royalblue");
+        screen.createImage(top2[1].image, "royalblue");
         screen.createBold("Condragulations, you're both winners baby!");
         top2[0].favoritism += 5;
         top2[0].ppe += 5;
@@ -9713,11 +9713,11 @@ function queensConjoined(wass = "") {
         screen.createHorizontalLine();
         sortPerformances(currentCast);
         screen.createBigText("Queens' performances...");
-        let slay = currentCast.filter(function (queen) { return queen.performanceScore < 6; });
-        let great = currentCast.filter(function (queen) { return queen.performanceScore >= 6 && queen.performanceScore < 16; });
-        let good = currentCast.filter(function (queen) { return queen.performanceScore >= 16 && queen.performanceScore < 26; });
-        let bad = currentCast.filter(function (queen) { return queen.performanceScore >= 26 && queen.performanceScore < 31; });
-        let flop = currentCast.filter(function (queen) { return queen.performanceScore >= 31 && queen.performanceScore < 50; });
+        let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 8; });
+        let great = currentCast.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 16; });
+        let good = currentCast.filter(function (queen) { return queen.performanceScore > 16 && queen.performanceScore <= 26; });
+        let bad = currentCast.filter(function (queen) { return queen.performanceScore > 26 && queen.performanceScore <= 31; });
+        let flop = currentCast.filter(function (queen) { return queen.performanceScore > 31 && queen.performanceScore <= 50; });
         createPerformanceDesc(slay, great, good, bad, flop);
         makeoverCounter = true;
         screen.createHorizontalLine();
