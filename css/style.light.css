@@ -151,7 +151,7 @@ table, th, td, tr {
     border-collapse: collapse;
     color: #3A3A3A;
     background-color: #E9DFE9;
-    border: 0px solid #C6BFC6;
+    border: 1px solid #C6BFC6;
     padding: 0.2em 0.4em;
 }
 
@@ -160,12 +160,12 @@ table {
     border-collapse: separate;
     box-sizing: border-box;
     text-indent: initial;
-    border-spacing: 0px;
+    border-spacing: 1px;
     border-color: grey;
 }
 
 tbody {
-    border-collapse: separate;
+    border-collapse: collapse;
     text-indent: initial;
     border-spacing: 2px;
 }
@@ -185,7 +185,7 @@ th {
 
 td {
     padding: 0.5em;
-    border: 1px solid #C6BFC6;
+    border: 0px solid #C6BFC6;
     background-color: #F5EBF5;
     font-weight: bold;
     font-size: 13px;
