@@ -7888,6 +7888,20 @@ let sashaColby = new Queen("Sasha Colby", 13, 9, 8, 10, 9, 12, 12, 9, 10,"SashaC
 let spice = new Queen("Spice", 7, 7, 6, 8, 14, 15, 8, 8, 9,"Spice");
 let sugar = new Queen("Sugar", 7, 7, 7, 7, 7, 7, 7, 7, 7,"Sugar");
 let us_season15 = [amethyst, anetra, auraMayari, irene, jax, loosey, luxx, malaysia, marcia, mistress, poppy, robin, salina, sashaColby, spice, sugar];
+//ALL STARS 1
+let chadas1 = new Queen("Chad Michaels", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"ChadAS1");
+let mimias1 = new Queen("Mimi Imfurst", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"MimiAS1");
+let pandoraas1 = new Queen("Pnadora Box", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"PandoraAS1");
+let tammieas1 = new Queen("Tammie Brown", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"TammieAS1");
+let alexisas1 = new Queen("Alexis Mateo", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"AlexisAS1");
+let shannelas1 = new Queen("Shannel", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"ShannelAS1");
+let jujubeeas1 = new Queen("Jujubee", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"JujubeeAS1");
+let ravenas1 = new Queen("Raven", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"RavenAS1");
+let manilaas1 = new Queen("Manila Luzon", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"ManilaAS1");
+let latriceas1 = new Queen("Latrice Royale", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"LatriceAS1");
+let yaraas1 = new Queen("Yara Sofia", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"YaraAS1");
+let ninaas1 = new Queen("Nina Flowers", 10 , 11, 12, 9, 10, 9, 10, 8, 9,"NinaAS1");
+let allstars_1 = [chadas1, mimias1, pandoraas1, tammieas1, alexisas1, shannelas1, jujubeeas1, ravenas1, manilaas1, latriceas1, yaraas1,ninaas1];
 //ALL STARS 2
 let adoreas2 = new Queen("Adore Delano", 9, 10, 11, 7, 6, 11, 9, 10, 15,"AdoreAS2")
 let alaskaas2 = new Queen("Alaska Thunderfuck", 14, 11, 10, 8, 10, 10, 10, 14, 8,"AlaskaAS2");
@@ -8252,6 +8266,7 @@ let allQueens = [
     denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica,
     alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow,
     amethyst, anetra, auraMayari, irene, jax, loosey, luxx, malaysia, marcia, mistress, poppy, robin, salina, sashaColby, spice, sugar,
+    chadas1, mimias1, pandoraas1, tammieas1, alexisas1, shannelas1, jujubeeas1, ravenas1, manilaas1, latriceas1, yaraas1, ninaas1,
     adoreas2, alaskaas2, alyssaeas2, cocoas2, detoxas2, gingeras2, katyaas2, jaremyas2, roxxxyas2, tatias2,
     ajaas3, bebeas3,delaas3,chichias3,kennedyas3,milkas3,morganas3,shangelaas3, thorgy, trixieas3,
     farrahas4, giagas4, jasmineas4, latriceas4, manilaas4, monetas4, moas4, naomias4, tttas4, valentinas4,
@@ -9962,17 +9977,17 @@ class Team extends Queen {
             Name = "Team Mrs. " + QueenB._name.split(" ")[0] + " Davis";
         else if (QueenB == kasha)
             Name = "Team Mrs. " + QueenA._name.split(" ")[0] + " Davis";
-        else if ((QueenA || QueenB) == latrice && ((QueenA && QueenB) == manila))
+        else if ((QueenA || QueenB) == latriceas1 && ((QueenA && QueenB) == manilaas1))
             Name = "Team Latrila";
-        else if ((QueenA || QueenB) == yara && ((QueenA && QueenB) == alexis))
+        else if ((QueenA || QueenB) == yaraas1 && ((QueenA && QueenB) == alexisas1))
             Name = "Team Yarlexis";
-        else if ((QueenA || QueenB) == chad && ((QueenA && QueenB) == shannels1))
+        else if ((QueenA || QueenB) == chadas1 && ((QueenA && QueenB) == shannelas1))
             Name = "Team Shad";
-        else if ((QueenA || QueenB) == ninas1 && ((QueenA && QueenB) == tammies1))
+        else if ((QueenA || QueenB) == ninaas1 && ((QueenA && QueenB) == tammieas1))
             Name = "Team Brown Flowers";
-        else if ((QueenA || QueenB) == raven && ((QueenA && QueenB) == jujubee))
+        else if ((QueenA || QueenB) == ravenas1 && ((QueenA && QueenB) == jujubeeas1))
             Name = "Team Rujubee";
-        else if ((QueenA || QueenB) == mimi && ((QueenA && QueenB) == pandora))
+        else if ((QueenA || QueenB) == mimias1 && ((QueenA && QueenB) == pandoraas1))
             Name = "Team Mandora";
         else if (QueenA._name.split(' ')[0].length == 3 && QueenB._name.split(' ')[0].length > 3)
             Name = "Team " + QueenA._name.split(' ')[0] + QueenB._name.split(' ')[0].slice(QueenB._name.split(' ')[0].length - 4, QueenB._name.split(' ')[0].length);
