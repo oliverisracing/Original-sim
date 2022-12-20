@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuPaul's Drag Race Simulator</title>
+    <link rel="icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="css/style.light.css">
+</head>
+
+<h1 id="MainTitle">Custom</h1>
+
+<body onload="customQueenSelectList()">
+    <div id="MainBlock">
+        <big>Go here if you want to create a cast with custom queens or create your own rendition of the show's queens!</big>
+        <p>
+            <b>Queen name: </b><input type="text" id="queenName" placeholder="Queen name...">
+        </p>
+        <p>
+            <button onclick="randomizeStats()">Randomize Stats</button>
+        </p>
+        <small>(Queens' stats must range from 0 to 15)</small>
+        <p>
+            <b>Acting stat: </b> <input type="number"  id="actingStat" class="stats" placeholder="0-15..."> 
+        </p>
+        <p>
+            <b>Comedy stat: </b> <input type="number"  id="comedyStat" class="stats" placeholder="0-15...">
+        </p>
+        <p>
+            <b>Dance stat: </b> <input type="number"  id="danceStat" class="stats" placeholder="0-15...">
+        </p>
+        <p>
+            <b>Design stat: </b> <input type="number"  id="designStat" class="stats" placeholder="0-15...">
+        </p>
+        <p>
+            <b>Improv stat: </b> <input type="number"  id="improvStat" class="stats" placeholder="0-15...">
+        </p>
+        <p>
+            <b>Runway stat: </b> <input type="number"  id="runwayStat" class="stats" placeholder="0-15...">
+        </p>
+        <p>
+            <b>Lip-Sync stat: </b> <input type="number"  id="lipsyncStat" class="stats" placeholder="0-15...">
+        </p>
+        <p>
+            <b>Image URL: </b> <input type="text"  id="url" placeholder="Link of your image...">
+        </p>
+        <p> Example: <b> www.mysite.com/image.png </b></p>
+        <button id="add" onclick="addQueen()">Add queen</button>
+        <button id="edit" onclick="updateCustomQueen()" hidden>Update queen</button>
+        <p>
+            <b id="announce-new"></b>
+        </p>
+        <hr>
+
+        <h2>Remove or edit a custom queen</h2>
+        <big>Go here to remove or edit one of your already created custom queens.</big>
+
+        <p>
+        <select id="custom-remove"></select>
+        </p>
+
+        <button onclick="removeCustomQueen()">Remove queen</button>
+        <button onclick="editCustomQueen()">Edit queen</button>
+        <p>
+            <b id="announce-remove"></b>
+        </p>
+
+        <hr>
+
+        <div>
+            <p>
+                <big><a href="index.html" id="inblock">Save changes and back to main page</a></big>
+            </p>
+        </div>
+    </div>
+</body>
+<script src="javascript/index.js">
+</script>
+</html>
