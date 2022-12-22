@@ -5062,7 +5062,7 @@ function thaiWinBottom2() {
         bottomQueens[1].unfavoritism += 1;
         bottomQueens[1].ppe += 2;
         bottomQueens.splice(0, 2);
-    } else if (bottomQueens.length == 3 && bottomQueens[0].performanceScore >= 35 && currentCast.length > 5) {
+    } else if (bottomQueens.length == 3 && bottomQueens[0].performanceScore >= 65 && currentCast.length > 10) {
         thirdqueen = true;
         screen.createBold("... no one is safe.");
     }
