@@ -41,7 +41,7 @@ body {
     margin: 0;
     font-family: rubik,helvetica,arial,sans-serif;
     font-size: 13px;
-    background-image: url(../Images/Backgrounds/bg.png);
+    background-image: url(../image/bg.png);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -188,7 +188,7 @@ td {
     border: 0px solid #C6BFC6;
     background-color: #F5EBF5;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 10px;
     text-align: center;
 }
 
@@ -207,6 +207,7 @@ td {
 .episodeTR {
     background-color: #e8dee8;
     font-weight: bold;
+    font-size: .8rem;
     border: 1px solid #C6BFC6
 }
 
