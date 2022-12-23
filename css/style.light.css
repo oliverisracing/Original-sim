@@ -1,4 +1,12 @@
-@charset "UTF-8";
+root{
+    --maple: "m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z";
+  }
+  .topnav {
+    background-color: rgba(255, 255, 255, 0.90);
+    border: 2px;
+    overflow: hidden;
+  }
+  
   .topnav a {
     float: left;
     color: black;
@@ -129,70 +137,65 @@ button:hover {
     border: 1px solid rgb(228, 228, 228);
 }
 
-.statistics {
-    font-size: 1rem;
+/*
+table, th, td, tr {
+    border: black solid 1px;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 3px;
 }
-
-.red {
-    background-color: #ffb6c1;
-}
-
-.blue {
-    background-color: #add8e6;
-}
+*/
 
 .trtable {
-    background-color: #f5ebf5;
-    color: #202122;
-    border: 1px solid #a2a9b1;
+    margin-bottom: 1em;
     border-collapse: collapse;
-
+    color: #3A3A3A;
+    background-color: #E9DFE9;
+    border: 1px solid #C6BFC6;
+    padding: 0.2em 0.4em;
 }
 
 table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
     text-indent: initial;
-    border-spacing: 2px;
-    color: #202122;
-    border: 1px solid #a2a9b1;
-    border-collapse: collapse;
-    font-size: .7rem;
-    text-align: center;
+    border-spacing: 1px;
+    border-color: grey;
 }
 
 tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
+    border-collapse: collapse;
+    text-indent: initial;
+    border-spacing: 2px;
 }
 
 tr {
-    display: table-row;
-    vertical-align: middle;
-    border-color: inherit;
+    height: 50px;
 }
 
 th {
-    display: table-cell;
     font-weight: bold;
-    background-color: #e9dfe9;
-    text-align: center;
-    border: 1px solid #a2a9b1;
-    padding: 0.2em 0.4em;
+    padding: 5px;
+    background-color: #E9DFE9;
+    border: 1px solid #C6BFC6;
+    font-size: 13px;
+    width: 75px;
 }
 
 td {
-    display: table-cell;
+    padding: 0.5em;
+    border: 0px solid #C6BFC6;
+    background-color: #F5EBF5;
+    font-weight: bold;
+    font-size: 10px;
     text-align: center;
-    border: 1px solid #a2a9b1;
-    padding: 0.2em 0.4em;
-    vertical-align: middle;
 }
 
 .placement {
     height: 50px;
     width: 60px;
 }
-
 .rumocracy {
     height: 45px;
     width: 45px;
@@ -201,21 +204,24 @@ td {
     width: max-content;
     font-size: 1rem;
 }
-
 .nameTR{
-    background-color: #f5ebf5; 
+    background-color: #e8dee8; 
     font-weight: bold;
     font-size: .8rem;
+    border: 1px solid #C6BFC6
 }
 
 .episodeTR {
-    background-color: #e9dfe9;
+    background-color: #e8dee8;
     font-weight: bold;
+    font-size: .8rem;
+    border: 1px solid #C6BFC6
 }
 
 .ppeTR{
-    background-color: #e9dfe9;
+    background-color: #e8dee8;
     font-weight: bold;
+    border: 1px solid #C6BFC6
 }
 
 select {
@@ -424,6 +430,7 @@ input {
     font-size: 25px;
   }
 }
+
 @media (max-width: 768px) {
   html {
     font-size: 18px;
