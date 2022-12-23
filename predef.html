@@ -8,6 +8,7 @@
     <link rel="icon" href="image/favicon.ico">
     <link rel="stylesheet" href="css/style.light.css">
     <script defer src="javascript/index.js"></script>
+    <script src="https://kit.fontawesome.com/65fd17a1f9.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="dMainTitle">
@@ -57,7 +58,7 @@
             <button onclick="predefCast(uk_season1, 'regular', 'top3')">UK Season 1</button>
             <button onclick="predefCast(uk_season2, 'regular', 'top4', '', 'vote')">UK Season 2</button>
             <button onclick="predefCast(uk_season3, 'regular', 'top3', 'uk3-premiere')">UK Season 3</button>
-            <button onclick="predefCast(uk_season4, 'regular', 'top3')">UK Season 4</button>
+            <button onclick="predefCast(uk_season4, 'regular', 'teams')">UK Season 4</button>
         </div>
 
         <h2>Canada's Drag Race</h2>
@@ -94,7 +95,7 @@
         <h2>Drag Race Italia</h2>
         <div>
             <button onclick="predefCast(drita, 'regular', 'top4')">ITA Season 1</button>
-            <button onclick="predefCast(drita_season2, 'regular', 'top3')">ITA Season 2</button>
+            <button onclick="predefCast(drita_season2, 'regular', 'top4')">ITA Season 2</button>
         </div>
 
         <h2>Drag Race France</h2>
@@ -106,18 +107,18 @@
         <div>
             <button onclick="predefCast(drph, 'regular', 'LFTC')">PH Season 1</button>
         </div>
-
         <hr>
-
         <div>
-            <h2>Options</h2>
-
+            <h3>Options: <br></h3>
+            <input type="checkbox" id="immunity"> Add immunity
             <input type="checkbox" id="disableDouble"> Disable double shantays and sashays
-            <input type="checkbox" id="chocolateBar"> Random Chocolate Bar Twist
-            <input type="checkbox" id="chocolateBarChoosable"> Choosable Chocolate Bar Twist
-            <input type="checkbox" id="riggory"> Disable Riggory for challenge wins
+            <input type="checkbox" id="riggory"> Disable Challenge Riggory
+            <input type="checkbox" id="riggoryLipsync"> Disable Lipsync Riggory 
+            <p>Chocolate Bar Twist: </p>
+            <input type="checkbox" id="chocolateBar"> Random
+            <input type="checkbox" id="chocolateBarChoosable"> Choosable
         </div>
-
+        <hr>
         <div>
             <p>
                 <big><a href="index.html" id="inblock">Back to main page</a></big>
@@ -125,13 +126,16 @@
         </div>
         <div id="result"></div>
     </div>
+    <a href="#" class="toTop">
+        <i class="fa-solid fa-angle-up"></i>
+    </a>
     <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-     </div>
     <script>
         kofiWidgetOverlay.draw('arainbow4u', {
         'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Tip Me',
         'floating-chat.donateButton.background-color': '#5bc0de',
         'floating-chat.donateButton.text-color': '#323842'
         });

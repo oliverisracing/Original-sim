@@ -7,13 +7,14 @@
     <link rel="icon" href="image/favicon.ico">
     <title>Drag Race Simulator</title>
     <script src="javascript/index.js" defer></script>
+    <script src="https://kit.fontawesome.com/65fd17a1f9.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <div class="dMainTitle">
         <h1 id="MainTitle">My Drag Series</h1>
     </div>
-    
+
     <div class="mainPart" id="MainBlock">
         <p><big>This is your chance to simulate a drag race season with all your favorite contestants!</big></p>
         <div class="search-wrapper">
@@ -22,6 +23,7 @@
         </div>
         <div>
             <button onclick="addRandomContestant()" id="randomK">Random</button>
+            <button onclick="addRandomCustomContestant()" id="randomKC">Random Customs</button>
             <button onclick="moreKweens()" class="hide" id="moreK">Choose More Contestants</button>
         </div>
         <div class="drag-cards" data-drag-cards-container></div>
@@ -32,7 +34,7 @@
             </div>
         </template>
         <hr>
-        <big class="hide" id="castBig">Current Cast<br></big>
+        <big class="hide" id="castBig">Current Cast: <br></big>
         <div id="chosenKweens" class="drag-cards"></div>
         <div>
             <p>Choose your premiere format: </p>
@@ -51,6 +53,7 @@
             <p>Choose your returning format: </p>
             <select id="returning">
                 <option>None</option>
+                <option value="choose">Choose who returns</option>
                 <option value="random">Random queen returns</option>
                 <option value="votes">Remaining queens vote</option>
                 <option value="conjoined-queens">Conjoined Queens Makeover</option>
@@ -83,6 +86,7 @@
                 <option value="LFTC">Lip-Sync For The Crown</option>
                 <option value="LFTF">Lip Sync for the Finale</option>
                 <option value="jury">Jury Vote</option>
+                <option value="randomFinale">Random Finale</option>
             </select>
         </div>
         <br>
@@ -90,8 +94,10 @@
         <hr>
         <div>
             <big>Options: <br></big>
+            <input type="checkbox" id="immunity"> Add immunity<br>
             <input type="checkbox" id="disableDouble"> Disable double shantays and sashays <br>
-            <input type="checkbox" id="riggory"> Disable Riggory for challenge wins
+            <input type="checkbox" id="riggory"> Disable Challenge Riggory <br>
+            <input type="checkbox" id="riggoryLipsync"> Disable Lipsync Riggory 
             <p>Chocolate Bar Twist: </p>
             <input type="checkbox" id="chocolateBar"> Random
             <input type="checkbox" id="chocolateBarChoosable"> Choosable
@@ -117,6 +123,9 @@
 
     </div>
     <div id="result" style="display: none;"></div>
+    <a href="#" class="toTop">
+        <i class="fa-solid fa-angle-up"></i>
+    </a>
     <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js" integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
