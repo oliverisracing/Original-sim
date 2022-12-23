@@ -1937,21 +1937,7 @@ function uk3PremiereJudging() {
     for (let i = 0; i < topQueens.length; i++) {
         topQueens[i].getASLipsync();
     }
-    screen.createHorizontalLine();
-    let slay = topQueens.filter(function (queen) { return queen.lipsyncScore > 11; });
-    let great = topQueens.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
-    let good = topQueens.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
-    let bad = topQueens.filter(function (queen) { return queen.lipsyncScore >= 2 && queen.lipsyncScore < 4; });
-    let flop = topQueens.filter(function (queen) { return queen.lipsyncScore >= -10 && queen.lipsyncScore < 2; });
-    toBlots(topQueens, song);
-    createLipsyncDesc(slay, great, good, bad, flop);
-    screen.createButton("Proceed", "uk3PremiereJudging2()");
-}
-function uk3PremiereJudging2() {
-    let screen = new Scene();
-    screen.clean();
-    screen.createHeader("I've made my decision.");
-    topQueens.sort((a, b) => (b.lipsyncScore - a.lipsyncScore));
+    c    topQueens.sort((a, b) => (b.lipsyncScore - a.lipsyncScore));
     if (immunityTwist && giveImmunity()) {
         topQueens[0].immune = true;
         topQueens[0].immuneEp.push(episodeCount);
@@ -11443,7 +11429,7 @@ class Scene {
     createImage(source, color = "black") {
         let image = document.createElement("img");
         image.src = source;
-        image.setAttribute("style", `border-color: ${color}; width: 105px; height: 105px;`);
+        image.setAttribute("style", `border-color: ${color}; width: 105px; height: 105px; border-radius: 20px;`);
         this._MainBlock.appendChild(image);
     }
     goToTop() {
