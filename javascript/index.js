@@ -104,7 +104,7 @@ function miniChallenge() {
     let challenge = new MiniChallenge();
     challenge.generateDescription();
     challenge.rankPerformances();
-    let challenges = ["actingChallenge()", "improvChallenge()", "marketingChallenge()", "danceChallenge()", "designChallenge()", "comedyChallenge()", "talentshow()"];
+    let challenges = ["actingChallenge()", "improvChallenge()", "marketingChallenge()", "danceChallenge()", "designChallenge()", "comedyChallenge()"];
     //remove from possible challenges list:
     if (talentShowCounter || (all_stars || all_winners || lipsync_assassin))
         challenges.splice(challenges.indexOf("talentshow()"), 1);
