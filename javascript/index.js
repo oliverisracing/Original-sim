@@ -6234,7 +6234,7 @@ function winAndBtm6() {
         topQueens.splice(0, 1);
     }
     //double win:
-    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 50) {
+    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 40) {
         topQueens[0].addToTrackRecord(" WIN");
         topQueens[0].favoritism += 5;
         topQueens[0].ppe += 5;
@@ -6823,7 +6823,7 @@ function winAndBtm2() {
         topQueens.splice(0, 1);
         }
     }//double win:
-    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 50 || isPairChallenge && randomNumber(0, 100) < 50) {
+    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 40 || isPairChallenge && randomNumber(0, 100) < 40) {
         topQueens[0].addToTrackRecord(" WIN");
         topQueens[0].favoritism += 5;
         topQueens[0].ppe += 5;
@@ -8735,7 +8735,7 @@ let jasmine = new Queen("Jasmine Masters",4,4,5,4,5,7,4,7,8,"JasmineMastersS7");
 let kandyh = new Queen("Kandy Ho",5,5,5,7,5,10,14,6,8,"Kandy");
 let katya = new Queen("Katya Zamolodchikova",11,11,10,10,7,9,8,13,15,"KatyaS7");
 let kennedy = new Queen("Kennedy Davenport",5,13,12,13,7,7,15,10,8,"KennedyS7");
-let max = new Queen("Max",14,6,14,7,8,12,3,12,11,"Max");
+let max = new Queen("Max",14,6,10,7,8,12,3,12,11,"Max");
 let fame = new Queen("Miss Fame",6,6,6,5,10,14,5,8,7,"Fame");
 let kasha = new Queen("Mrs. Kasha Davis",6,7,6,7,7,8,6,8,12,"Kasha");
 let pearl = new Queen("Pearl Liaison",8,8,10,4,10,13,6,7,6,"Pearl");
