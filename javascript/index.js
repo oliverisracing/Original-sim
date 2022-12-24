@@ -108,15 +108,15 @@ function miniChallenge() {
     //remove from possible challenges list:
     if (talentShowCounter || (all_stars || all_winners || lipsync_assassin))
         challenges.splice(challenges.indexOf("talentshow()"), 1);
-    if (actingChallengeCounter == 3 && totalCastSize > 15 || actingChallengeCounter == 3 && totalCastSize <= 15)
+    if (actingChallengeCounter == 3 && totalCastSize > 15 || actingChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("actingChallenge()"), 1);
     if (comedyChallengeCounter == 3 && totalCastSize > 15 || comedyChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("comedyChallenge()"), 1);
-    if (marketingChallengeCounter == 3 && totalCastSize > 15 || marketingChallengeCounter == 3 && totalCastSize <= 15)
+    if (marketingChallengeCounter == 3 && totalCastSize > 15 || marketingChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("marketingChallenge()"), 1);
-    if (danceChallengeCounter == 2 && totalCastSize > 15 || danceChallengeCounter == 3 && totalCastSize <= 15)
+    if (danceChallengeCounter == 2 && totalCastSize > 15 || danceChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("danceChallenge()"), 1);
-    if (designChallengeCounter == 3 && totalCastSize > 15 || designChallengeCounter == 2 && totalCastSize <= 15)
+    if (designChallengeCounter == 2 && totalCastSize > 15 || designChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("designChallenge()"), 1);
     if (improvChallengeCounter == 3&& totalCastSize > 15 || improvChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("improvChallenge()"), 1);
