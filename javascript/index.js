@@ -8587,47 +8587,47 @@ class Queen {
         return this._lipsyncStat;
     }
     getActing() {
-        this.performanceScore = this._calculateScores(15, 30, this._actingStat);
+        this.performanceScore = this._calculateScores(15, 25, this._actingStat);
     }
     getComedy() {
-        this.performanceScore = this._calculateScores(15, 30, this._comedyStat);
+        this.performanceScore = this._calculateScores(15, 25, this._comedyStat);
     }
     getMarketing() {
-        this.performanceScore = this._calculateScores(45, 55, this._comedyStat + this._actingStat + this._brandingStat);
+        this.performanceScore = this._calculateScores(45, 50, this._comedyStat + this._actingStat + this._brandingStat);
     }
     getDance() {
-        this.performanceScore = this._calculateScores(15, 30, this._danceStat);
+        this.performanceScore = this._calculateScores(15, 25, this._danceStat);
     }
     getDesign() {
-        this.performanceScore = this._calculateScores(15, 30, this._designStat);
+        this.performanceScore = this._calculateScores(15, 25, this._designStat);
     }
     getRunwayChallenge() {
-        this.performanceScore = this._calculateScores(15, 30, this._runwayStat);
+        this.performanceScore = this._calculateScores(15, 25, this._runwayStat);
     }
     getImprov() {
-        this.performanceScore = this._calculateScores(15, 30, this._improvStat);
+        this.performanceScore = this._calculateScores(15, 25, this._improvStat);
     }
     //special 'gets':
     getSnatch() {
-        this.performanceScore = this._calculateScores(35, 60, this._improvStat + this._comedyStat + this._actingStat);
+        this.performanceScore = this._calculateScores(35, 55, this._improvStat + this._comedyStat + this._actingStat);
     }
     getRusical() {
-        this.performanceScore = this._calculateScores(25, 40, this._danceStat + this._lipsyncStat);
+        this.performanceScore = this._calculateScores(25, 35, this._danceStat + this._lipsyncStat);
     }
     getBall() {
-        this.performanceScore = this._calculateScores(25, 40, this._designStat + this._runwayStat);
+        this.performanceScore = this._calculateScores(25, 35, this._designStat + this._runwayStat);
     }
     getRumix() {
-        this.performanceScore = this._calculateScores(35, 55, this._danceStat + this._brandingStat + this._charismaStat);
+        this.performanceScore = this._calculateScores(35, 50, this._danceStat + this._brandingStat + this._charismaStat);
     }
     getTalentShow() {
-        this.performanceScore = this._calculateScores(15, 30, randomNumber(1, 30));
+        this.performanceScore = this._calculateScores(15, 25, randomNumber(1, 30));
     }
     getFinale() {
         this.finaleScore = this.favoritism - this.unfavoritism;
     }
     getRunway() {
-        this.runwayScore = this._calculateScores(12, 30, this._runwayStat);
+        this.runwayScore = this._calculateScores(12, 25, this._runwayStat);
     }
     getLipsync() {
         this.lipsyncScore = this._calculateScores(0, this._lipsyncStat, this.unfavoritism) + this.favoritism;
@@ -8813,7 +8813,7 @@ let crystalm = new Queen("Crystal Methyd", 8, 10, 10, 8, 8, 12, 8, 15, 10,"Cryst
 let gigi = new Queen("Gigi Goode", 12, 14, 14, 10, 15, 13, 10, 10, 11,"Gigi");
 let jackie = new Queen("Jackie Cox", 10, 10, 10, 8, 7, 10, 11, 10, 7, "Jackie");
 let heidi = new Queen("Heidi N Closet", 9, 8, 8, 9, 8, 8, 14, 12, 15, "Heidi");
-let widow = new Queen("Widow Von'Du", 7, 7, 8, 14, 10, 12, 15, 5, 12, "Widow");
+let widow = new Queen("Widow Von'Du", 10, 7, 8, 14, 9, 12, 15, 5, 12, "Widow");
 let jan = new Queen("Jan", 7, 6, 7, 7, 9, 10, 1, 8, 7,"JanS12");
 let brita = new Queen("Brita", 5, 6, 5, 5, 6, 10, 15, 6, 8,"Brita");
 let aiden = new Queen("Aiden Zhane", 6, 4, 3, 3, 6, 7, 6, 6, 6,"Aiden");
