@@ -6107,12 +6107,11 @@ function s9judgingScreen() {
     }
     safeQueens.innerHTML += "you are safe..";
     screen.createHorizontalLine();
-    if (topQueens[i].unfavoritism >= 12){
+    if (riggory) {
         for (let i = 0; i < topQueens.length; i++) {
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
         }
-    } 
-    else {
+    } else {
         for (let i = 0; i < topQueens.length; i++)
             topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
     }
@@ -6211,12 +6210,10 @@ function winAndBtm6() {
     screen.createBold("Ladies, I've made some decisions...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     //sort the top queens now taking runway and favoritism in consideration:
-    if (topQueens[i].unfavoritism >= 12){
-        for (let i = 0; i < topQueens.length; i++) {
+    if (riggory) {
+        for (let i = 0; i < topQueens.length; i++)
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
-        }
-    } 
-    else {
+    } else {
         for (let i = 0; i < topQueens.length; i++)
             topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
     }
@@ -6305,14 +6302,15 @@ function winAndBtm6() {
     screen.createButton("Proceed", "bottom6()");
 }
 function bottom6() {
-    if (topQueens[i].unfavoritism >= 12){
-        for (let i = 0; i < topQueens.length; i++) {
-            topQueens[i].performanceScore -= (topQueens[i].runwayScore);
+    if (riggoryLipsync) {
+        for (let i = 0; i < bottomQueens.length; i++) {
+            bottomQueens[i].getASLipsync();
         }
-    } 
-    else {
-        for (let i = 0; i < topQueens.length; i++)
-            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
+    } else {
+        for (let i = 0; i < bottomQueens.length; i++) {
+            bottomQueens[i].getLipsync();
+            bottomQueens[i].lipsyncScore = (bottomQueens[i].lipsyncScore - bottomQueens[i].favoritism) + bottomQueens[i].unfavoritism;
+        }
     }
     bottomQueens.sort((a, b) => (b.lipsyncScore - a.lipsyncScore));
     let screen = new Scene();
@@ -6772,14 +6770,11 @@ function winAndBtm2() {
     screen.createBold("Ladies, I've made some decisions...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     //sort the top queens now taking runway and favoritism in consideration:
-    for (let i = 0; i < topQueens.length; i++) {
-        if (topQueens[i].unfavoritism >= 12){
-            for (let i = 0; i < topQueens.length; i++) {
+    if (riggory) {
+        for (let i = 0; i < topQueens.length; i++) {
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
         }
-    } 
-    else {
-        
+    } else {
         for (let i = 0; i < topQueens.length; i++)
             topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
     }
@@ -6973,13 +6968,11 @@ function teamWinAndBtm2() {
     screen.createBold("Ladies, I've made some decisions...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     //sort the top queens now taking runway and favoritism in consideration:
-    for (let i = 0; i < topQueens.length; i++) {
-    if (topQueens[i].unfavoritism >= 12){
+    if (riggory) {
         for (let i = 0; i < topQueens.length; i++) {
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
         }
-    } 
-    else {
+    } else {
         for (let i = 0; i < topQueens.length; i++)
             topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
     }
@@ -7044,12 +7037,11 @@ function top2AndBtm() {
     screen.createBold("Ladies, I've made some decisions...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     //sort the top queens now taking runway and favoritism in consideration:
-    if (topQueens[i].unfavoritism >= 12){
+    if (riggory) {
         for (let i = 0; i < topQueens.length; i++) {
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
         }
-    } 
-    else {
+    } else {
         for (let i = 0; i < topQueens.length; i++)
             topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
     }
@@ -7177,12 +7169,11 @@ function topAndBtm() {
     screen.createBold("Ladies, I've made some decisions...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     //sort the top queens now taking runway and favoritism in consideration:
-    if (topQueens[i].unfavoritism >= 12){
+    if (riggory) {
         for (let i = 0; i < topQueens.length; i++) {
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
         }
-    } 
-    else {
+    } else {
         for (let i = 0; i < topQueens.length; i++)
             topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
     }
@@ -7408,12 +7399,11 @@ function top2AndBlocked() {
         threestars = true;
     }
     //sort the top queens now taking runway and favoritism in consideration:
-    if (topQueens[i].unfavoritism >= 12){
+    if (riggory) {
         for (let i = 0; i < topQueens.length; i++) {
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
         }
-    } 
-    else {
+    } else {
         for (let i = 0; i < topQueens.length; i++)
             topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
     }
