@@ -277,7 +277,7 @@ function comedyChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new ComedyChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 80 && currentCast.length == 10 && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 80 && currentCast.length == 10  && !isPairChallenge && regularFormat || randomNumber(0, 100) >= 80 && currentCast.length == 12  && !isPairChallenge && regularFormat){ 
         isPairChallenge = true;
         pairMaking();
     challenge.rankPerformances();
