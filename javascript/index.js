@@ -9223,7 +9223,7 @@ let anitacan = new Queen("Anita Wiglit (CA)", 10, 8, 7, 8, 10, 10, 8, 11, 12, "A
 let kendallcan = new Queen("Kendall Gender (CA)", 7, 11, 10, 6, 8, 9, 10, 8, 10, "KendallCVSTW");
 let stephaniecan = new Queen("Stephanie Prince (CA)", 5, 6, 3, 8, 6, 12, 10, 8, 7,"StephanieCVSTW");
 let silkycan = new Queen("Silky Nutmet Ganache (CA)", 13, 12, 11, 10, 11, 9, 15, 13, 13, "SilkyCVSTW");
-let canvstw = [rajahcan, victoriacan, vanitycan, ritacan, icesiscan, anitacan, kendallcan, stephaniecan];
+let canvstw = [rajahcan, victoriacan, vanitycan, ritacan, icesiscan, anitacan, kendallcan, stephaniecan, silkycan];
 //all possible queens:
 let allCustomQueens = [];
 if (localStorage.getItem("customQueens") != null)
