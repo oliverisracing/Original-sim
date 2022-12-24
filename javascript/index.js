@@ -6772,12 +6772,14 @@ function winAndBtm2() {
     screen.createBold("Ladies, I've made some decisions...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     //sort the top queens now taking runway and favoritism in consideration:
-    if (topQueens[i].unfavoritism >= 12){
-        for (let i = 0; i < topQueens.length; i++) {
+    for (let i = 0; i < topQueens.length; i++) {
+        if (topQueens[i].unfavoritism >= 12){
+            for (let i = 0; i < topQueens.length; i++) {
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
         }
     } 
     else {
+        
         for (let i = 0; i < topQueens.length; i++)
             topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
     }
@@ -6971,6 +6973,7 @@ function teamWinAndBtm2() {
     screen.createBold("Ladies, I've made some decisions...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     //sort the top queens now taking runway and favoritism in consideration:
+    for (let i = 0; i < topQueens.length; i++) {
     if (topQueens[i].unfavoritism >= 12){
         for (let i = 0; i < topQueens.length; i++) {
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
