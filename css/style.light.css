@@ -146,6 +146,17 @@ table, th, td, tr {
 }
 */
 
+.statistics {
+    font-size: 1rem;
+}
+
+.red {
+    background-color: #ffb6c1;
+}
+
+.blue {
+    background-color: #add8e6;
+}
 .trtable {
     margin-bottom: 1em;
     border-collapse: collapse;
