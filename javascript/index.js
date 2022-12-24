@@ -277,7 +277,7 @@ function comedyChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new ComedyChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || 12 || 8 || 6  && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 60 && currentCast.length == (10 || 12 || 8 || 6)  && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
     challenge.rankPerformances();
@@ -457,7 +457,7 @@ function designChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new DesignChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || 12 || 8 || 6  && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 60 && currentCast.length == (10 || 12 || 8 || 6)  && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
         challenge.rankPerformances();
@@ -612,7 +612,7 @@ function improvChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new ImprovChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || 12 || 8 || 6  && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 60 && currentCast.length == (10 || 12 || 8 || 6)  && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
     challenge.rankPerformances();
