@@ -116,7 +116,7 @@ function miniChallenge() {
         challenges.splice(challenges.indexOf("marketingChallenge()"), 1);
     if (danceChallengeCounter == 2 && totalCastSize > 15 || danceChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("danceChallenge()"), 1);
-    if (designChallengeCounter == 3 && totalCastSize > 15 || designChallengeCounter == 3 && totalCastSize <= 15)
+    if (designChallengeCounter == 3 && totalCastSize > 15 || designChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("designChallenge()"), 1);
     if (improvChallengeCounter == 3&& totalCastSize > 15 || improvChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("improvChallenge()"), 1);
@@ -277,7 +277,7 @@ function comedyChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new ComedyChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 70 && currentCast.length == 10 && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 80 && currentCast.length == 10 && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
     challenge.rankPerformances();
@@ -457,7 +457,7 @@ function designChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new DesignChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 70 && currentCast.length == 10 && !isPairChallenge && regularFormat && currentCast != firstCast && currentCast != secondCast && !uk3Premiere && !s9Premiere && !conjoinedQueens && episodeCount > 1){
+    if (randomNumber(0, 100) >= 80 && currentCast.length == 10 && !isPairChallenge && regularFormat && currentCast != firstCast && currentCast != secondCast && !uk3Premiere && !s9Premiere && !conjoinedQueens && episodeCount > 1){
         isPairChallenge = true;
         pairMaking();
         challenge.rankPerformances();
@@ -6823,7 +6823,7 @@ function winAndBtm2() {
         topQueens.splice(0, 1);
         }
     }//double win:
-    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 50 || isPairChallenge && randomNumber(0, 100) < 90) {
+    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 50 || isPairChallenge && randomNumber(0, 100) < 99) {
         topQueens[0].addToTrackRecord(" WIN");
         topQueens[0].favoritism += 5;
         topQueens[0].ppe += 5;
