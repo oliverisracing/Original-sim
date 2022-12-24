@@ -277,7 +277,7 @@ function comedyChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new ComedyChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 80 && currentCast.length == 10  && !isPairChallenge && regularFormat || randomNumber(0, 100) >= 80 && currentCast.length == 12  && !isPairChallenge && regularFormat){ 
+    if (randomNumber(0, 100) >= 80 && currentCast.length == 10  && !isPairChallenge && regularFormat || randomNumber(0, 100) >= 80 && currentCast.length == 12  && !isPairChallenge && regularFormat || randomNumber(0, 100) >= 80 && currentCast.length == 8  && !isPairChallenge && regularFormat){         
         isPairChallenge = true;
         pairMaking();
     challenge.rankPerformances();
@@ -457,7 +457,7 @@ function designChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new DesignChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 80 && currentCast.length == 10 && !isPairChallenge && regularFormat && currentCast != firstCast && currentCast != secondCast && !uk3Premiere && !s9Premiere && !conjoinedQueens && episodeCount > 1){
+    if (randomNumber(0, 100) >= 80 && currentCast.length == 10  && !isPairChallenge && regularFormat || randomNumber(0, 100) >= 80 && currentCast.length == 12  && !isPairChallenge && regularFormat || randomNumber(0, 100) >= 80 && currentCast.length == 8  && !isPairChallenge && regularFormat){         
         isPairChallenge = true;
         pairMaking();
         challenge.rankPerformances();
@@ -612,12 +612,12 @@ function improvChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new ImprovChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 80 && currentCast.length > 6 && currentCast.length <= 15 && !isTeamChallenge && regularFormat){
-        isTeamChallenge = true;
-        teamMaking();
-        challenge.rankPerformances();
-    } else {
-        challenge.rankPerformances();
+    if (randomNumber(0, 100) >= 80 && currentCast.length == 10  && !isPairChallenge && regularFormat || randomNumber(0, 100) >= 80 && currentCast.length == 12  && !isPairChallenge && regularFormat || randomNumber(0, 100) >= 80 && currentCast.length == 8  && !isPairChallenge && regularFormat){         
+        isPairChallenge = true;
+        pairMaking();
+    challenge.rankPerformances();
+} else {
+    challenge.rankPerformances();
     }
     improvChallengeCounter++;
     isDesignChallenge = false;
