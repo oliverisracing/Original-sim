@@ -9343,7 +9343,7 @@ function returningQueenScreen() {
     screen.createButton("Proceed", "newEpisode()");
     if ((randomReturn || chooseReturn) && document.querySelector("button[onclick='fijarReturningQueen()']") || queensOfComedy && document.querySelector("button[onclick='queensofComedyJudging(pairQOF, qofcomedy)']") || kittyGirlGroup && document.querySelector("button[onclick='kittygirlGroupJudging()']")){
         let button = document.querySelector("button[onclick='newEpisode()']");
-        button.setAttribute("hidden", "hidden");
+        button.setAttribute("hidden");
     }
 }
 function queenReturnsChoose(mal = "") {
