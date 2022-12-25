@@ -1569,7 +1569,7 @@ if (document.location.pathname == "/custom.html") {
             b.setAttribute("id", "bnomasbb");
             let image = document.createElement("img");
             image.src = previewCustomPic.value;
-            image.setAttribute("style", `border-color: ${color}; width: 105px; height: 105px; border-radius: 20px;`);
+            image.setAttribute("style", `border-color: gold; width: 105px; height: 105px; border-radius: 20px;`);
             image.setAttribute("id", "nomasbb");
             previewCustomPic.parentElement.append(b);
             previewCustomPic.parentElement.append(image);
@@ -13610,7 +13610,7 @@ showingQueens = allQueens.map(queen => {
     const header = card.querySelector("[data-header]");
     let image = document.createElement("img");
     image.src = queen.image;
-    image.setAttribute("style", `border-color: ${color}; width: 105px; height: 105px; border-radius: 20px;`);
+    image.setAttribute("style", `border-color: black; width: 105px; height: 105px; border-radius: 20px;`);
     cardImage.appendChild(image);
     header.textContent = queen._name;
     card.setAttribute("id", queen._name);
