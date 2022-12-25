@@ -458,7 +458,7 @@ function designChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new DesignChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 80 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 99 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
         challenge.rankPerformances();
@@ -7774,7 +7774,7 @@ function lipSync() {
                 currentCast.splice(currentCast.indexOf(bottomQueens[1]), 1);
             }
         }
-        else if (randomNumber(0, 1000) >= 998 && disqOrDept == false) {
+        else if (randomNumber(0, 1000) >= 999 && disqOrDept == false) {
             let quitterQueen = bottomQueens[randomNumber(0, bottomQueens.length - 1)];
             screen.createImage(quitterQueen.image, "red");
             screen.createBold(quitterQueen.getName() + ", shockingly has left the runway, they decided that they won't lipsync.");
