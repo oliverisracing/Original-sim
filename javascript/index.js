@@ -926,11 +926,11 @@ function queensPerformances() {
     let performanceScreen = new Scene();
     performanceScreen.createHorizontalLine();
     performanceScreen.createBigText("Queens' performances...");
-    let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 8; });
-    let great = currentCast.filter(function (queen) { return queen.performanceScore > 8 && queen.performanceScore <= 16; });
-    let good = currentCast.filter(function (queen) { return queen.performanceScore > 16 && queen.performanceScore <= 26; });
-    let bad = currentCast.filter(function (queen) { return queen.performanceScore > 26 && queen.performanceScore <= 31; });
-    let flop = currentCast.filter(function (queen) { return queen.performanceScore > 31 && queen.performanceScore <= 50; });
+    let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 6; });
+    let great = currentCast.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 14; });
+    let good = currentCast.filter(function (queen) { return queen.performanceScore > 14 && queen.performanceScore <= 24; });
+    let bad = currentCast.filter(function (queen) { return queen.performanceScore > 24 && queen.performanceScore <= 29; });
+    let flop = currentCast.filter(function (queen) { return queen.performanceScore > 29 && queen.performanceScore <= 50; });
     createPerformanceDesc(slay, great, good, bad, flop);
     if (isDesignChallenge == true || episodeChallenges[episodeChallenges.length - 1] == "Design") {
         performanceScreen.createButton("Proceed", "judging()");
@@ -1436,7 +1436,7 @@ function CheckForSpecialEvents(slay, great, good, bad, flop) {
         floppers = true;
     if (slay.length == currentCast.length && !slayersCheck && !conjoinedCheck)
         slayers = true;
-    else if (slay.length + great.length == currentCast.length && !slayersCheck && randomNumber(0, 100) >= 70 && !conjoinedCheck)
+    else if (slay.length + great.length == currentCast.length && !slayersCheck && randomNumber(0, 100) >= 90 && !conjoinedCheck)
         slayers = true;
     if (flop.length + bad.length >= 5 && flop.length + bad.length < 7 && currentCast.length >= 9 && !bottom6WayLipsyncCheck && randomNumber(0, 100) >= 99 && !conjoinedCheck)
         bottom6WayLipsync = true;
@@ -10177,12 +10177,12 @@ function queensofComedy(pord = "") {
         screen.createHorizontalLine();
         sortPerformances(pairQOF);
         screen.createBigText("Queens' performances...");
-        let slay = allofthem.filter(function (queen) { return queen.performanceScore <= 8; });
-        let great = allofthem.filter(function (queen) { return queen.performanceScore > 8 && queen.performanceScore <= 16; });
-        let good = allofthem.filter(function (queen) { return queen.performanceScore > 16 && queen.performanceScore <= 26; });
-        let bad = allofthem.filter(function (queen) { return queen.performanceScore > 26 && queen.performanceScore <= 31; });
-        let flop = allofthem.filter(function (queen) { return queen.performanceScore > 31 && queen.performanceScore <= 50; });
-        createPerformanceDesc(slay, great, good, bad, flop);
+        let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 6; });
+        let great = currentCast.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 14; });
+        let good = currentCast.filter(function (queen) { return queen.performanceScore > 14 && queen.performanceScore <= 24; });
+        let bad = currentCast.filter(function (queen) { return queen.performanceScore > 24 && queen.performanceScore <= 29; });
+        let flop = currentCast.filter(function (queen) { return queen.performanceScore > 29 && queen.performanceScore <= 50; });
+            createPerformanceDesc(slay, great, good, bad, flop);
         comedyChallengeCounter++;
         screen.createHorizontalLine();
         screen.createButton("Proceed", "queensofComedyJudging(pairQOF, qofcomedy)");
@@ -10534,12 +10534,12 @@ function kittygirlGroup(cena = "") {
         }
         screen.createHorizontalLine();
         screen.createBigText("Queens' performances...");
-        let slay = allofthem.filter(function (queen) { return queen.performanceScore <= 8; });
-        let great = allofthem.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 16; });
-        let good = allofthem.filter(function (queen) { return queen.performanceScore > 16 && queen.performanceScore <= 26; });
-        let bad = allofthem.filter(function (queen) { return queen.performanceScore > 26 && queen.performanceScore <= 31; });
-        let flop = allofthem.filter(function (queen) { return queen.performanceScore > 31 && queen.performanceScore <= 50; });
-        createPerformanceDesc(slay, great, good, bad, flop);
+        let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 6; });
+        let great = currentCast.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 14; });
+        let good = currentCast.filter(function (queen) { return queen.performanceScore > 14 && queen.performanceScore <= 24; });
+        let bad = currentCast.filter(function (queen) { return queen.performanceScore > 24 && queen.performanceScore <= 29; });
+        let flop = currentCast.filter(function (queen) { return queen.performanceScore > 29 && queen.performanceScore <= 50; });
+            createPerformanceDesc(slay, great, good, bad, flop);
         screen.createHorizontalLine();
         screen.createButton("Proceed", "kittygirlGroupJudging()");
     }
@@ -11173,12 +11173,12 @@ function queensConjoined(wass = "") {
         screen.createHorizontalLine();
         sortPerformances(currentCast);
         screen.createBigText("Queens' performances...");
-        let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 8; });
-        let great = currentCast.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 16; });
-        let good = currentCast.filter(function (queen) { return queen.performanceScore > 16 && queen.performanceScore <= 26; });
-        let bad = currentCast.filter(function (queen) { return queen.performanceScore > 26 && queen.performanceScore <= 31; });
-        let flop = currentCast.filter(function (queen) { return queen.performanceScore > 31 && queen.performanceScore <= 50; });
-        createPerformanceDesc(slay, great, good, bad, flop);
+        let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 6; });
+        let great = currentCast.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 14; });
+        let good = currentCast.filter(function (queen) { return queen.performanceScore > 14 && queen.performanceScore <= 24; });
+        let bad = currentCast.filter(function (queen) { return queen.performanceScore > 24 && queen.performanceScore <= 29; });
+        let flop = currentCast.filter(function (queen) { return queen.performanceScore > 29 && queen.performanceScore <= 50; });
+            createPerformanceDesc(slay, great, good, bad, flop);
         makeoverCounter = true;
         screen.createHorizontalLine();
         screen.createButton("Proceed", "judging()");
