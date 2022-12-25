@@ -6113,7 +6113,7 @@ function s9judgingScreen() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
+            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/2);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 60) {
@@ -6215,7 +6215,7 @@ function winAndBtm6() {
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
     } else {
         for (let i = 0; i < topQueens.length; i++)
-            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
+            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/2);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     if (isTeamChallenge) {
@@ -6776,7 +6776,7 @@ function winAndBtm2() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
+            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/2);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     if (isTeamChallenge) {
@@ -6974,7 +6974,7 @@ function teamWinAndBtm2() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
+            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/2);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     topQueens[0].QueenA.addToTrackRecord("WIN");
@@ -7043,7 +7043,7 @@ function top2AndBtm() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
+            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/2);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     top2.push(topQueens[0]);
@@ -7175,7 +7175,7 @@ function topAndBtm() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
+            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/2);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     top2.push(topQueens[0]);
@@ -7405,7 +7405,7 @@ function top2AndBlocked() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism);
+            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/2);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     top2.push(topQueens[0]);
