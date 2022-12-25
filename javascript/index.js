@@ -128,6 +128,7 @@ let team2 = [];
 let team3 = [];
 let team4 = [];
 let team5 = [];
+let team6 = [];
 let isTeamChallenge = false;
 let isPairChallenge = false;
 class ActingChallenge {
@@ -277,7 +278,7 @@ function comedyChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new ComedyChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 60 && currentCast.length == (10 || 12 || 8 || 6)  && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
     challenge.rankPerformances();
@@ -457,7 +458,7 @@ function designChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new DesignChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 60 && currentCast.length == (10 || 12 || 8 || 6)  && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
         challenge.rankPerformances();
@@ -612,7 +613,7 @@ function improvChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new ImprovChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 60 && currentCast.length == (10 || 12 || 8 || 6)  && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
     challenge.rankPerformances();
@@ -1155,6 +1156,7 @@ function pairMaking() {
     team3 = [];
     team4 = [];
     team5 = [];
+    team6 = [];
     let castPairs = currentCast.slice();
     if (currentCast.length == 10) {
         for (let i = 0; i < 2; i++) {
@@ -1191,7 +1193,77 @@ function pairMaking() {
         screen.createImage(team5[1].image);
         screen.createBold(team5[0].getName() + " and " + team5[1].getName() + " are paired together.");
     }
+    if (currentCast.length == 12) {
+        for (let i = 0; i < 2; i++) {
+            let queen = castPairs[randomNumber(0, castPairs.length - 1)];
+            team1.push(queen);
+            castPairs.splice(castPairs.indexOf(queen), 1);
+            queen = castPairs[randomNumber(0, castPairs.length - 1)];
+            team2.push(queen);
+            castPairs.splice(castPairs.indexOf(queen), 1);
+            queen = castPairs[randomNumber(0, castPairs.length - 1)];
+            team3.push(queen);
+            castPairs.splice(castPairs.indexOf(queen), 1);
+            queen = castPairs[randomNumber(0, castPairs.length - 1)];
+            team4.push(queen);
+            castPairs.splice(castPairs.indexOf(queen), 1);
+            queen = castPairs[randomNumber(0, castPairs.length - 1)];
+            team5.push(queen);
+            queen = castPairs[randomNumber(0, castPairs.length - 1)];
+            team6.push(queen);
+            castPairs.splice(castPairs.indexOf(queen), 1);
+        }
+        screen.createBigText("Pairs");
+        screen.createImage(team1[0].image);
+        screen.createImage(team1[1].image);
+        screen.createBold(team1[0].getName() + " and " + team1[1].getName() + " are paired together.");
+        screen.createImage(team2[0].image);
+        screen.createImage(team2[1].image);
+        screen.createBold(team2[0].getName() + " and " + team2[1].getName() + " are paired together.");
+        screen.createImage(team3[0].image);
+        screen.createImage(team3[1].image);
+        screen.createBold(team3[0].getName() + " and " + team3[1].getName() + " are paired together.");
+        screen.createImage(team4[0].image);
+        screen.createImage(team4[1].image);
+        screen.createBold(team4[0].getName() + " and " + team4[1].getName() + " are paired together.");
+        screen.createImage(team5[0].image);
+        screen.createImage(team5[1].image);
+        screen.createBold(team5[0].getName() + " and " + team5[1].getName() + " are paired together.");
+        screen.createImage(team6[0].image);
+        screen.createImage(team6[1].image);
+        screen.createBold(team6[0].getName() + " and " + team6[1].getName() + " are paired together.");
+    }
+    if (currentCast.length == 8) {
+        for (let i = 0; i < 2; i++) {
+            let queen = castPairs[randomNumber(0, castPairs.length - 1)];
+            team1.push(queen);
+            castPairs.splice(castPairs.indexOf(queen), 1);
+            queen = castPairs[randomNumber(0, castPairs.length - 1)];
+            team2.push(queen);
+            castPairs.splice(castPairs.indexOf(queen), 1);
+            queen = castPairs[randomNumber(0, castPairs.length - 1)];
+            team3.push(queen);
+            castPairs.splice(castPairs.indexOf(queen), 1);
+            queen = castPairs[randomNumber(0, castPairs.length - 1)];
+            team4.push(queen);
+            castPairs.splice(castPairs.indexOf(queen), 1);
+        }
+        screen.createBigText("Pairs");
+        screen.createImage(team1[0].image);
+        screen.createImage(team1[1].image);
+        screen.createBold(team1[0].getName() + " and " + team1[1].getName() + " are paired together.");
+        screen.createImage(team2[0].image);
+        screen.createImage(team2[1].image);
+        screen.createBold(team2[0].getName() + " and " + team2[1].getName() + " are paired together.");
+        screen.createImage(team3[0].image);
+        screen.createImage(team3[1].image);
+        screen.createBold(team3[0].getName() + " and " + team3[1].getName() + " are paired together.");
+        screen.createImage(team4[0].image);
+        screen.createImage(team4[1].image);
+        screen.createBold(team4[0].getName() + " and " + team4[1].getName() + " are paired together.");        
+    }
 }
+        
 //runway:
 function runway() {
     let runwayScreen = new Scene();
