@@ -463,7 +463,6 @@ function designChallenge() {
     isDesignChallenge = true;
     queensPerformances();
     designChallengeCounter++;
-    } 
     if ((currentCast.length == 6 || currentCast.length == 5)&& makeoverCounter == false && team == false && currentCast != firstCast && currentCast != secondCast && !uk3Premiere && !s9Premiere && !conjoinedQueens) {
         episodeChallenges.push("Make Over");
         makeoverCounter = true;
@@ -475,7 +474,7 @@ function designChallenge() {
         episodeChallenges.push("Runway");
     else
         episodeChallenges.push("Design");
-}
+    } 
 class RunwayChallenge {
     generateDescription() {
         let description = document.querySelector("b#Description");
