@@ -458,7 +458,7 @@ function designChallenge() {
     challengeScreen.createBold("", "Description");
     let challenge = new DesignChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 80 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
         challenge.rankPerformances();
@@ -6852,7 +6852,7 @@ function winAndBtm2() {
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     if (isTeamChallenge) {
-        if (episodeChallenges[episodeChallenges.length - 1] == "Girl Group" && randomNumber(0, 100) >= 50) {
+        if (episodeChallenges[episodeChallenges.length - 1] == "Girl Group" && randomNumber(0, 100) >= 70) {
             let names = "";
             for (let i = 0; i < topQueens.length; i++) {
                 topQueens[i].addToTrackRecord(" WIN");
