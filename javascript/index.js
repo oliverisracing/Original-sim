@@ -114,7 +114,7 @@ function miniChallenge() {
         challenges.splice(challenges.indexOf("comedyChallenge()"), 1);
     if (marketingChallengeCounter == 3 && totalCastSize > 15 || marketingChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("marketingChallenge()"), 1);
-    if (danceChallengeCounter == 2 && totalCastSize > 15 || danceChallengeCounter == 2 && totalCastSize <= 15)
+    if (danceChallengeCounter == 2 && totalCastSize > 15 || danceChallengeCounter == 1 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("danceChallenge()"), 1);
     if (designChallengeCounter == 2 && totalCastSize > 15 || designChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("designChallenge()"), 1);
@@ -130,6 +130,22 @@ let team4 = [];
 let team5 = [];
 let isTeamChallenge = false;
 let isPairChallenge = false;
+" in an interview with a celebrity.",
+" in a news program named : \"QNN News\".",
+" in a news program named : \"Morning Glory\".",
+" in a news program named : \"Good Morning Bitches\".",
+" in a political debate.",
+" in a talk show named : \"Pink Table Talk\".",
+" in a talk show talking about celebrities.",
+" in drag cons panels!",
+" in a brand new kids TV show.",
+" in a brand new program : \"World's Worst\".",
+" in a brand new program : \"The Bossy Rossy Show\".",
+" in a brand new program : \"The Bitchelor\".",
+" in a brand new program : \"Los Angeles Drag Patrol\".",
+" in a brand new report : \"SheMZ\".",
+" in a brand new program : \"Jersey Justice\".",
+];
 class ActingChallenge {
     generateDescription() {
         let description = document.querySelector("b#Description");
@@ -627,7 +643,7 @@ function improvChallenge() {
 class SnatchGame {
     generateDescription() {
         let description = document.querySelector("b#Description");
-        description.innerHTML = "Today's challenge is... SNATCH GAME!! The queens will do funny celebrity impersonations!";
+        description.innerHTML = "For this weeks maxi challenge we are playin the Snatch Game, The queens will do funny celebrity impersonations!";
         if (randomNumber(0, 100) >= 95) {
             episodeChallenges.push("Snatch Game of Love");
         } else {
@@ -681,7 +697,7 @@ class Rusical {
             desc[desc["Hairspray: The Rusical."] = 21] = "Hairspray: The Rusical.";
             desc[desc["Burlesque: The Rusical."] = 22] = "Burlesque: The Rusical.";
         })(desc || (desc = {}));
-        description.innerHTML = "Today's challenge is... THE RUSICAL!! The queens were tasked to take part in " + desc[randomNumber(0, 22)];
+        description.innerHTML = "This weeks challenge is the Rusical, The queens were tasked to take part in " + desc[randomNumber(0, 22)];
     }
     rankPerformances() {
         for (let i = 0; i < currentCast.length; i++)
@@ -1338,7 +1354,7 @@ function createChallenge(challenges, miniChallengeScreen) {
     else if (totalCastSize >= 12 && (currentCast.length == 8 || currentCast.length == 9) && !girlGroupCounter && randomNumber(0, 100) >= 50 || totalCastSize < 12 && currentCast.length == 6 && !girlGroupCounter && !kittyGirlGroup && randomNumber(0, 100) >= 50)
     miniChallengeScreen.createButton("Proceed", "girlgroup()");
     //rusical
-    else if (totalCastSize >= 12 && (currentCast.length == 11 || currentCast.length == 9) && !rusicalCounter && randomNumber(0, 100) >= 50 || totalCastSize < 12 && currentCast.length == 7 && !rusicalCounter  && randomNumber(0, 100) >= 50 || currentCast.length > 5 && randomNumber(0, 20) >= 19 && team && !rusicalCounter)
+    else if (totalCastSize >= 12 && (currentCast.length == 11 || currentCast.length == 9) && !rusicalCounter && randomNumber(0, 100) >= 30 || totalCastSize < 12 && currentCast.length == 7 && !rusicalCounter  && randomNumber(0, 100) >= 30 || currentCast.length > 5 && randomNumber(0, 20) >= 19 && team && !rusicalCounter)
         miniChallengeScreen.createButton("Proceed", "rusical()");
     //makeover
     else if (currentCast.length == 6 && (lftc || canFinale || teamsF || top4 || top5 || allstars3Finale) && !makeoverCounter && !team  && (regularFormat || thailandFormat) || currentCast.length == 5 && top3 && !makeoverCounter)
@@ -8688,7 +8704,7 @@ let chads4 = new Queen("Chad Michaels",12,14,12,10,6,13,8,7,10,"ChadS4");
 let dida = new Queen("Dida Ritz",7,5,7,8,6,7,15,4,10,"Dida");
 let jiggly = new Queen("Jiggly Caliente",9,4,6,10,2,6,13,4,8,"JigglyS4");
 let kenya = new Queen("Kenya Michaels",6,4,6,7,5,6,6,8,8,"Kenya");
-let lashauwn = new Queen("Lashauwn Beyond",6,4,7,6,12,11,8,6,7,"Lashauwn");
+let lashauwn = new Queen("Lashauwn Beyond",6,4,7,6,9,10,8,6,7,"Lashauwn");
 let latrice = new Queen("Latrice Royale",12,5,9,12,5,6,14,6,15,"LatriceS4");
 let madamel = new Queen("Madame LaQueer",4,7,7,11,7,8,7,6,7,"Madame");
 let milan = new Queen("Milan",5,4,6,11,5,7,12,7,8,"Milan");
@@ -8825,17 +8841,17 @@ let us_season12 = [jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aide
 //SEASON 13
 let denali = new Queen("Denali Foxx", 7, 10, 9, 14, 8, 10, 15, 11, 6,"Denali");
 let eliott = new Queen("Elliott with 2 Ts", 6, 5, 5, 9, 8, 8, 12, 8, 7,"Eliott");
-let gottmik = new Queen("Gottmik", 9, 11, 11, 4, 12, 15, 6, 9, 12,"Gottmik");
-let joey = new Queen("Joey Jay", 6, 7, 7, 7, 5, 5, 8, 7, 7,"Joey");
+let gottmik = new Queen("Gottmik", 9, 11, 11, 4, 10, 13, 6, 9, 12,"Gottmik");
+let joey = new Queen("Joey Jay", 6, 6, 5, 5, 5, 5, 8, 7, 7,"Joey");
 let kahmora = new Queen("Kahmora Hall", 5, 6, 5, 6, 8, 15, 5, 8, 12,"Kahmora");
 let kandy = new Queen("Kandy Muse", 8, 11, 10, 7, 6, 10, 15, 13, 14,"KandyMuse");
 let lalari = new Queen("LaLa Ri", 6, 6, 6, 9, 1, 4, 15, 10, 13,"Lala");
 let liv = new Queen("Liv Lux Miyake-Mugler", 8, 11, 9, 11, 8, 12, 10, 7, 11,"Liv");
 let rose = new Queen("Rosé", 12, 11, 11, 11, 10, 10, 7, 14, 12,"Rose");
-let symone = new Queen("Symone", 14, 10, 6, 10, 8, 15, 13, 15, 15,"Symone");
+let symone = new Queen("Symone", 14, 10, 8, 10, 8, 15, 13, 15, 15,"Symone");
 let tamisha = new Queen("Tamisha Iman", 6, 4, 4, 3, 3, 6, 10, 8, 8,"Tamisha");
 let tina = new Queen("Tina Burner", 8, 8, 7, 7, 5, 5, 7, 10, 9,"Tina");
-let utica = new Queen("Utica Queen", 8, 7, 6, 8, 14, 15, 10, 10, 10,"Utica");
+let utica = new Queen("Utica Queen", 8, 7, 6, 8, 13, 12, 10, 10, 10,"Utica");
 let us_season13 = [denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica];
 //SEASON 14:  acting, comedy, dance, design, improv, runway, lipsync
 let alyssah = new Queen("Alyssa Hunter", 6, 6, 6, 8, 6, 10, 8, 7, 8,"AlyssaH");
