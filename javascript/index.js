@@ -130,22 +130,6 @@ let team4 = [];
 let team5 = [];
 let isTeamChallenge = false;
 let isPairChallenge = false;
-" in an interview with a celebrity.",
-" in a news program named : \"QNN News\".",
-" in a news program named : \"Morning Glory\".",
-" in a news program named : \"Good Morning Bitches\".",
-" in a political debate.",
-" in a talk show named : \"Pink Table Talk\".",
-" in a talk show talking about celebrities.",
-" in drag cons panels!",
-" in a brand new kids TV show.",
-" in a brand new program : \"World's Worst\".",
-" in a brand new program : \"The Bossy Rossy Show\".",
-" in a brand new program : \"The Bitchelor\".",
-" in a brand new program : \"Los Angeles Drag Patrol\".",
-" in a brand new report : \"SheMZ\".",
-" in a brand new program : \"Jersey Justice\".",
-];
 class ActingChallenge {
     generateDescription() {
         let description = document.querySelector("b#Description");
