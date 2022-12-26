@@ -1586,7 +1586,7 @@ function addQueen() {
     let runway = document.getElementById("runwayStat").valueAsNumber;
     let lipsync = document.getElementById("lipsyncStat").valueAsNumber;
     let branding = document.getElementById("brandingStat").valueAsNumber;
-    let singing = document.getElementById("singing").valueAsNumber;
+    let singing = document.getElementById("singingStat").valueAsNumber;
     let image = document.getElementById("url").value.trim();
     if (acting < 0 || improv < 0 || comedy < 0 || dance < 0 || design < 0 || runway < 0 || lipsync < 0 || branding < 0 || singing < 0 || acting > 15 || improv > 15 || comedy > 15 || dance > 15 || design > 15 || runway > 15 || lipsync > 15 || branding > 15 || singing > 15 ) {
         window.alert("Queens' stats must be between 0 and 15!");
