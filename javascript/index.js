@@ -3959,7 +3959,7 @@ function contestantProgress() {
         for (let i = 0; i < currentCast.length; i++) {
             let contestant = document.createElement("tr");
             let rank = document.createElement("td");
-            rank.setAttribute("style", "background-color: #f5ebf5; font-weight: bold;", "border: 1px ##C6BFC6;");
+            rank.setAttribute("style", "background-color: #f5ebf5; font-weight: bold; border: 1px ##C6BFC6");
             rank.innerHTML = "TBA"
             contestant.appendChild(rank);
             let name = document.createElement("td");
@@ -4238,8 +4238,6 @@ function contestantProgress() {
                 if (currentCast[i].miniEpisode.indexOf(k+1) != -1) {
                     if (currentCast[i].tCaptain.indexOf((k+1)) != -1) {
                         placement.innerHTML += "<br> <small> <i> Team Captain </i> </small>";
-                    } else {
-                        placement.innerHTML += "<br> <small> <i> Mini Chall. Winner </i> </small>";
                     }
                 }
                 if (currentCast[i].immuneEp.indexOf((k)) != -1 && k != currentCast[i].trackRecord.length) {
