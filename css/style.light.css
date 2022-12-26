@@ -1,42 +1,12 @@
-root{
-    --maple: "m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z";
-  }
-  .topnav {
-    background-color: rgba(255, 255, 255, 0.90);
-    border: 2px;
-    overflow: hidden;
-  }
-  
-  .topnav a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    
-  }
-  
-  .topnav a.right {
-    float: right;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    
-  }
-  
-  .topnav a:hover {
-    background-color: white;
-    color: black;
-  }
-  .topnav a.active {
-    background: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);
-    color: white;
-  }
-  
 
+@charset "UTF-8";
+
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+    line-height: 1.75;
+}
 body {
     margin: 0;
     font-family: rubik,helvetica,arial,sans-serif;
