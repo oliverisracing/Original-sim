@@ -3618,12 +3618,12 @@ function contestantProgress() {
     trackRecords.appendChild(header);
     let thr = document.createElement("th");
     thr.innerHTML = "Rank";
-    thr.setAttribute("style", "font-weight: bold;");
+    thr.setAttribute("style", "font-weight: bold; width: 50px;");
     thr.setAttribute("rowspan", "2");
     header.appendChild(thr);
     let th = document.createElement("th");
     th.innerHTML = "Contestant";
-    th.setAttribute("style", "font-weight: bold; width: 100px;");
+    th.setAttribute("style", "font-weight: bold; width: 150px;");
     th.setAttribute("rowspan", "2");
     header.appendChild(th);
     let th_i = document.createElement("th");
