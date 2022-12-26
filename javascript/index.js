@@ -3616,6 +3616,11 @@ function contestantProgress() {
     trackRecords.setAttribute("border", "2");
     let header = document.createElement("tr");
     trackRecords.appendChild(header);
+    let thr = document.createElement("th");
+    thr.innerHTML = "Rank";
+    thr.setAttribute("style", "font-weight: bold;");
+    thr.setAttribute("rowspan", "2");
+    header.appendChild(thr);
     let th = document.createElement("th");
     th.innerHTML = "Contestant";
     th.setAttribute("style", "font-weight: bold; width: 100px;");
@@ -3650,6 +3655,10 @@ function contestantProgress() {
     }
     header.appendChild(th_2);
     let winner = document.createElement("tr");
+    let rank = document.createElement("td");
+    rank.setAttribute("style", "background-color: #f5ebf5; font-weight: bold;");
+    rank.innerHTML = "1st<br><small>(Winner)</small>"
+    winner.appendChild(rank);
     let name = document.createElement("td");
     name.setAttribute("class", "nameTR");
     if (onFinale) {
@@ -3949,6 +3958,10 @@ function contestantProgress() {
     if (!onFinale) {
         for (let i = 0; i < currentCast.length; i++) {
             let contestant = document.createElement("tr");
+            let rank = document.createElement("td");
+            rank.setAttribute("style", "background-color: #f5ebf5; font-weight: bold;", "border: 1px ##C6BFC6");
+            rank.innerHTML = "TBA"
+            contestant.appendChild(rank);
             let name = document.createElement("td");
             name.setAttribute("class", "nameTR");
             name.innerHTML = currentCast[i].getName();
@@ -4238,6 +4251,46 @@ function contestantProgress() {
             trackRecords.appendChild(contestant);
         }
     }
+    let rankNumber = currentCast.length;
+    for (let i = 0; i < eliminatedCast.length; i++) {
+        let contestant = document.createElement("tr");
+        let rank = document.createElement("td");
+        rank.setAttribute("style", "background-color: #f5ebf5; font-weight: bold; 50px;");
+        if (eliminatedCast[i].rankP == 0) {
+            rank.innerHTML = (rankNumber+1+i);
+            if (rank.innerHTML == 3) {
+                rank.innerHTML += "rd"
+            } else {
+                rank.innerHTML += "th";
+            }
+        } else if (eliminatedCast[i].rankP == 1) {
+            rank.innerHTML += "1st<br><small>(Winner)</small>";
+        } else if (eliminatedCast[i].rankP == 2) {
+            rank.innerHTML += "2nd<br><small>(Runner-Up)</small>";
+        } else if (eliminatedCast[i].rankP == 3) {
+            rank.innerHTML += "3rd<br><small>(Runner-Up)</small>";
+        } else if (eliminatedCast[i].rankP == 234) {
+            rank.innerHTML += "2nd-4th<br><small>(Runner-Up)</small>";
+        } else if (eliminatedCast[i].rankP == 432) {
+            rank.innerHTML += "3rd/4th<br><small>(Runner-Up)</small>";
+        } else if (eliminatedCast[i].rankP == 23) {
+            rank.innerHTML += "2nd/3rd<br><small>(Runner-Up)</small>";
+        } else if (eliminatedCast[i].rankP == 34) {
+            rank.innerHTML += "3rd/4th";
+        } else if (eliminatedCast[i].rankP == 32) {
+            rank.innerHTML += "3rd<br><small>(Runner-Up)</small>";
+        } else if (eliminatedCast[i].rankP == 345) {
+            rank.innerHTML += "3rd-5th";
+        } else if (eliminatedCast[i].rankP == 58) {
+            rank.innerHTML += "5th-" + totalCastSize + "th";
+        } else if (eliminatedCast[i].rankP == "tie1") {
+            rank.innerHTML = (rankNumber+i) + "th";
+            rank.innerHTML += "/" + (rankNumber+1+i) + "th";
+        } else if (eliminatedCast[i].rankP == "tie2") {
+            rank.innerHTML = (rankNumber+1+i) + "th";
+            rank.innerHTML += "/" + (rankNumber+2+i) + "th";
+        }
+        contestant.appendChild(rank);
         let name = document.createElement("td");
         name.setAttribute("class", "nameTR");
         name.innerHTML = eliminatedCast[i].getName();
