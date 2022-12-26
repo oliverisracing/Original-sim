@@ -3656,7 +3656,7 @@ function contestantProgress() {
     header.appendChild(th_2);
     let winner = document.createElement("tr");
     let rank = document.createElement("td");
-    rank.setAttribute("style", "font-weight: bold; width: 50px; border: 1px");        
+    rank.setAttribute("style", "font-weight: bold; width: 50px");        
     rank.innerHTML = "1st<br><small>(Winner)</small>"
     winner.appendChild(rank);
     let name = document.createElement("td");
@@ -3959,7 +3959,7 @@ function contestantProgress() {
         for (let i = 0; i < currentCast.length; i++) {
             let contestant = document.createElement("tr");
             let rank = document.createElement("td");
-            rank.setAttribute("style", "font-weight: bold; width: 50px; border: 1px");        
+            rank.setAttribute("style", "font-weight: bold; width: 50px");        
             rank.innerHTML = "TBA"
             contestant.appendChild(rank);
             let name = document.createElement("td");
@@ -4255,7 +4255,7 @@ function contestantProgress() {
     for (let i = 0; i < eliminatedCast.length; i++) {
         let contestant = document.createElement("tr");
         let rank = document.createElement("td");
-        rank.setAttribute("style", "font-weight: bold; width: 50px; border: 1px");        
+        rank.setAttribute("style", "font-weight: bold; width: 50px");        
         if (eliminatedCast[i].rankP == 0) {
             rank.innerHTML = (rankNumber+1+i);
             if (rank.innerHTML == 3) {
