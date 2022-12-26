@@ -3945,8 +3945,6 @@ function contestantProgress() {
             if (winnerQueen.miniEpisode.indexOf((i+1)) != -1) {
                 if (winnerQueen.tCaptain.indexOf((i+1)) != -1) {
                     placement.innerHTML += "<br> <small> <i> Team Captain </i> </small>";
-                } else {
-                    placement.innerHTML += "<br> <small> <i> Mini Chall. Winner </i> </small>";
                 }
             }
             if (winnerQueen.immuneEp.indexOf((i)) != -1 && i != winnerQueen.trackRecord.length) {
@@ -4240,8 +4238,6 @@ function contestantProgress() {
                 if (currentCast[i].miniEpisode.indexOf(k+1) != -1) {
                     if (currentCast[i].tCaptain.indexOf((k+1)) != -1) {
                         placement.innerHTML += "<br> <small> <i> Team Captain </i> </small>";
-                    } else {
-                        placement.innerHTML += "<br> <small> <i> Mini Chall. Winner </i> </small>";
                     }
                 }
                 if (currentCast[i].immuneEp.indexOf((k)) != -1 && k != currentCast[i].trackRecord.length) {
@@ -4573,8 +4569,6 @@ function contestantProgress() {
             if (eliminatedCast[i].miniEpisode.indexOf((k+1)) != -1) {
                 if (eliminatedCast[i].tCaptain.indexOf((k+1)) != -1) {
                     placement.innerHTML += "<br> <small> <i> Team Captain </i> </small>";
-                } else {
-                    placement.innerHTML += "<br> <small> <i> Mini Chall. Winner </i> </small>";
                 }
             }
             if (eliminatedCast[i].immuneEp.indexOf((k)) != -1 && k != eliminatedCast[i].trackRecord.length) {
@@ -8736,18 +8730,18 @@ let ravens2 = new Queen("Raven", 7, 11, 9, 7, 13, 13, 10, 14, 10,"RavenS2");
 let james = new Queen("James Ross", 14, 10, 12, 6, 12, 10, 14, 12, 8,"James");
 let us_season2 = [jessicaw, jujus2, morganmcs2, mystique, npb, pandoras2, sahara, shangela, kylies2, tatis2, ravens2, james];
 //SEASON 3:
-let alexiss3 = new Queen("Alexis Mateo",10,14,12,10,9,8,15,13,14,"AlexisS3");
+let alexiss3 = new Queen("Alexis Mateo",11,14,12,10,9,8,15,13,14,"AlexisS3");
 let carmenc = new Queen("Carmen Carrera",6,5,6,7,5,8,6,6,8,"Carmen");
 let delta = new Queen("Delta Work",4,4,5,7,4,4,11,7,8,"Delta");
 let indias3 = new Queen("India Ferrah",5,3,4,5,7,7,10,3,6,"IndiaS3");
-let manilas3 = new Queen("Manila Luzon",7,13,9,10,13,13,13,7,13,"ManilaS3",);
+let manilas3 = new Queen("Manila Luzon",10,13,9,10,11,13,13,7,13,"ManilaS3",);
 let mariahs3 = new Queen("Mariah Paris Balenciaga",5,3,6,7,7,5,7,5,8,"MariahS3");
 let phoenix = new Queen("Phoenix",3,5,5,3,3,3,5,4,6,"Phoenix");
 let rajas3 = new Queen("Raja",9,11,14,12,15,14,10,7,13,"RajaS3");
 let shangelas3 = new Queen("Shangela(S3)",11,11,11,8,2,7,11,10,12,"ShangelaS3");
 let stacy = new Queen("Stacy Layne Matthews",9,11,11,5,6,8,6,9,10,"Stacy");
 let venus = new Queen("Venus D-Lite",3,4,4,3,3,6,10,4,6,"Venus");
-let yaras3 = new Queen("Yara Sofia",9,9,10,10,13,12,5,6,13,"YaraS3");
+let yaras3 = new Queen("Yara Sofia",10,9,7,10,13,12,9,8,12,"YaraS3");
 let us_season3 = [alexiss3, carmenc, delta, indias3, manilas3, mariahs3, phoenix, rajas3, shangelas3, stacy, venus, yaras3];
 //SEASON 4:
 let alisa = new Queen("Alisa Summers",4,5,4,5,4,6,4,5,5,"Alisa");
@@ -8783,9 +8777,9 @@ let us_season5 = [alaska, alyssae, coco, detox, honeym, jadej, ivyw, jinkxs5, se
 let adore = new Queen("Adore Delano",7,6,9,15,8,10,12,13,13,"AdoreS6");
 let april = new Queen("April Carrión",4,5,5,4,9,10,10,6,10,"April");
 let ben = new Queen("BenDeLaCreme",8,14,8,12,9,12,8,6,12,"BenS6");
-let bianca = new Queen("Bianca Del Rio",14,13,15,8,12,11,6,13,13,"Bianca");
+let bianca = new Queen("Bianca Del Rio",12,13,15,8,12,10,8,13,13,"Bianca");
 let courtney = new Queen("Courtney Act",9,8,8,15,8,13,6,6,12,"Courtney");
-let darienne = new Queen("Darienne Lake",13,7,12,7,4,6,14,5,8,"Darienne");
+let darienne = new Queen("Darienne Lake",14,7,12,7,4,6,14,5,8,"Darienne");
 let giag = new Queen("Gia Gunn",6,4,6,4,8,8,11,8,8,"GiaS6");
 let joslyn = new Queen("Joslyn Fox",5,6,6,6,6,5,11,6,12,"Joslyn");
 let kelly = new Queen("Kelly Mantle",8,6,8,8,3,6,5,8,7,"Kelly");
@@ -8877,17 +8871,17 @@ let us_season11 = [yvie, brooke, akeria, silky, vanjies11, ninawest, shuga, plas
 //SEASON 12: 
 let jaida = new Queen("Jaida Essence Hall", 10, 12, 8, 9, 12, 12, 13, 14, 13, "JaidaS12");
 let crystalm = new Queen("Crystal Methyd", 8, 10, 10, 8, 8, 12, 8, 15, 10,"Crystal");
-let gigi = new Queen("Gigi Goode", 12, 14, 14, 10, 15, 13, 10, 10, 11,"Gigi");
+let gigi = new Queen("Gigi Goode", 10, 13, 13, 10, 18, 13, 10, 10, 11,"Gigi");
 let jackie = new Queen("Jackie Cox", 10, 10, 10, 8, 7, 10, 11, 10, 7, "Jackie");
 let heidi = new Queen("Heidi N Closet", 9, 8, 8, 9, 8, 8, 14, 12, 15, "Heidi");
 let widow = new Queen("Widow Von'Du", 10, 7, 8, 14, 9, 12, 15, 5, 12, "Widow");
-let jan = new Queen("Jan", 7, 6, 7, 7, 9, 10, 1, 8, 7,"JanS12");
-let brita = new Queen("Brita", 5, 6, 5, 5, 6, 10, 15, 6, 8,"Brita");
+let jan = new Queen("Jan", 7, 6, 7, 11, 9, 10, 8, 8, 7,"JanS12");
+let brita = new Queen("Brita", 5, 6, 5, 5, 6, 10, 13, 6, 8,"Brita");
 let aiden = new Queen("Aiden Zhane", 6, 4, 3, 3, 6, 7, 6, 6, 6,"Aiden");
 let nicky = new Queen("Nicky Doll", 3, 6, 6, 6, 15, 15, 6, 7, 7,"Nicky");
 let rock = new Queen("Rock M. Sakura", 6, 3, 3, 5, 5, 4, 10, 8, 8,"Rock");
 let dahlia = new Queen("Dahlia Sin", 4, 5, 4, 4, 6, 10, 4, 6, 6,"Dahlia");
-let sherry = new Queen("Sherry Pie", 10, 10, 7, 6, 10, 8, 8, 10, 8,"Sherry")
+let sherry = new Queen("Sherry Pie", 13, 13, 8, 6, 10, 10, 8, 10, 8,"Sherry")
 let us_season12 = [jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia, sherry];
 //SEASON 13
 let denali = new Queen("Denali Foxx", 7, 10, 9, 14, 8, 10, 15, 11, 6,"Denali");
