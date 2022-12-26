@@ -8888,14 +8888,14 @@ let us_season12 = [jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aide
 //SEASON 13
 let denali = new Queen("Denali Foxx", 7, 10, 9, 14, 8, 10, 15, 11, 6,"Denali");
 let eliott = new Queen("Elliott with 2 Ts", 6, 5, 5, 9, 8, 8, 12, 8, 7,"Eliott");
-let gottmik = new Queen("Gottmik", 9, 11, 11, 4, 10, 13, 6, 9, 12,"Gottmik");
+let gottmik = new Queen("Gottmik", 9, 11, 13, 4, 10, 13, 6, 9, 12,"Gottmik");
 let joey = new Queen("Joey Jay", 6, 6, 5, 5, 5, 5, 8, 7, 7,"Joey");
 let kahmora = new Queen("Kahmora Hall", 5, 6, 5, 6, 8, 15, 5, 8, 12,"Kahmora");
-let kandy = new Queen("Kandy Muse", 8, 11, 10, 7, 6, 10, 15, 13, 14,"KandyMuse");
+let kandy = new Queen("Kandy Muse", 9, 11, 14, 7, 6, 10, 15, 13, 14,"KandyMuse");
 let lalari = new Queen("LaLa Ri", 6, 6, 6, 9, 1, 4, 15, 10, 13,"Lala");
 let liv = new Queen("Liv Lux Miyake-Mugler", 8, 11, 9, 11, 8, 12, 10, 7, 11,"Liv");
 let rose = new Queen("Rosé", 12, 11, 11, 11, 10, 10, 7, 14, 12,"Rose");
-let symone = new Queen("Symone", 14, 10, 8, 10, 8, 15, 13, 15, 15,"Symone");
+let symone = new Queen("Symone", 14, 9, 7, 7, 9, 15, 13, 15, 15,"Symone");
 let tamisha = new Queen("Tamisha Iman", 6, 4, 4, 3, 3, 6, 10, 8, 8,"Tamisha");
 let tina = new Queen("Tina Burner", 8, 8, 7, 7, 5, 5, 7, 10, 9,"Tina");
 let utica = new Queen("Utica Queen", 8, 7, 6, 8, 13, 12, 10, 10, 10,"Utica");
