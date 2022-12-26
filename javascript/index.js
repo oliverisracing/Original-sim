@@ -4238,9 +4238,6 @@ function contestantProgress() {
                 if (currentCast[i].miniEpisode.indexOf(k+1) != -1) {
                     if (currentCast[i].tCaptain.indexOf((k+1)) != -1) {
                         placement.innerHTML += "<br> <small> <i> Team Captain </i> </small>";
-                    } else {
-                        placement.innerHTML += "<br> <small> <i> Mini Chall. Winner </i> </small>";
-                    }
                 }
                 if (currentCast[i].immuneEp.indexOf((k)) != -1 && k != currentCast[i].trackRecord.length) {
                     placement.style.backgroundColor = "magenta";
@@ -8898,7 +8895,7 @@ let rose = new Queen("Rosé", 12, 11, 11, 11, 10, 10, 7, 14, 12,"Rose");
 let symone = new Queen("Symone", 14, 9, 7, 7, 9, 15, 13, 15, 15,"Symone");
 let tamisha = new Queen("Tamisha Iman", 6, 4, 4, 3, 3, 6, 10, 8, 8,"Tamisha");
 let tina = new Queen("Tina Burner", 8, 8, 7, 7, 5, 5, 7, 10, 9,"Tina");
-let utica = new Queen("Utica Queen", 8, 7, 6, 8, 13, 12, 10, 10, 10,"Utica");
+let utica = new Queen("Utica Queen", 6, 6, 6, 8, 13, 12, 10, 10, 10,"Utica");
 let us_season13 = [denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica];
 //SEASON 14:  acting, comedy, dance, design, improv, runway, lipsync
 let alyssah = new Queen("Alyssa Hunter", 6, 6, 6, 8, 6, 10, 8, 7, 8,"AlyssaH");
