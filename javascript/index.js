@@ -4238,6 +4238,7 @@ function contestantProgress() {
                 if (currentCast[i].miniEpisode.indexOf(k+1) != -1) {
                     if (currentCast[i].tCaptain.indexOf((k+1)) != -1) {
                         placement.innerHTML += "<br> <small> <i> Team Captain </i> </small>";
+                    } 
                 }
                 if (currentCast[i].immuneEp.indexOf((k)) != -1 && k != currentCast[i].trackRecord.length) {
                     placement.style.backgroundColor = "magenta";
