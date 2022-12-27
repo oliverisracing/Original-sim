@@ -359,6 +359,7 @@ function marketingChallenge() {
     isDesignChallenge = false;
     queensPerformances();
 }
+
 class SingingChallenge {
     generateDescription() {
         let description = document.querySelector("b#Description");
@@ -487,11 +488,7 @@ class DesignChallenge {
             desc1[desc1["flowers."] = 23] = "flowers.";
 
         })(desc1 || (desc1 = {}));
-        if (currentCast.length == 6 && makeoverCounter == false && team == false && currentCast != firstCast && currentCast != secondCast && !uk3Premiere && !s9Premiere && !conjoinedQueens) {
-            let makeoverPeole = ["everyday people", "soldiers", "doctors", "their family members to", "the pitcrew", "production staff", "youtubers", "politicians", "marines", "their friends to", "veterans", "straight men", "babies"];
-            description.innerHTML = "It's the makeover challenge! The queens will make "+ makeoverPeole[randomNumber(0, makeoverPeole.length - 1)] +" their drag sisters!";
-        }
-        else if (currentCast.length == totalCastSize && (uk3Premiere || s9Premiere) && !s9PremiereCheck && !uk3PremiereCheck) {
+        if (currentCast.length == totalCastSize && (uk3Premiere || s9Premiere) && !s9PremiereCheck && !uk3PremiereCheck) {
             description.innerHTML = "The queens will bring it to the runway and serve not one but two looks!";
         }
         else
@@ -503,6 +500,7 @@ class DesignChallenge {
         sortPerformances(currentCast);
     }
 }
+
 function designChallenge() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
@@ -515,11 +513,7 @@ function designChallenge() {
     isDesignChallenge = true;
     queensPerformances();
     designChallengeCounter++;
-    if ((currentCast.length == 6 || currentCast.length == 5)&& makeoverCounter == false && team == false && currentCast != firstCast && currentCast != secondCast && !uk3Premiere && !s9Premiere && !conjoinedQueens) {
-        episodeChallenges.push("Make Over");
-        makeoverCounter = true;
-    }
-    else if (currentCast.length == totalCastSize && (uk3Premiere || s9Premiere) && !s9PremiereCheck && !uk3PremiereCheck){
+    if (currentCast.length == totalCastSize && (uk3Premiere || s9Premiere) && !s9PremiereCheck && !uk3PremiereCheck){
         episodeChallenges.push("Runway");
     }
     else if (currentCast.length == totalCastSize - 1 && s9Premiere && !s9PremiereCheck)
@@ -672,6 +666,48 @@ function improvChallenge() {
     queensPerformances();
 }
 //SPECIAL CHALLENGES:
+class MakeoverChallenge {
+    generateDescription() {
+        let description = document.querySelector("b#Description");
+        let desc1;
+        (function (desc1) {
+            desc1[desc1["professional female fighters"] = 0] = "professional female fighters";
+            desc1[desc1["older gay men"] = 1] = "older gay men";
+            desc1[desc1["masculine, heterosexual jocks"] = 2] = "masculine, heterosexual jocks";
+            desc1[desc1["dads"] = 3] = "dads";
+            desc1[desc1["gay veterans"] = 4] = "gay veterans";
+            desc1[desc1["grooms"] = 5] = "grooms";
+            desc1[desc1["stars of Little Women"] = 6] = "stars of Little Women";
+            desc1[desc1["members of the pit crew"] = 7] = "members of the pit crew";
+            desc1[desc1["social media kings"] = 8] = "social media kings";
+            desc1[desc1["Drag Race super fans"] = 9] = "Drag Race super fans";
+            desc1[desc1["the eliminated contestants"] = 10] = "the eliminated contestants";
+            desc1[desc1["a member of their family"] = 11] = "a member of their family";
+        })(desc1 || (desc1 = {}));
+        description.innerHTML = "The queens will makeover " + desc1[randomNumber(0, 11)];
+    }
+    rankPerformances() {
+        for (let i = 0; i < currentCast.length; i++) {
+            currentCast[i].getMakeover();
+        }
+        sortPerformances(currentCast);
+    }    
+}
+
+function makeoverChallenge() {
+    let challengeScreen = new Scene();
+    challengeScreen.clean();
+    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createBold("", "Description");
+    let challenge = new MakeoverChallenge();
+    challenge.generateDescription();
+    challenge.rankPerformances();
+    isDesignChallenge = false;
+    rusicalCounter = true;
+    queensPerformances();
+    episodeChallenges.push("Makeover");
+}    
+
 class SnatchGame {
     generateDescription() {
         let description = document.querySelector("b#Description");
@@ -688,6 +724,7 @@ class SnatchGame {
         sortPerformances(currentCast);
     }
 }
+
 function snatchGame() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
@@ -750,6 +787,7 @@ function rusical() {
     queensPerformances();
     episodeChallenges.push("Rusical");
 }
+
 class Ball {
     generateDescription() {
         let description = document.querySelector("b#Description");
@@ -1461,7 +1499,7 @@ function createChallenge(challenges, miniChallengeScreen) {
         miniChallengeScreen.createButton("Proceed", "rusical()");
     //makeover
     else if (currentCast.length == 6 && (lftc || canFinale || teamsF || top4 || top5 || allstars3Finale) && !makeoverCounter && !team  && (regularFormat || thailandFormat) || currentCast.length == 5 && top3 && !makeoverCounter)
-        miniChallengeScreen.createButton("Proceed", "designChallenge()");
+        miniChallengeScreen.createButton("Proceed", "makeoverChallenge()");
     //if no conditions apply, create random challenge
     else {
         let currentChallenge;
@@ -2376,7 +2414,7 @@ function finaleLipSyncs() {
     screen.clean();
     screen.createHeader("I've made my decision...");
     firstLS.sort((a, b) => (b.lipsyncScore - a.lipsyncScore));
-    if (firstLS[0].lipsyncScore == firstLS[1].lipsyncScore && firstLS[0].lipsyncScore > 7 && firstLS[1].lipsyncScore > 7) {
+    if (firstLS[0].lipsyncScore == firstLS[1].lipsyncScore && firstLS[0].lipsyncScore > 5 && firstLS[1].lipsyncScore > 5) {
         screen.createImage(firstLS[0].image, "silver");
         screen.createImage(firstLS[1].image, "silver");
         screen.createBold(firstLS[0].getName() + ", " + firstLS[1].getName() + ", shantay you both stay.");
@@ -2434,7 +2472,7 @@ function finaleLipSyncs2() {
     screen.clean();
     screen.createHeader("I've made my decision...");
     secondLS.sort((a, b) => (b.lipsyncScore - a.lipsyncScore));
-    if (secondLS[0].lipsyncScore == secondLS[1].lipsyncScore && secondLS[0].lipsyncScore > 6 && secondLS[1].lipsyncScore > 6) {
+    if (secondLS[0].lipsyncScore == secondLS[1].lipsyncScore && secondLS[0].lipsyncScore > 4 && secondLS[1].lipsyncScore > 4) {
         screen.createImage(secondLS[0].image, "silver");
         screen.createImage(secondLS[1].image, "silver");
         screen.createBold(secondLS[0].getName() + ", " + secondLS[1].getName() + ", shantay you both stay.");
@@ -6089,7 +6127,7 @@ function lipsyncs14() {
             lipSync[i_1].getASLipsync();
         }
         lipSync.sort(function (a, b) { return (b.lipsyncScore - a.lipsyncScore); });
-        if (lipSync[0].lipsyncScore >= lipSync[1].lipsyncScore && lipSync[0].lipsyncScore > 8 && lipSync[1].lipsyncScore > 8) {
+        if (lipSync[0].lipsyncScore >= lipSync[1].lipsyncScore && lipSync[0].lipsyncScore > 5 && lipSync[1].lipsyncScore > 5) {
             screen.createImage(lipSync[0].image, "royalblue");
             screen.createImage(lipSync[1].image, "royalblue");
             screen.createBold("Shantay, you both stay baby!");
@@ -7665,7 +7703,7 @@ function lipSync() {
             }
         }
     } else {
-        if (score1 > 7 && score2 > 7 && randomNumber(0, 100) <= 85 && !doubleShantay && !noDouble && currentCast.length > 5) {
+        if (score1 > 4 && score2 > 4 && randomNumber(0, 100) <= 90 && !doubleShantay && !noDouble && currentCast.length > 5) {
             if (randomNumber(0, 100) >= 80) {
                 screen.createImage(bottomQueens[0].image, "tomato");
                 screen.createBold(bottomQueens[0].getName() + ", shantay you stay.");
@@ -7693,7 +7731,7 @@ function lipSync() {
                 doubleShantay = true;
             }
         }
-        else if (score1 < 4 && score2 < 4 && randomNumber(0, 100) <= 1 && !doubleSashay && currentCast.length > 6 && noDouble == false) {
+        else if (score1 < 4 && score2 < 4 && randomNumber(0, 1000) <= 1 && !doubleSashay && currentCast.length > 6 && noDouble == false) {
             screen.createImage(bottomQueens[0].image, "darkred");
             screen.createImage(bottomQueens[1].image, "darkred");
             if (chocolateBarTwist  && !chocolateBarTwistCheck) {
@@ -8681,7 +8719,10 @@ class Queen {
         this.performanceScore = this._calculateScores(25, 40, this._danceStat + this._singingStat);
     }
     getBall() {
-        this.performanceScore = this._calculateScores(25, 40, this._designStat + this._runwayStat);
+        this.performanceScore = this._calculateScores(25, 30, this._runwayStat*0.75 + this._designStat);
+    }
+    getMakeover() {
+        this.performanceScore = this._calculateScores(25, 40, this._runwayStat + this._brandingStat);
     }
     getRumix() {
         this.performanceScore = this._calculateScores(35, 55, this._danceStat + this._brandingStat + this._singingStat);
@@ -8764,19 +8805,19 @@ let princess = new Queen("The Princess",5,4,6,4,10,10,11,4,7,"Princess");
 let willam = new Queen("Willam",10,12,12,10,9,9,7,4,14,"Willam");
 let us_season4 = [alisa, chads4, dida, jiggly, kenya, lashauwn, latrice, madamel, milan, jaremy, sharon, princess, willam];
 //SEASON 5:   acting, comedy, dance, design, improv, runway, lipsync
-let alaska = new Queen("Alaska Thunderfuck 5000",11,12,11,6,12,12,6,13,9,"AlaskaS5");
+let alaska = new Queen("Alaska Thunderfuck 5000",10,8,11,7,12,12,6,13,8,"AlaskaS5");
 let alyssae = new Queen("Alyssa Edwards",6,5,6,15,8,8,14,5,7,"AlyssaS5");
-let coco = new Queen("Coco Montrese",6,7,12,9,7,8,15,7,6,"CocoS5");
-let detox = new Queen("Detox",6,8,9,7,7,13,14,10,9,"DetoxS5");
+let coco = new Queen("Coco Montrese",6,7,12,9,7,6,15,7,6,"CocoS5");
+let detox = new Queen("Detox",6,12,9,7,7,11,14,10,9,"DetoxS5");
 let honeym = new Queen("Honey Mahogany",4,5,5,4,4,8,4,6,4,"Honey");
 let jadej = new Queen("Jade Jolie",4,6,6,5,5,6,12,6,5,"JadeJolie");
-let ivyw = new Queen("Ivy Winters",11,5,7,13,12,12,7,6,18,"Ivy");
-let jinkxs5 = new Queen("Jinkx Monsoon",13,12,15,11,7,7,12,12,13,"JinkxS5");
+let ivyw = new Queen("Ivy Winters",9,5,6,10,9,12,7,6,18,"Ivy");
+let jinkxs5 = new Queen("Jinkx Monsoon",13,13,15,11,7,10,12,12,13,"JinkxS5");
 let serena = new Queen("Serena ChaCha",4,4,4,4,3,6,8,7,4,"SerenaS5");
 let lineysha = new Queen("Lineysha Sparx",13,5,6,6,11,12,8,7,5,"Lineysha");
 let monica = new Queen("Monica Beverly Hillz",4,4,5,6,7,8,8,4,4,"Monica");
 let penny = new Queen("Penny Tration",5,4,5,4,2,4,4,7,5,"Penny");
-let roxxxy = new Queen("Roxxxy Andrews",10,10,10,7,15,14,14,5,12,"RoxxxyS5");
+let roxxxy = new Queen("Roxxxy Andrews",9,8,7,6,16,14,14,6,12,"RoxxxyS5");
 let us_season5 = [alaska, alyssae, coco, detox, honeym, jadej, ivyw, jinkxs5, serena, lineysha, monica, penny, roxxxy];
 //SEASON 6:
 let adore = new Queen("Adore Delano",7,6,9,12,8,10,12,13,15,"AdoreS6");
@@ -8874,34 +8915,34 @@ let kahanna= new Queen("Kahanna Montrese",3,6,5,8,4,6,12,6,5,"Kahanna");
 let soju = new Queen("Soju",3,1,2,1,1,3,3,1,1,"Soju");
 let us_season11 = [yvie, brooke, akeria, silky, vanjies11, ninawest, shuga, plastique, rajah, scarlet, ariel, mercedes, honey, kahanna, soju];
 //SEASON 12: 
-let jaida = new Queen("Jaida Essence Hall", 10, 12, 8, 9, 12, 18, 13, 14, 16, "JaidaS12");
-let crystalm = new Queen("Crystal Methyd", 8, 10, 10, 10, 8, 11, 8, 13, 10,"Crystal");
-let gigi = new Queen("Gigi Goode", 10, 13, 13, 10, 18, 13, 10, 10, 18,"Gigi");
+let jaida = new Queen("Jaida Essence Hall", 10, 13, 10, 13, 12, 17, 13, 11, 15, "JaidaS12");
+let crystalm = new Queen("Crystal Methyd", 8, 10, 10, 10, 8, 9, 8, 13, 9,"Crystal");
+let gigi = new Queen("Gigi Goode", 10, 13, 13, 10, 14, 12, 10, 10, 17,"Gigi");
 let jackie = new Queen("Jackie Cox", 10, 10, 10, 8, 7, 10, 11, 10, 8, "Jackie");
 let heidi = new Queen("Heidi N Closet", 9, 8, 8, 9, 8, 8, 14, 10, 9, "Heidi");
-let widow = new Queen("Widow Von'Du", 10, 7, 8, 10, 9, 10, 13, 5, 13, "Widow");
-let jan = new Queen("Jan", 7, 6, 7, 11, 9, 10, 8, 8, 14,"JanS12");
+let widow = new Queen("Widow Von'Du", 9, 7, 8, 10, 9, 10, 13, 5, 12, "Widow");
+let jan = new Queen("Jan", 6, 6, 6, 10, 9, 10, 8, 8, 14,"JanS12");
 let brita = new Queen("Brita", 5, 6, 5, 5, 6, 10, 13, 6, 5,"Brita");
 let aiden = new Queen("Aiden Zhane", 6, 4, 3, 3, 6, 7, 6, 6, 3,"Aiden");
 let nicky = new Queen("Nicky Doll", 3, 6, 6, 6, 15, 15, 6, 7, 4,"Nicky");
 let rock = new Queen("Rock M. Sakura", 6, 6, 6, 6, 5, 4, 10, 8, 4,"Rock");
 let dahlia = new Queen("Dahlia Sin", 4, 5, 4, 4, 6, 10, 4, 6, 5,"Dahlia");
-let sherry = new Queen("Sherry Pie", 13, 13, 10, 6, 10, 10, 8, 10, 10,"Sherry")
+let sherry = new Queen("Sherry Pie", 14, 13, 10, 6, 10, 10, 8, 10, 10,"Sherry")
 let us_season12 = [jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia, sherry];
 //SEASON 13
 let denali = new Queen("Denali Foxx", 7, 10, 9, 12, 8, 10, 13, 7, 18,"Denali");
 let eliott = new Queen("Elliott with 2 Ts", 6, 6, 5, 9, 8, 8, 12, 8, 9,"Eliott");
-let gottmik = new Queen("Gottmik", 9, 11, 13, 4, 10, 13, 6, 9, 9,"Gottmik");
+let gottmik = new Queen("Gottmik", 9, 11, 13, 4, 12, 13, 6, 9, 9,"Gottmik");
 let joey = new Queen("Joey Jay", 6, 6, 5, 5, 5, 5, 8, 7, 8,"Joey");
-let kahmora = new Queen("Kahmora Hall", 5, 6, 5, 6, 8, 15, 5, 8, 6,"Kahmora");
+let kahmora = new Queen("Kahmora Hall", 5, 6, 5, 6, 8, 12, 5, 8, 6,"Kahmora");
 let kandy = new Queen("Kandy Muse", 9, 11, 14, 7, 6, 10, 15, 13, 9,"KandyMuse");
 let lalari = new Queen("LaLa Ri", 6, 6, 6, 9, 1, 4, 15, 10, 8,"Lala");
 let liv = new Queen("Liv Lux Miyake-Mugler", 8, 11, 9, 11, 8, 12, 10, 7, 14,"Liv");
-let rose = new Queen("Rosé", 12, 11, 11, 11, 10, 10, 7, 14, 25,"Rose");
-let symone = new Queen("Symone", 14, 9, 7, 8, 9, 15, 13, 15, 20,"Symone");
+let rose = new Queen("Rosé", 10, 11, 11, 10, 9, 10, 9, 15, 25,"Rose");
+let symone = new Queen("Symone", 14, 9, 7, 8, 8, 17, 13, 15, 20,"Symone");
 let tamisha = new Queen("Tamisha Iman", 6, 6, 6, 6, 3, 6, 10, 8, 5,"Tamisha");
 let tina = new Queen("Tina Burner", 8, 8, 7, 7, 5, 5, 7, 10, 6,"Tina");
-let utica = new Queen("Utica Queen", 6, 6, 6, 4, 13, 12, 10, 6, 9,"Utica");
+let utica = new Queen("Utica Queen", 6, 6, 6, 4, 13, 11, 10, 6, 9,"Utica");
 let us_season13 = [denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica];
 //SEASON 14:  acting, comedy, dance, design, improv, runway, lipsync
 let alyssah = new Queen("Alyssa Hunter", 6, 6, 6, 8, 6, 10, 8, 7, 8,"AlyssaH");
@@ -9705,7 +9746,7 @@ function lipsyncSmackdown(word = "") {
                 lipsync[i_1].getASLipsync();
             }
             lipsync.sort(function (a, b) { return (b.lipsyncScore - a.lipsyncScore); });
-            if (lipsync[0].lipsyncScore >= lipsync[1].lipsyncScore && lipsync[0].lipsyncScore > 7 && lipsync[1].lipsyncScore > 7 && smack.length <= 2) {
+            if (lipsync[0].lipsyncScore >= lipsync[1].lipsyncScore && lipsync[0].lipsyncScore > 6 && lipsync[1].lipsyncScore > 6 && smack.length <= 2) {
                 screen.createImage(lipsync[0].image, "royalblue");
                 screen.createImage(lipsync[1].image, "royalblue");
                 screen.createBold("Shantay, you both stay, baby!");
@@ -11193,7 +11234,7 @@ function queensConjoined(wass = "") {
         for (var i = 0; i < currentCast.length; i++){
             currentCast[i].episodesOn++;
         }
-        episodeChallenges.push("Conjoined Makeover");
+        episodeChallenges.push("Makeover");
         safeQueens = [];
         topQueens = [];
         bottomQueens = [];
@@ -11217,7 +11258,7 @@ function queensConjoined(wass = "") {
             if (conjoined.length == 0) {
                 screen.createImage(currentCast[i].image);
                 screen.createBold("That means " + currentCast[i].getName() + " will makeover one of the pitcrew member.");
-                currentCast[i].getDesign();
+                currentCast[i].getMakeover();
                 twinsMakeover.push(currentCast[i]);
             } else { 
                 screen.createImage(currentCast[i].image);
