@@ -6886,7 +6886,7 @@ function winAndBtm2() {
         topQueens.splice(0, 1);
         }
     }//double win:
-    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 40 || isPairChallenge && randomNumber(0, 100) < 90) {
+    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 40 || isPairChallenge && randomNumber(0, 100) < 60) {
         topQueens[0].addToTrackRecord(" WIN");
         topQueens[0].favoritism += 5;
         topQueens[0].ppe += 5;
@@ -8650,50 +8650,50 @@ class Queen {
         return this._lipsyncStat;
     }
     getActing() {
-        this.performanceScore = this._calculateScores(15, 25, this._actingStat);
+        this.performanceScore = this._calculateScores(15, 30, this._actingStat);
     }
     getComedy() {
-        this.performanceScore = this._calculateScores(15, 25, this._comedyStat);
+        this.performanceScore = this._calculateScores(15, 30, this._comedyStat);
     }
     getMarketing() {
-        this.performanceScore = this._calculateScores(45, 50, this._comedyStat + this._actingStat + this._brandingStat);
+        this.performanceScore = this._calculateScores(45, 55, this._comedyStat + this._actingStat + this._brandingStat);
     }
     getDance() {
-        this.performanceScore = this._calculateScores(15, 25, this._danceStat);
+        this.performanceScore = this._calculateScores(15, 30, this._danceStat);
     }
     getSinging()  {
-        this.performanceScore = this._calculateScores(15, 25, this._singingStat);
+        this.performanceScore = this._calculateScores(15, 30, this._singingStat);
     }
     getDesign() {
-        this.performanceScore = this._calculateScores(15, 25, this._designStat);
+        this.performanceScore = this._calculateScores(15, 30, this._designStat);
     }
     getRunwayChallenge() {
-        this.performanceScore = this._calculateScores(15, 25, this._runwayStat);
+        this.performanceScore = this._calculateScores(15, 30, this._runwayStat);
     }
     getImprov() {
-        this.performanceScore = this._calculateScores(15, 25, this._improvStat);
+        this.performanceScore = this._calculateScores(15, 30, this._improvStat);
     }
     //special 'gets':
     getSnatch() {
         this.performanceScore = this._calculateScores(35, 55, this._improvStat + this._comedyStat + this._actingStat);
     }
     getRusical() {
-        this.performanceScore = this._calculateScores(25, 35, this._danceStat + this._singingStat);
+        this.performanceScore = this._calculateScores(25, 40, this._danceStat + this._singingStat);
     }
     getBall() {
-        this.performanceScore = this._calculateScores(25, 35, this._designStat + this._runwayStat);
+        this.performanceScore = this._calculateScores(25, 40, this._designStat + this._runwayStat);
     }
     getRumix() {
-        this.performanceScore = this._calculateScores(35, 50, this._danceStat + this._brandingStat + this._singingStat);
+        this.performanceScore = this._calculateScores(35, 55, this._danceStat + this._brandingStat + this._singingStat);
     }
     getTalentShow() {
-        this.performanceScore = this._calculateScores(15, 25, randomNumber(1, 30));
+        this.performanceScore = this._calculateScores(15, 30, randomNumber(1, 30));
     }
     getFinale() {
         this.finaleScore = this.favoritism - this.unfavoritism;
     }
     getRunway() {
-        this.runwayScore = this._calculateScores(12, 25, this._runwayStat);
+        this.runwayScore = this._calculateScores(12, 30, this._runwayStat);
     }
     getLipsync() {
         this.lipsyncScore = this._calculateScores(0, this._lipsyncStat, this.unfavoritism) + this.favoritism;
@@ -8862,14 +8862,14 @@ let brooke = new Queen("Brooke Lynn Hytes", 8,12,10,15,15,15,15,9,12,"Brooke");
 let akeria = new Queen("A'keria Chanel Davenport",7,13,8,12,11,11,11,10,9,"AkeriaS11");
 let silky = new Queen("Silky Nutmeg Ganache", 9,15,13,14,8,9,6,13,17,"SilkyS11");
 let vanjies11 = new Queen("Vanessa Vanjie Matteo (S11)",9,5,9,5,7,8,10,10,7,"VanessaS11");
-let ninawest = new Queen("Nina West", 10,9,10,6,6,8,7,13,9,"NinaWest");
+let ninawest = new Queen("Nina West", 10,13,10,6,6,8,7,13,9,"NinaWest");
 let shuga = new Queen("Shuga Cain",6,8,8,7,6,8,9,7,6,"Shuga");
-let plastique= new Queen("Plastique Tiara",10,6,7,8,11,13,8,7,10,"Plastique");
+let plastique= new Queen("Plastique Tiara",10,8,7,8,11,13,8,7,10,"Plastique");
 let rajah= new Queen("Ra'Jah O'Hara",4,6,7,6,8,12,10,6,7,"RajahS11");
-let scarlet= new Queen("Scarlet Envy",14,5,9,5,10,13,8,8,12,"ScarletS11");
+let scarlet= new Queen("Scarlet Envy",14,8,9,7,10,13,8,8,12,"ScarletS11");
 let ariel= new Queen("Ariel Versace",5,6,6,6,6,9,8,6,7,"Ariel");
 let mercedes= new Queen("Mercedes Iman Diamond",3,4,4,5,4,9,12,6,3,"Mercedes");
-let honey= new Queen("Honey Davenport",5,5,3,3,4,4,3,7,6,"HoneyDavenport");
+let honey= new Queen("Honey Davenport",6,6,6,6,6,6,6,6,6,"HoneyDavenport");
 let kahanna= new Queen("Kahanna Montrese",3,6,5,8,4,6,12,6,5,"Kahanna");
 let soju = new Queen("Soju",3,1,2,1,1,3,3,1,1,"Soju");
 let us_season11 = [yvie, brooke, akeria, silky, vanjies11, ninawest, shuga, plastique, rajah, scarlet, ariel, mercedes, honey, kahanna, soju];
@@ -8884,13 +8884,13 @@ let jan = new Queen("Jan", 7, 6, 7, 11, 9, 10, 8, 8, 14,"JanS12");
 let brita = new Queen("Brita", 5, 6, 5, 5, 6, 10, 13, 6, 5,"Brita");
 let aiden = new Queen("Aiden Zhane", 6, 4, 3, 3, 6, 7, 6, 6, 3,"Aiden");
 let nicky = new Queen("Nicky Doll", 3, 6, 6, 6, 15, 15, 6, 7, 4,"Nicky");
-let rock = new Queen("Rock M. Sakura", 6, 3, 3, 5, 5, 4, 10, 8, 4,"Rock");
+let rock = new Queen("Rock M. Sakura", 6, 6, 6, 6, 5, 4, 10, 8, 4,"Rock");
 let dahlia = new Queen("Dahlia Sin", 4, 5, 4, 4, 6, 10, 4, 6, 5,"Dahlia");
 let sherry = new Queen("Sherry Pie", 13, 13, 10, 6, 10, 10, 8, 10, 10,"Sherry")
 let us_season12 = [jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia, sherry];
 //SEASON 13
 let denali = new Queen("Denali Foxx", 7, 10, 9, 12, 8, 10, 13, 7, 18,"Denali");
-let eliott = new Queen("Elliott with 2 Ts", 6, 5, 5, 9, 8, 8, 12, 8, 9,"Eliott");
+let eliott = new Queen("Elliott with 2 Ts", 6, 6, 5, 9, 8, 8, 12, 8, 9,"Eliott");
 let gottmik = new Queen("Gottmik", 9, 11, 13, 4, 10, 13, 6, 9, 9,"Gottmik");
 let joey = new Queen("Joey Jay", 6, 6, 5, 5, 5, 5, 8, 7, 8,"Joey");
 let kahmora = new Queen("Kahmora Hall", 5, 6, 5, 6, 8, 15, 5, 8, 6,"Kahmora");
@@ -8899,7 +8899,7 @@ let lalari = new Queen("LaLa Ri", 6, 6, 6, 9, 1, 4, 15, 10, 8,"Lala");
 let liv = new Queen("Liv Lux Miyake-Mugler", 8, 11, 9, 11, 8, 12, 10, 7, 14,"Liv");
 let rose = new Queen("Rosé", 12, 11, 11, 11, 10, 10, 7, 14, 25,"Rose");
 let symone = new Queen("Symone", 14, 9, 7, 8, 9, 15, 13, 15, 20,"Symone");
-let tamisha = new Queen("Tamisha Iman", 6, 4, 4, 3, 3, 6, 10, 8, 5,"Tamisha");
+let tamisha = new Queen("Tamisha Iman", 6, 6, 6, 6, 3, 6, 10, 8, 5,"Tamisha");
 let tina = new Queen("Tina Burner", 8, 8, 7, 7, 5, 5, 7, 10, 6,"Tina");
 let utica = new Queen("Utica Queen", 6, 6, 6, 4, 13, 12, 10, 6, 9,"Utica");
 let us_season13 = [denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica];
