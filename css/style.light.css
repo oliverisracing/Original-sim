@@ -152,7 +152,7 @@ th {
 
 td {
     padding: 0.5em;
-    border: 0px solid #C6BFC6;
+    border: 0.5px solid #C6BFC6;
     background-color: #F5EBF5;
     font-weight: bold;
     font-size: 10px;
@@ -160,7 +160,7 @@ td {
 }
 
 .placement {
-    height: 50px;
+    height: 70px;
     width: 60px;
 }
 .rumocracy {
