@@ -109,7 +109,7 @@ function miniChallenge() {
     //remove from possible challenges list:
     if (talentShowCounter || (all_stars || all_winners || lipsync_assassin))
         challenges.splice(challenges.indexOf("talentshow()"), 1);
-    if (actingChallengeCounter == 3 && totalCastSize > 15 || actingChallengeCounter == 2 && totalCastSize <= 15)
+    if (actingChallengeCounter == 3 && totalCastSize > 15 || actingChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("actingChallenge()"), 1);
     if (comedyChallengeCounter == 3 && totalCastSize > 15 || comedyChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("comedyChallenge()"), 1);
@@ -705,7 +705,7 @@ function makeoverChallenge() {
     isDesignChallenge = false;
     rusicalCounter = true;
     queensPerformances();
-    episodeChallenges.push("Makeover");
+    episodeChallenges.push("Make Over");
 }    
 
 class SnatchGame {
@@ -7703,7 +7703,7 @@ function lipSync() {
             }
         }
     } else {
-        if (score1 > 3 && score2 > 3 && randomNumber(0, 100) <= 90 && !doubleShantay && !noDouble && currentCast.length > 5) {
+        if (score1 > 2 && score2 > 2 && randomNumber(0, 100) <= 99 && !doubleShantay && !noDouble && currentCast.length > 5) {
             if (randomNumber(0, 100) >= 80) {
                 screen.createImage(bottomQueens[0].image, "tomato");
                 screen.createBold(bottomQueens[0].getName() + ", shantay you stay.");
@@ -11234,7 +11234,7 @@ function queensConjoined(wass = "") {
         for (var i = 0; i < currentCast.length; i++){
             currentCast[i].episodesOn++;
         }
-        episodeChallenges.push("Makeover");
+        episodeChallenges.push("Make over");
         safeQueens = [];
         topQueens = [];
         bottomQueens = [];
