@@ -6214,7 +6214,7 @@ function s9judgingScreen() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-            topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/1.4);
+            topQueens[i].performanceScore -= (topQueens[i].runwayScore/1.4 - topQueens[i].favoritism/1.4);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 60) {
@@ -6316,7 +6316,7 @@ function winAndBtm6() {
             topQueens[i].performanceScore -= (topQueens[i].runwayScore);
     } else {
         for (let i = 0; i < topQueens.length; i++)
-        topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/1.4);
+        topQueens[i].performanceScore -= (topQueens[i].runwayScore/1.4 - topQueens[i].favoritism/1.4);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     if (isTeamChallenge) {
@@ -6877,7 +6877,7 @@ function winAndBtm2() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-        topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/1.4);
+        topQueens[i].performanceScore -= (topQueens[i].runwayScore/1.4 - topQueens[i].favoritism/1.4);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     if (isTeamChallenge) {
@@ -7075,7 +7075,7 @@ function teamWinAndBtm2() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-        topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/1.4);
+        topQueens[i].performanceScore -= (topQueens[i].runwayScore/1.4 - topQueens[i].favoritism/1.4);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     topQueens[0].QueenA.addToTrackRecord("WIN");
@@ -7144,7 +7144,7 @@ function top2AndBtm() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-        topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/1.4);
+        topQueens[i].performanceScore -= (topQueens[i].runwayScore/1.4 - topQueens[i].favoritism/1.4);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     top2.push(topQueens[0]);
@@ -7276,7 +7276,7 @@ function topAndBtm() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-        topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/1.4);
+        topQueens[i].performanceScore -= (topQueens[i].runwayScore/1.4 - topQueens[i].favoritism/1.4);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     top2.push(topQueens[0]);
@@ -7506,7 +7506,7 @@ function top2AndBlocked() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-        topQueens[i].performanceScore -= (topQueens[i].runwayScore - topQueens[i].favoritism/1.4);
+        topQueens[i].performanceScore -= (topQueens[i].runwayScore/1.4 - topQueens[i].favoritism/1.4);
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     top2.push(topQueens[0]);
@@ -8898,10 +8898,10 @@ let vanessas10 = new Queen("Vanessa Vanjie Matteo",4,5,4,5,3,3,7,7,8,"VanessaS10
 let yuhua = new Queen("Yuhua Hamasaki",7,6,6,6,8,10,6,5,6,"Yuhua");
 let us_season10 = [aquaria, asia, blair, dusty, eurekas10, kalorie, kameron, mayhem, miz, monet, monique, vixen, vanessas10, yuhua];
 //SEASON 11:  acting, comedy, dance, design, improv, runway, lipsync
-let yvie = new Queen("Yvie Oddly",12,7,7,14,10,13,15,11,12,"YvieS11");
-let brooke = new Queen("Brooke Lynn Hytes", 8,12,10,15,15,15,15,9,12,"Brooke");
-let akeria = new Queen("A'keria Chanel Davenport",7,13,8,12,11,11,11,10,9,"AkeriaS11");
-let silky = new Queen("Silky Nutmeg Ganache", 9,15,13,14,8,9,6,13,17,"SilkyS11");
+let yvie = new Queen("Yvie Oddly",12,10,7,14,13,11,15,11,12,"YvieS11");
+let brooke = new Queen("Brooke Lynn Hytes", 8,11,8,15,15,20,15,9,12,"Brooke");
+let akeria = new Queen("A'keria Chanel Davenport",7,16,7,14,11,9,13,10,7,"AkeriaS11");
+let silky = new Queen("Silky Nutmeg Ganache", 9,11,14,10,6,6,9,10,18,"SilkyS11");
 let vanjies11 = new Queen("Vanessa Vanjie Matteo (S11)",9,5,9,5,7,8,10,10,7,"VanessaS11");
 let ninawest = new Queen("Nina West", 10,13,10,6,6,8,7,13,9,"NinaWest");
 let shuga = new Queen("Shuga Cain",6,8,8,7,6,8,9,7,6,"Shuga");
@@ -8930,7 +8930,7 @@ let dahlia = new Queen("Dahlia Sin", 4, 5, 4, 4, 6, 10, 4, 6, 5,"Dahlia");
 let sherry = new Queen("Sherry Pie", 14, 13, 10, 6, 10, 10, 8, 10, 10,"Sherry")
 let us_season12 = [jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia, sherry];
 //SEASON 13
-let denali = new Queen("Denali Foxx", 7, 10, 9, 12, 8, 10, 13, 7, 18,"Denali");
+let denali = new Queen("Denali Foxx", 7, 10, 9, 12, 8, 10, 13, 7, 15,"Denali");
 let eliott = new Queen("Elliott with 2 Ts", 6, 6, 5, 9, 8, 8, 12, 8, 9,"Eliott");
 let gottmik = new Queen("Gottmik", 9, 11, 13, 4, 12, 13, 6, 9, 9,"Gottmik");
 let joey = new Queen("Joey Jay", 6, 6, 5, 5, 5, 5, 8, 7, 8,"Joey");
@@ -8939,7 +8939,7 @@ let kandy = new Queen("Kandy Muse", 9, 11, 14, 7, 6, 10, 15, 13, 9,"KandyMuse");
 let lalari = new Queen("LaLa Ri", 6, 6, 6, 9, 1, 4, 15, 10, 8,"Lala");
 let liv = new Queen("Liv Lux Miyake-Mugler", 8, 11, 9, 11, 8, 12, 10, 7, 14,"Liv");
 let rose = new Queen("Rosé", 10, 11, 11, 10, 9, 10, 6, 15, 25,"Rose");
-let symone = new Queen("Symone", 14, 9, 7, 8, 8, 17, 17, 15, 20,"Symone");
+let symone = new Queen("Symone", 14, 9, 7, 8, 8, 18, 17, 15, 20,"Symone");
 let tamisha = new Queen("Tamisha Iman", 6, 6, 6, 6, 3, 6, 10, 8, 5,"Tamisha");
 let tina = new Queen("Tina Burner", 8, 8, 7, 7, 5, 5, 7, 10, 6,"Tina");
 let utica = new Queen("Utica Queen", 6, 6, 6, 4, 13, 11, 10, 6, 9,"Utica");
