@@ -113,22 +113,28 @@ button:hover {
 .blue {
     background-color: #add8e6;
 }
+
+@media (max-width: 768px) {
+    html {
+      font-size: 18px;
+    }
+  } 
+  
 .trtable {
-    margin-bottom: 1em;
+    background-color: #f5ebf5;
+    color: #202122;
+    border: 1px solid #a2a9b1;
     border-collapse: collapse;
-    color: #3A3A3A;
-    background-color: #E9DFE9;
-    border: 1px solid #C6BFC6;
-    padding: 0.2em 0.4em;
 }
 
 table {
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
     text-indent: initial;
-    border-spacing: 1px;
-    border-color: grey;
+    border-spacing: 2px;
+    color: #202122;
+    border: 1px solid #a2a9b1;
+    border-collapse: collapse;
+    font-size: .7rem;
+    text-align: center;
 }
 
 tbody {
@@ -142,26 +148,25 @@ tr {
 }
 
 th {
+    display: table-cell;
     font-weight: bold;
-    padding: 5px;
-    background-color: #E9DFE9;
-    border: 1px solid #C6BFC6;
-    font-size: 13px;
-    width: 75px;
+    background-color: #e9dfe9;
+    text-align: center;
+    border: 1px solid #a2a9b1;
+    padding: 0.2em 0.4em;
 }
 
 td {
-    padding: 0.5em;
-    border: 0px solid #C6BFC6;
-    background-color: #F5EBF5;
-    font-weight: bold;
-    font-size: 10px;
+    display: table-cell;
     text-align: center;
+    border: 0px solid #a2a9b1;
+    padding: 0.2em 0.4em;
+    vertical-align: middle;
 }
 
 .placement {
-    height: 70px;
-    width: 60px;
+    height: 100px;
+    width: 35px;
 }
 .rumocracy {
     height: 45px;
