@@ -117,7 +117,7 @@ function miniChallenge() {
         challenges.splice(challenges.indexOf("marketingChallenge()"), 1);
     if (danceChallengeCounter == 3 && totalCastSize > 15 || danceChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("danceChallenge()"), 1);
-    if (designChallengeCounter == 3 && totalCastSize > 15 || designChallengeCounter == 3 && totalCastSize <= 15)
+    if (designChallengeCounter == 3 && totalCastSize > 15 || designChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("designChallenge()"), 1);
     if (improvChallengeCounter == 3 && totalCastSize > 15 || improvChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("improvChallenge()"), 1);
