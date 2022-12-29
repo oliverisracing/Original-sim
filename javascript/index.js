@@ -94,7 +94,7 @@ function miniChallenge() {
     }
     let miniChallengeScreen = new Scene();
     miniChallengeScreen.clean();
-    miniChallengeScreen.createHeader("Mini-challenge!");
+    miniChallengeScreen.createHeader("Mini-challenge");
     if (premiereCounter == 3 && s14Premiere) {
         s14ElimReturn();
         premiereCounter++;
@@ -113,13 +113,13 @@ function miniChallenge() {
         challenges.splice(challenges.indexOf("actingChallenge()"), 1);
     if (comedyChallengeCounter == 3 && totalCastSize > 15 || comedyChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("comedyChallenge()"), 1);
-    if (marketingChallengeCounter == 3 && totalCastSize > 15 || marketingChallengeCounter == 2 && totalCastSize <= 15)
+    if (marketingChallengeCounter == 3 && totalCastSize > 15 || marketingChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("marketingChallenge()"), 1);
-    if (danceChallengeCounter == 2 && totalCastSize > 15 || danceChallengeCounter == 1 && totalCastSize <= 15)
+    if (danceChallengeCounter == 3 && totalCastSize > 15 || danceChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("danceChallenge()"), 1);
-    if (designChallengeCounter == 2 && totalCastSize > 15 || designChallengeCounter == 1 && totalCastSize <= 15)
+    if (designChallengeCounter == 3 && totalCastSize > 15 || designChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("designChallenge()"), 1);
-    if (improvChallengeCounter == 3&& totalCastSize > 15 || improvChallengeCounter == 3 && totalCastSize <= 15)
+    if (improvChallengeCounter == 3 && totalCastSize > 15 || improvChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("improvChallenge()"), 1);
     if (singingChallengeCounter == 1 || rusicalCounter == 1 && totalCastSize > 15 || singingChallengeCounter == 1 || rusicalCounter == 1 && totalCastSize <=15)
         challenges.splice(challenges.indexOf("singingChallenge()"), 1);
@@ -208,7 +208,7 @@ class ActingChallenge {
 function actingChallenge() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new ActingChallenge();
     challenge.generateDescription();
@@ -277,7 +277,7 @@ class ComedyChallenge {
 function comedyChallenge() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new ComedyChallenge();
     challenge.generateDescription();
@@ -344,7 +344,7 @@ class MarketingChallenge {
 function marketingChallenge() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new MarketingChallenge();
     challenge.generateDescription();
@@ -423,7 +423,7 @@ class DanceChallenge {
 function singingChallenge() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new SingingChallenge();
     challenge.generateDescription();
@@ -442,7 +442,7 @@ function singingChallenge() {
 function danceChallenge() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new DanceChallenge();
     challenge.generateDescription();
@@ -504,7 +504,7 @@ class DesignChallenge {
 function designChallenge() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new DesignChallenge();
     challenge.generateDescription();
@@ -650,7 +650,7 @@ class ImprovChallenge {
 function improvChallenge() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new ImprovChallenge();
     challenge.generateDescription();
@@ -697,7 +697,7 @@ class MakeoverChallenge {
 function makeoverChallenge() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new MakeoverChallenge();
     challenge.generateDescription();
@@ -728,7 +728,7 @@ class SnatchGame {
 function snatchGame() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new SnatchGame();
     challenge.generateDescription();
@@ -777,7 +777,7 @@ class Rusical {
 function rusical() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new Rusical();
     challenge.generateDescription();
@@ -869,7 +869,7 @@ class Ball {
 function ball() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new Ball();
     challenge.generateDescription();
@@ -912,7 +912,7 @@ class Rumix {
 function rumix() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new Rumix();
     challenge.generateDescription();
@@ -960,7 +960,7 @@ class GirlGroup {
 function girlgroup() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new GirlGroup();
     challenge.generateDescription();
@@ -994,7 +994,7 @@ class TalentShow {
 function talentshow() {
     let challengeScreen = new Scene();
     challengeScreen.clean();
-    challengeScreen.createHeader("Maxi-challenge!");
+    challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
     let challenge = new TalentShow();
     challenge.generateDescription();
@@ -1542,7 +1542,7 @@ function createPerformanceDesc(slay, great, good, bad, flop) {
     }
     if (great.length !== 0) {
         for (let i = 0; i < great.length; i++)
-            screen.createImage(great[i].image, "royalblue");
+            screen.createImage(great[i].image, "lightblue");
         screen.createBold("", "great");
         let greatText = document.getElementById("great");
         for (let i = 0; i < great.length; i++)
@@ -1551,7 +1551,7 @@ function createPerformanceDesc(slay, great, good, bad, flop) {
     }
     if (good.length !== 0) {
         for (let i = 0; i < good.length; i++)
-            screen.createImage(good[i].image);
+            screen.createImage(good[i].image, "lightgreen");
         screen.createBold("", "good");
         let goodText = document.getElementById("good");
         for (let i = 0; i < good.length; i++)
@@ -2219,7 +2219,7 @@ function newEpisode() {
     let queensRemainingScreen = new Scene();
     if (episodeCount == 1 || premiereCounter <= 2 && (s12Premiere || porkchopPremiere || s6Premiere || s14Premiere ) || episodeCount == 1 && (uk3Premiere || s9Premiere)) {
         queensRemainingScreen.clean();
-        queensRemainingScreen.createHeader("Full cast");
+        queensRemainingScreen.createHeader("Season");
         for (let i = 0; i < currentCast.length; i++) {
             queensRemainingScreen.createImage(currentCast[i].image);
             queensRemainingScreen.createBold(currentCast[i].getName());
@@ -3708,12 +3708,12 @@ function contestantProgress() {
     trackRecords.appendChild(header);
     let th = document.createElement("th");
     th.innerHTML = "Contestant";
-    th.setAttribute("style", "font-weight: bold; width: 100px;");
+    th.setAttribute("style","width: 100px;");
     th.setAttribute("rowspan", "2");
     header.appendChild(th);
     let th_i = document.createElement("th");
     th_i.innerHTML = "Photo";
-    th_i.setAttribute("style", "font-weight: bold;");
+    th_i.setAttribute("style","width: 75px;");
     th_i.setAttribute("rowspan", "2");
     header.appendChild(th_i);
     for (let i = 0; i < episodeChallenges.length; i++) {
@@ -3872,7 +3872,7 @@ function contestantProgress() {
                 placement.innerHTML = "<b>WIN<br>+<br> RTRN</b>";
             }
             else if (placement.innerHTML == "SAFE") {
-                placement.setAttribute("style", "background-color: white;");
+                placement.setAttribute("style", "background-color: #F5EBF5;");
             }
             else if (placement.innerHTML == "SAFE ") {
                     placement.setAttribute("style", "background-color: palegreen; color:#000;");
@@ -4161,7 +4161,7 @@ function contestantProgress() {
                     placement.innerHTML = "<b>WIN<br>+<br> RTRN</b>";
                 }
                 else if (placement.innerHTML == "SAFE") {
-                    placement.setAttribute("style", "background-color: white;");
+                    placement.setAttribute("style", "background-color: #F5EBF5;");
                 }
                 else if (placement.innerHTML == "SAFE ") {
                         placement.setAttribute("style", "background-color: palegreen; color:#000;");
@@ -4455,7 +4455,7 @@ function contestantProgress() {
                 placement.innerHTML = "<b>WIN<br>+<br> RTRN</b>";
             }
             else if (placement.innerHTML == "SAFE") {
-                placement.setAttribute("style", "background-color: white;");
+                placement.setAttribute("style", "background-color: #F5EBF5;");
             }
             else if (placement.innerHTML == "SAFE ") {
                     placement.setAttribute("style", "background-color: palegreen; color:#000;");
@@ -5785,7 +5785,7 @@ function judging() {
 function judgingThailand() {
     let screen = new Scene();
     screen.clean();
-    screen.createHeader("Judging!");
+    screen.createHeader("Critiques");
     screen.createBold("Based on tonight's runway...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     if (topQueens.length > bottomQueens.length) {
@@ -5990,7 +5990,7 @@ function thaiWinBottom2() {
 function judgingS14LaLaPaRUZaScreen() {
     let screen = new Scene();
     screen.clean();
-    screen.createHeader("Judging!");
+    screen.createHeader("Critiques");
     screen.createBold("Based on tonight's performances...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     screen.createHorizontalLine();
@@ -6181,7 +6181,7 @@ let lateQueen = '';
 function s9judgingScreen() { 
     let screen = new Scene();
     screen.clean();
-    screen.createHeader("Judging!");
+    screen.createHeader("Critiques");
     screen.createParagraph("In this premiere, for the first time in Drag Race herstory.. nobody is going home tonight!");
     screen.createBold("Now, based on tonight's performances...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
@@ -6271,7 +6271,7 @@ function judging6WayScreen() {
     bottom6WayLipsyncCheck = true;
     let judgingScreen = new Scene();
     judgingScreen.clean();
-    judgingScreen.createHeader("Judging!");
+    judgingScreen.createHeader("Critiques");
     judgingScreen.createBold("Based on tonight's performances...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     let o = 0;
@@ -6578,7 +6578,7 @@ function judgingSlayersScreen() {
     slayersSmack = episodeCount;
     let screen = new Scene();
     screen.clean();
-    screen.createHeader("Judging!");
+    screen.createHeader("Critiques");
     screen.createBold("Based on tonight's performances...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     for (let i = 0; i < topQueens.length; i++) {
@@ -6657,7 +6657,7 @@ function judgingFloppersScreen() {
     floppersCheck = true;
     let screen = new Scene();
     screen.clean();
-    screen.createHeader("Judging!");
+    screen.createHeader("Critiques");
     screen.createBold("Brace yourselves, cause Drag Race is about to get real..");
     screen.createBold("Based on tonight's performances... This week there will be no winners.");
     document.body.style.backgroundImage = "url('image/stage.webp')";
@@ -6699,7 +6699,7 @@ function judgingFloppersScreen() {
 function winnersJudging() {
     let screen = new Scene();
     screen.clean();
-    screen.createHeader("Judging!");
+    screen.createHeader("Critiques");
     screen.createBold("Based on tonight's performances...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     for (let i = 0; i < topQueens.length; i++) {
@@ -6725,7 +6725,7 @@ let homeTrigger = 0;
 function judgingScreen() {
     let judgingScreen = new Scene();
     judgingScreen.clean();
-    judgingScreen.createHeader("Judging!");
+    judgingScreen.createHeader("Critiques");
     judgingScreen.createBold("Based on tonight's performances...");
     document.body.style.backgroundImage = "url('image/stage.webp')";
     if (team == true) {
@@ -8776,14 +8776,14 @@ let ravens2 = new Queen("Raven", 7, 11, 9, 7, 13, 13, 10, 14, 12,"RavenS2");
 let james = new Queen("James Ross", 14, 10, 12, 6, 12, 10, 14, 12, 8,"James");
 let us_season2 = [jessicaw, jujus2, morganmcs2, mystique, npb, pandoras2, sahara, shangela, kylies2, tatis2, ravens2, james];
 //SEASON 3
-let alexiss3 = new Queen("Alexis Mateo",12,14,12,10,8,7,14,13,8,"AlexisS3");
+let alexiss3 = new Queen("Alexis Mateo",12,14,12,10,6,6,14,13,6,"AlexisS3");
 let carmenc = new Queen("Carmen Carrera",6,5,6,7,5,8,6,6,4,"Carmen");
 let delta = new Queen("Delta Work",4,4,5,7,4,4,11,7,3,"Delta");
 let indias3 = new Queen("India Ferrah",5,3,4,5,7,7,10,3,6,"IndiaS3");
-let manilas3 = new Queen("Manila Luzon",10,13,9,10,11,15,13,7,13,"ManilaS3",);
+let manilas3 = new Queen("Manila Luzon",10,13,9,10,11,15,13,11,13,"ManilaS3",);
 let mariahs3 = new Queen("Mariah Paris Balenciaga",5,3,6,7,7,5,7,5,5,"MariahS3");
 let phoenix = new Queen("Phoenix",3,5,5,3,3,3,5,4,6,"Phoenix");
-let rajas3 = new Queen("Raja",9,11,10,12,15,17,10,7,18,"RajaS3");
+let rajas3 = new Queen("Raja",9,11,10,12,18,15,10,5,17,"RajaS3");
 let shangelas3 = new Queen("Shangela(S3)",10,11,11,8,2,7,11,10,7,"ShangelaS3");
 let stacy = new Queen("Stacy Layne Matthews",9,11,11,5,6,8,6,9,6,"Stacy");
 let venus = new Queen("Venus D-Lite",3,4,4,3,3,6,10,4,6,"Venus");
@@ -8800,7 +8800,7 @@ let latrice = new Queen("Latrice Royale",12,5,9,12,5,6,14,6,14,"LatriceS4");
 let madamel = new Queen("Madame LaQueer",4,7,7,11,7,8,7,6,6,"Madame");
 let milan = new Queen("Milan",5,4,6,8,5,7,12,7,6,"Milan");
 let jaremy = new Queen("Jaremy Carey",10,5,10,6,12,12,11,12,8,"JaremyS4");
-let sharon = new Queen("Sharon Needles",11,10,10,8,17,11,9,12,8,"SharonNeedles");
+let sharon = new Queen("Sharon Needles",11,10,10,8,17,10,9,10,6,"SharonNeedles");
 let princess = new Queen("The Princess",5,4,6,4,10,10,11,4,7,"Princess");
 let willam = new Queen("Willam",10,12,12,10,9,9,7,4,14,"Willam");
 let us_season4 = [alisa, chads4, dida, jiggly, kenya, lashauwn, latrice, madamel, milan, jaremy, sharon, princess, willam];
@@ -8812,7 +8812,7 @@ let detox = new Queen("Detox",6,12,9,7,7,11,14,10,9,"DetoxS5");
 let honeym = new Queen("Honey Mahogany",4,5,5,4,4,8,4,6,4,"Honey");
 let jadej = new Queen("Jade Jolie",4,6,6,5,5,6,12,6,5,"JadeJolie");
 let ivyw = new Queen("Ivy Winters",9,5,6,10,9,12,7,6,18,"Ivy");
-let jinkxs5 = new Queen("Jinkx Monsoon",13,13,15,11,7,10,12,12,13,"JinkxS5");
+let jinkxs5 = new Queen("Jinkx Monsoon",13,13,15,11,6,6,12,12,13,"JinkxS5");
 let serena = new Queen("Serena ChaCha",4,4,4,4,3,6,8,7,4,"SerenaS5");
 let lineysha = new Queen("Lineysha Sparx",13,5,6,6,11,12,8,7,5,"Lineysha");
 let monica = new Queen("Monica Beverly Hillz",4,4,5,6,7,8,8,4,4,"Monica");
@@ -8882,15 +8882,15 @@ let trinitys9 = new Queen("Trinity Taylor",14,8,10,8,10,12,10,13,10,"TrinityS9")
 let valentina = new Queen("Valentina",11,8,11,12,11,13,8,7,10,"ValentinaS9");
 let us_season9 = [aja, alexism, charlie, cynthialees9, eureka, farrah, jaymes, kimora, nina, peppermint, sasha, sheas9, trinitys9, valentina];
 //SEASON 10: 
-let aquaria = new Queen("Aquaria", 11,11,10,8,15,15,10,8,10,"Aquaria");
-let asia = new Queen("Asia O'Hara",14,9,13,8,7,13,10,13,8,"Asia");
+let aquaria = new Queen("Aquaria", 10,10,13,8,20,20,10,8,9,"Aquaria");
+let asia = new Queen("Asia O'Hara",14,11,10,8,7,13,10,13,7,"Asia");
 let blair = new Queen("Blair St. Clair", 7,7,7,6,8,10,4,8,8,"BlairS10");
 let dusty = new Queen("Dusty Ray Bottoms",6,5,3,3,5,7,9,7,3,"Dusty");
-let eurekas10 = new Queen("Eureka O'Hara (S10)",7,13,13,7,8,11,11,13,7,"EurekaS10");
+let eurekas10 = new Queen("Eureka O'Hara (S10)",7,13,17,7,8,11,11,15,6,"EurekaS10");
 let kalorie = new Queen("Kalorie Karbdashian-Williams",3,3,3,3,4,3,10,7,6,"Kalorie");
-let kameron = new Queen("Kameron Michaels",6,10,7,14,10,10,15,6,16,"Kameron");
+let kameron = new Queen("Kameron Michaels",6,10,7,14,10,10,15,6,17,"Kameron");
 let mayhem = new Queen("Mayhem Miller",6,6,8,9,12,11,10,6,8,"MayhemS10");
-let miz = new Queen("Miz Cracker",8,6,10,9,9,10,7,10,12,"MizS10");
+let miz = new Queen("Miz Cracker",8,6,10,9,9,10,10,10,12,"MizS10");
 let monet = new Queen("Monét X Change",10,9,9,9,4,1,15,10,13,"MonetS10");
 let monique = new Queen("Mo Heart",9,6,9,5,10,8,5,10,8,"MoS10");
 let vixen = new Queen("The Vixen",6,5,7,11,8,10,14,7,13,"Vixen");
@@ -10298,7 +10298,7 @@ function queensofComedy(pord = "") {
 function queensofComedyJudging(pairs, qofcomedy) {
     let screen = new Scene();
     screen.clean();
-    screen.createHeader("Judging");
+    screen.createHeader("Critiques");
         screen.createImage(pairs[0].QueenA.image, "aquamarine");
         screen.createImage(pairs[0].QueenB.image, "aquamarine");
         screen.createImage(pairs[1].QueenA.image, "aquamarine");
@@ -10654,7 +10654,7 @@ function kittygirlGroup(cena = "") {
 function kittygirlGroupJudging() {
     let screen = new Scene();
     screen.clean();
-    screen.createHeader("Judging!");
+    screen.createHeader("Critiques");
     sortPerformances(dragUpYourLife);
     sortPerformances(sittingOnASecret);
     let sum1 = 0;
@@ -11940,7 +11940,7 @@ function untucked() {
     let screen = new Scene();
     screen.clean();
     document.body.style.backgroundImage = "url('image/untucked.webp')";
-    screen.createHeader("Untucked!!");
+    screen.createHeader("Untucked");
     screen.createBold("At the end of the episode the queens go to sit and talk about their feelings in this episode.");
     screen.createHorizontalLine();
     let howManyInteractions = 0;
