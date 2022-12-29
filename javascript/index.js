@@ -210,6 +210,7 @@ function actingChallenge() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new ActingChallenge();
     challenge.generateDescription();
     if (randomNumber(0, 100) >= 80 && currentCast.length > 6 && currentCast.length <= 15 && !isTeamChallenge && regularFormat){
@@ -279,6 +280,7 @@ function comedyChallenge() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new ComedyChallenge();
     challenge.generateDescription();
     if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
@@ -346,6 +348,7 @@ function marketingChallenge() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new MarketingChallenge();
     challenge.generateDescription();
     if (randomNumber(0, 100) >= 80 && currentCast.length > 6 && currentCast.length <= 15 && !isTeamChallenge && regularFormat){
@@ -425,6 +428,7 @@ function singingChallenge() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new SingingChallenge();
     challenge.generateDescription();
     if (randomNumber(0, 100) >= 99 && currentCast.length > 6 && currentCast.length <= 15 && !isTeamChallenge && regularFormat){
@@ -444,6 +448,7 @@ function danceChallenge() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new DanceChallenge();
     challenge.generateDescription();
     if (randomNumber(0, 100) >= 80 && currentCast.length > 6 && currentCast.length <= 15 && !isTeamChallenge && regularFormat){
@@ -506,6 +511,7 @@ function designChallenge() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new DesignChallenge();
     challenge.generateDescription();
     challenge.generateDescription();
@@ -652,6 +658,7 @@ function improvChallenge() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new ImprovChallenge();
     challenge.generateDescription();
     if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
@@ -699,6 +706,7 @@ function makeoverChallenge() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new MakeoverChallenge();
     challenge.generateDescription();
     challenge.rankPerformances();
@@ -730,6 +738,7 @@ function snatchGame() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new SnatchGame();
     challenge.generateDescription();
     challenge.rankPerformances();
@@ -779,6 +788,7 @@ function rusical() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new Rusical();
     challenge.generateDescription();
     challenge.rankPerformances();
@@ -871,6 +881,7 @@ function ball() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new Ball();
     challenge.generateDescription();
     challenge.rankPerformances();
@@ -914,6 +925,7 @@ function rumix() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new Rumix();
     challenge.generateDescription();
     challenge.rankPerformances();
@@ -962,6 +974,7 @@ function girlgroup() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new GirlGroup();
     challenge.generateDescription();
     if (randomNumber(0, 100) >= 70 && currentCast.length > 6 && currentCast.length <= 15 && !isTeamChallenge && regularFormat && episodeCount > 3) {
@@ -996,6 +1009,7 @@ function talentshow() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
+    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new TalentShow();
     challenge.generateDescription();
     queenTalents();
@@ -2220,6 +2234,7 @@ function newEpisode() {
     if (episodeCount == 1 || premiereCounter <= 2 && (s12Premiere || porkchopPremiere || s6Premiere || s14Premiere ) || episodeCount == 1 && (uk3Premiere || s9Premiere)) {
         queensRemainingScreen.clean();
         queensRemainingScreen.createHeader("Season");
+        document.body.style.backgroundImage = "url('image/stage.webp')";
         for (let i = 0; i < currentCast.length; i++) {
             queensRemainingScreen.createImage(currentCast[i].image);
             queensRemainingScreen.createBold(currentCast[i].getName());
@@ -3708,7 +3723,7 @@ function contestantProgress() {
     trackRecords.appendChild(header);
     let th = document.createElement("th");
     th.innerHTML = "Contestant";
-    th.setAttribute("style","width: 100px;");
+    th.setAttribute("style","width: 170px;");
     th.setAttribute("rowspan", "2");
     header.appendChild(th);
     let th_i = document.createElement("th");
@@ -3753,7 +3768,7 @@ function contestantProgress() {
         name.innerHTML = winnerQueen.getName();
         winner.appendChild(name);
         let photo = document.createElement("td");
-        photo.setAttribute("style", "background: url("+ winnerQueen.image +"); background-size: cover; background-position: center; background-repeat: no-repeat;");
+        photo.setAttribute("style", "background: url("+ winnerQueen.image +"); background-size: 102px 102px; background-position: center;");
         photo.setAttribute("class", "placement");
         winner.appendChild(photo);
         for (let i = 0; i < winnerQueen.trackRecord.length + 1; i++) {
@@ -4004,11 +4019,11 @@ function contestantProgress() {
                 placement.setAttribute("style", "background-color: aqua; font-weight: bold;");
             }
             else if (placement.innerHTML == "undefined" && all_winners) {
-                placement.setAttribute("style", "font-weight: bold; background-color: lightgray;");
+                placement.setAttribute("style", "font-weight: bold; background-color: #f5ebf5;");
                 placement.innerHTML = (winnerQueen.ppe / (winnerQueen.episodesOn)).toFixed(2) + " - " + winnerQueen.stars;
             }
             else if (placement.innerHTML == "undefined") {
-                placement.setAttribute("style", "font-weight: bold; background-color: lightgray;");
+                placement.setAttribute("style", "font-weight: bold; background-color: #f5ebf5;");
                 placement.innerHTML = (winnerQueen.ppe / (winnerQueen.episodesOn)).toFixed(2);
             }
             if (winnerQueen.retEp == (i+1) && winnerQueen.retEp - winnerQueen.trackRecord.length <= 0 || winnerQueen.retEp != 0 && winnerQueen.retEp2 != undefined) {
@@ -4044,7 +4059,7 @@ function contestantProgress() {
             name.innerHTML = currentCast[i].getName();
             contestant.appendChild(name);
             let photo = document.createElement("td");
-            photo.setAttribute("style", "background: url("+ currentCast[i].image +"); background-size: cover; background-position: center; background-repeat: no-repeat;");
+            photo.setAttribute("style", "background: url("+ currentCast[i].image +"); background-size: 102px 102px; background-position: center;");
             photo.setAttribute("class", "placement");
             contestant.appendChild(photo);
             for (let k = 0; k < currentCast[i].trackRecord.length + 1; k++) {
@@ -4293,11 +4308,11 @@ function contestantProgress() {
                     placement.setAttribute("style", "background-color: aqua; font-weight: bold;");
                 }
                 else if (placement.innerHTML == "undefined" && all_winners) {
-                    placement.setAttribute("style", "font-weight: bold; background-color: lightgray;");
+                    placement.setAttribute("style", "font-weight: bold; background-color: #f5ebf5;");
                     placement.innerHTML = (currentCast[i].ppe / (currentCast[i].episodesOn)).toFixed(2) + " - " + currentCast[i].stars;
                 }
                 else if (placement.innerHTML == "undefined") {
-                    placement.setAttribute("style", "font-weight: bold; background-color: lightgray;");
+                    placement.setAttribute("style", "font-weight: bold; background-color: #f5ebf5;");
                     placement.innerHTML = (currentCast[i].ppe / (currentCast[i].episodesOn)).toFixed(2);
                 }
                 if (currentCast[i].retEp == (k+1) && currentCast[i].retEp - currentCast[i].trackRecord.length <= 0 || currentCast[i].retEp != 0 && currentCast[i].retEp2 != undefined) {
@@ -4334,7 +4349,7 @@ function contestantProgress() {
         name.innerHTML = eliminatedCast[i].getName();
         contestant.appendChild(name);
         let photo = document.createElement("td");
-        photo.setAttribute("style", "background: url("+ eliminatedCast[i].image +"); background-size: cover; background-position: center; background-repeat: no-repeat;");
+        photo.setAttribute("style", "background: url("+ eliminatedCast[i].image +"); background-size: 102px 102px; background-position: center;");
         photo.setAttribute("class", "placement");
         contestant.appendChild(photo);
         for (let k = 0; k < eliminatedCast[i].trackRecord.length + 1; k++) {
@@ -4587,11 +4602,11 @@ function contestantProgress() {
                 placement.setAttribute("style", "background-color: aqua; font-weight: bold;");
             }
             else if (placement.innerHTML == "undefined" && all_winners) {
-                placement.setAttribute("style", "font-weight: bold; background-color: lightgray;");
+                placement.setAttribute("style", "font-weight: bold; background-color: #f5ebf5;");
                 placement.innerHTML = (eliminatedCast[i].ppe / (eliminatedCast[i].episodesOn)).toFixed(2) + " - " + eliminatedCast[i].stars;
             }
             else if (placement.innerHTML == "undefined") {
-                placement.setAttribute("style", "font-weight: bold; background-color: lightgray;");
+                placement.setAttribute("style", "font-weight: bold; background-color: #f5ebf5;");
                 placement.innerHTML = (eliminatedCast[i].ppe / (eliminatedCast[i].episodesOn)).toFixed(2);
             }
             if (eliminatedCast[i].retEp == (k+1) && eliminatedCast[i].retEp - eliminatedCast[i].trackRecord.length <= 0 || eliminatedCast[i].retEp != 0 && eliminatedCast[i].retEp2 != undefined) {
@@ -8783,7 +8798,7 @@ let indias3 = new Queen("India Ferrah",5,3,4,5,7,7,10,3,6,"IndiaS3");
 let manilas3 = new Queen("Manila Luzon",10,13,9,10,11,15,13,11,13,"ManilaS3",);
 let mariahs3 = new Queen("Mariah Paris Balenciaga",5,3,6,7,7,5,7,5,5,"MariahS3");
 let phoenix = new Queen("Phoenix",3,5,5,3,3,3,5,4,6,"Phoenix");
-let rajas3 = new Queen("Raja",9,11,10,12,18,15,10,5,17,"RajaS3");
+let rajas3 = new Queen("Raja",9,11,10,8,18,13,10,5,17,"RajaS3");
 let shangelas3 = new Queen("Shangela(S3)",10,11,11,8,2,7,11,10,7,"ShangelaS3");
 let stacy = new Queen("Stacy Layne Matthews",9,11,11,5,6,8,6,9,6,"Stacy");
 let venus = new Queen("Venus D-Lite",3,4,4,3,3,6,10,4,6,"Venus");
@@ -8915,7 +8930,7 @@ let kahanna= new Queen("Kahanna Montrese",3,6,5,8,4,6,12,6,5,"Kahanna");
 let soju = new Queen("Soju",3,1,2,1,1,3,3,1,1,"Soju");
 let us_season11 = [yvie, brooke, akeria, silky, vanjies11, ninawest, shuga, plastique, rajah, scarlet, ariel, mercedes, honey, kahanna, soju];
 //SEASON 12: 
-let jaida = new Queen("Jaida Essence Hall", 10, 13, 10, 13, 12, 17, 13, 11, 15, "JaidaS12");
+let jaida = new Queen("Jaida Essence Hall", 9, 13, 9, 13, 12, 18, 13, 11, 15, "JaidaS12");
 let crystalm = new Queen("Crystal Methyd", 8, 10, 10, 10, 8, 9, 8, 13, 9,"Crystal");
 let gigi = new Queen("Gigi Goode", 10, 13, 13, 10, 14, 12, 10, 10, 17,"Gigi");
 let jackie = new Queen("Jackie Cox", 10, 10, 10, 8, 7, 10, 11, 10, 8, "Jackie");
@@ -8924,10 +8939,10 @@ let widow = new Queen("Widow Von'Du", 9, 7, 8, 10, 9, 10, 13, 5, 12, "Widow");
 let jan = new Queen("Jan", 6, 6, 6, 10, 9, 10, 8, 8, 14,"JanS12");
 let brita = new Queen("Brita", 5, 6, 5, 5, 6, 10, 13, 6, 5,"Brita");
 let aiden = new Queen("Aiden Zhane", 6, 4, 3, 3, 6, 7, 6, 6, 3,"Aiden");
-let nicky = new Queen("Nicky Doll", 3, 6, 6, 6, 15, 15, 6, 7, 4,"Nicky");
+let nicky = new Queen("Nicky Doll", 3, 6, 6, 6, 12, 12, 6, 7, 4,"Nicky");
 let rock = new Queen("Rock M. Sakura", 6, 6, 6, 6, 5, 4, 10, 8, 4,"Rock");
-let dahlia = new Queen("Dahlia Sin", 4, 5, 4, 4, 6, 10, 4, 6, 5,"Dahlia");
-let sherry = new Queen("Sherry Pie", 14, 13, 10, 6, 10, 10, 8, 10, 10,"Sherry")
+let dahlia = new Queen("Dahlia Sin", 4, 5, 4, 4, 6, 8, 4, 6, 5,"Dahlia");
+let sherry = new Queen("Sherry Pie", 14, 13, 10, 6, 8, 10, 8, 10, 10,"Sherry")
 let us_season12 = [jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia, sherry];
 //SEASON 13
 let denali = new Queen("Denali Foxx", 7, 10, 9, 12, 8, 10, 13, 7, 15,"Denali");
