@@ -154,12 +154,12 @@ tr {
 }
 
 th {
-    display: table-cell;
-    font-weight: bold;
-    background-color: #e9dfe9;
-    text-align: center;
-    border: 1px solid #a2a9b1;
-    padding: 0.2em 0.4em;
+    font-weight:bold;
+    padding:5px;
+    background-color:#E9DFE9;
+    border: 1px solid #C6BFC6;
+    font-size: 13px;
+    width: 75px;
 }
 
 td {
@@ -170,10 +170,6 @@ td {
     vertical-align: middle;
 }
 
-.placement {
-    height: 90px;
-    width: 45px;
-}
 .rumocracy {
     height: 45px;
     width: 45px;
