@@ -109,17 +109,17 @@ function miniChallenge() {
     //remove from possible challenges list:
     if (talentShowCounter || (all_stars || all_winners || lipsync_assassin))
         challenges.splice(challenges.indexOf("talentshow()"), 1);
-    if (actingChallengeCounter == 3 && totalCastSize > 15 || actingChallengeCounter == 3 && totalCastSize <= 15)
+    if (actingChallengeCounter == 3 && totalCastSize > 15 || actingChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("actingChallenge()"), 1);
-    if (comedyChallengeCounter == 3 && totalCastSize > 15 || comedyChallengeCounter == 3 && totalCastSize <= 15)
+    if (comedyChallengeCounter == 3 && totalCastSize > 15 || comedyChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("comedyChallenge()"), 1);
-    if (marketingChallengeCounter == 3 && totalCastSize > 15 || marketingChallengeCounter == 3 && totalCastSize <= 15)
+    if (marketingChallengeCounter == 3 && totalCastSize > 15 || marketingChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("marketingChallenge()"), 1);
-    if (danceChallengeCounter == 3 && totalCastSize > 15 || danceChallengeCounter == 3 && totalCastSize <= 15)
+    if (danceChallengeCounter == 3 && totalCastSize > 15 || danceChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("danceChallenge()"), 1);
     if (designChallengeCounter == 3 && totalCastSize > 15 || designChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("designChallenge()"), 1);
-    if (improvChallengeCounter == 3 && totalCastSize > 15 || improvChallengeCounter == 3 && totalCastSize <= 15)
+    if (improvChallengeCounter == 3 && totalCastSize > 15 || improvChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("improvChallenge()"), 1);
     if (singingChallengeCounter == 1 || rusicalCounter == 1 && totalCastSize > 15 || singingChallengeCounter == 1 || rusicalCounter == 1 && totalCastSize <=15)
         challenges.splice(challenges.indexOf("singingChallenge()"), 1);
@@ -3712,7 +3712,7 @@ function contestantProgress() {
     let screen = new Scene();
     screen.clean();
     screen.createHeader("Contestant Progress");
-    document.body.style.backgroundImage = "url('image/bg.png')";
+    document.body.style.backgroundImage = "url('image/stage.webp')";
     let main = document.querySelector("div#MainBlock");
     let centering = document.createElement("center");
     let trackRecords = document.createElement("table");
@@ -3728,7 +3728,7 @@ function contestantProgress() {
     header.appendChild(th);
     let th_i = document.createElement("th");
     th_i.innerHTML = "Photo";
-    th_i.setAttribute("style","width: 75px;");
+    th_i.setAttribute("style","width: 100px;");
     th_i.setAttribute("rowspan", "2");
     header.appendChild(th_i);
     for (let i = 0; i < episodeChallenges.length; i++) {
@@ -8703,47 +8703,47 @@ class Queen {
         return this._lipsyncStat;
     }
     getActing() {
-        this.performanceScore = this._calculateScores(15, 30, this._actingStat);
+        this.performanceScore = this._calculateScores(20, 30, this._actingStat);
     }
     getComedy() {
-        this.performanceScore = this._calculateScores(15, 30, this._comedyStat);
+        this.performanceScore = this._calculateScores(20, 30, this._comedyStat);
     }
     getMarketing() {
-        this.performanceScore = this._calculateScores(45, 55, this._comedyStat + this._actingStat + this._brandingStat);
+        this.performanceScore = this._calculateScores(45, 50, this._comedyStat + this._actingStat + this._brandingStat);
     }
     getDance() {
-        this.performanceScore = this._calculateScores(15, 30, this._danceStat);
+        this.performanceScore = this._calculateScores(20, 30, this._danceStat);
     }
     getSinging()  {
-        this.performanceScore = this._calculateScores(15, 30, this._singingStat);
+        this.performanceScore = this._calculateScores(20, 30, this._singingStat);
     }
     getDesign() {
-        this.performanceScore = this._calculateScores(15, 30, this._designStat);
+        this.performanceScore = this._calculateScores(20, 30, this._designStat);
     }
     getRunwayChallenge() {
-        this.performanceScore = this._calculateScores(15, 30, this._runwayStat);
+        this.performanceScore = this._calculateScores(20, 30, this._runwayStat);
     }
     getImprov() {
-        this.performanceScore = this._calculateScores(15, 30, this._improvStat);
+        this.performanceScore = this._calculateScores(20, 30, this._improvStat);
     }
     //special 'gets':
     getSnatch() {
-        this.performanceScore = this._calculateScores(35, 55, this._improvStat + this._comedyStat + this._actingStat);
+        this.performanceScore = this._calculateScores(40, 50, this._improvStat + this._comedyStat + this._actingStat);
     }
     getRusical() {
-        this.performanceScore = this._calculateScores(25, 40, this._danceStat + this._singingStat);
+        this.performanceScore = this._calculateScores(30, 40, this._danceStat + this._singingStat);
     }
     getBall() {
-        this.performanceScore = this._calculateScores(25, 30, this._runwayStat*0.75 + this._designStat);
+        this.performanceScore = this._calculateScores(30, 40, this._runwayStat*0.75 + this._designStat);
     }
     getMakeover() {
-        this.performanceScore = this._calculateScores(25, 40, this._runwayStat + this._brandingStat);
+        this.performanceScore = this._calculateScores(30, 40, this._runwayStat + this._brandingStat);
     }
     getRumix() {
-        this.performanceScore = this._calculateScores(35, 55, this._danceStat + this._brandingStat + this._singingStat);
+        this.performanceScore = this._calculateScores(30, 50, this._danceStat + this._brandingStat + this._singingStat);
     }
     getTalentShow() {
-        this.performanceScore = this._calculateScores(15, 30, randomNumber(1, 30));
+        this.performanceScore = this._calculateScores(20, 30, randomNumber(1, 30));
     }
     getFinale() {
         this.finaleScore = this.favoritism - this.unfavoritism;
@@ -8795,14 +8795,14 @@ let alexiss3 = new Queen("Alexis Mateo",12,14,12,10,6,6,14,13,6,"AlexisS3");
 let carmenc = new Queen("Carmen Carrera",6,5,6,7,5,8,6,6,4,"Carmen");
 let delta = new Queen("Delta Work",4,4,5,7,4,4,11,7,3,"Delta");
 let indias3 = new Queen("India Ferrah",5,3,4,5,7,7,10,3,6,"IndiaS3");
-let manilas3 = new Queen("Manila Luzon",10,13,9,10,11,15,13,11,13,"ManilaS3",);
+let manilas3 = new Queen("Manila Luzon",10,13,9,10,11,17,13,11,13,"ManilaS3",);
 let mariahs3 = new Queen("Mariah Paris Balenciaga",5,3,6,7,7,5,7,5,5,"MariahS3");
 let phoenix = new Queen("Phoenix",3,5,5,3,3,3,5,4,6,"Phoenix");
-let rajas3 = new Queen("Raja",9,11,10,8,18,13,10,5,17,"RajaS3");
+let rajas3 = new Queen("Raja",9,11,10,8,20,13,10,5,17,"RajaS3");
 let shangelas3 = new Queen("Shangela(S3)",10,11,11,8,2,7,11,10,7,"ShangelaS3");
 let stacy = new Queen("Stacy Layne Matthews",9,11,11,5,6,8,6,9,6,"Stacy");
 let venus = new Queen("Venus D-Lite",3,4,4,3,3,6,10,4,6,"Venus");
-let yaras3 = new Queen("Yara Sofia",10,9,7,10,13,12,9,8,12,"YaraS3");
+let yaras3 = new Queen("Yara Sofia",10,9,7,10,12,11,9,8,12,"YaraS3");
 let us_season3 = [alexiss3, carmenc, delta, indias3, manilas3, mariahs3, phoenix, rajas3, shangelas3, stacy, venus, yaras3];
 //SEASON 4:
 let alisa = new Queen("Alisa Summers",4,5,4,5,4,6,4,5,5,"Alisa");
@@ -8812,7 +8812,7 @@ let jiggly = new Queen("Jiggly Caliente",9,4,6,10,2,6,13,4,6,"JigglyS4");
 let kenya = new Queen("Kenya Michaels",6,4,6,7,5,6,6,8,6,"Kenya");
 let lashauwn = new Queen("Lashauwn Beyond",6,4,7,6,9,10,8,6,6,"Lashauwn");
 let latrice = new Queen("Latrice Royale",12,5,9,12,5,6,14,6,14,"LatriceS4");
-let madamel = new Queen("Madame LaQueer",4,7,7,11,7,8,7,6,6,"Madame");
+let madamel = new Queen("Madame LaQueer",4,7,7,10,7,8,7,6,6,"Madame");
 let milan = new Queen("Milan",5,4,6,8,5,7,12,7,6,"Milan");
 let jaremy = new Queen("Jaremy Carey",10,5,10,6,12,12,11,12,8,"JaremyS4");
 let sharon = new Queen("Sharon Needles",11,10,10,8,17,10,9,10,6,"SharonNeedles");
@@ -8914,11 +8914,11 @@ let yuhua = new Queen("Yuhua Hamasaki",7,6,6,6,8,10,6,5,6,"Yuhua");
 let us_season10 = [aquaria, asia, blair, dusty, eurekas10, kalorie, kameron, mayhem, miz, monet, monique, vixen, vanessas10, yuhua];
 //SEASON 11:  acting, comedy, dance, design, improv, runway, lipsync
 let yvie = new Queen("Yvie Oddly",12,10,7,14,13,11,15,11,12,"YvieS11");
-let brooke = new Queen("Brooke Lynn Hytes", 8,11,8,15,15,20,15,9,12,"Brooke");
+let brooke = new Queen("Brooke Lynn Hytes", 8,11,8,11,15,20,15,9,12,"Brooke");
 let akeria = new Queen("A'keria Chanel Davenport",7,16,7,14,11,9,13,10,7,"AkeriaS11");
 let silky = new Queen("Silky Nutmeg Ganache", 9,11,14,10,6,6,9,10,18,"SilkyS11");
 let vanjies11 = new Queen("Vanessa Vanjie Matteo (S11)",9,5,9,5,7,8,10,10,7,"VanessaS11");
-let ninawest = new Queen("Nina West", 10,13,10,6,6,8,7,13,9,"NinaWest");
+let ninawest = new Queen("Nina West", 10,13,10,6,6,6,7,13,9,"NinaWest");
 let shuga = new Queen("Shuga Cain",6,8,8,7,6,8,9,7,6,"Shuga");
 let plastique= new Queen("Plastique Tiara",10,8,7,8,11,13,8,7,10,"Plastique");
 let rajah= new Queen("Ra'Jah O'Hara",4,6,7,6,8,12,10,6,7,"RajahS11");
@@ -9464,6 +9464,8 @@ function returningQueenScreen() {
         kittygirlGroup(returningQueen);
     screen.createButton("Proceed", "newEpisode()");
     if ((randomReturn || chooseReturn) && document.querySelector("button[onclick='fijarReturningQueen()']") || queensOfComedy && document.querySelector("button[onclick='queensofComedyJudging(pairQOF, qofcomedy)']") || kittyGirlGroup && document.querySelector("button[onclick='kittygirlGroupJudging()']")){
+        let button = document.querySelector("button[onclick='newEpisode()']");
+        button.setAttribute("hidden", "hidden");
     }
 }
 function queenReturnsChoose(mal = "") {
