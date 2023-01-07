@@ -109,9 +109,9 @@ function miniChallenge() {
     //remove from possible challenges list:
     if (talentShowCounter || (all_stars || all_winners || lipsync_assassin))
         challenges.splice(challenges.indexOf("talentshow()"), 1);
-    if (actingChallengeCounter == 3 && totalCastSize > 15 || actingChallengeCounter == 2 && totalCastSize <= 15)
+    if (actingChallengeCounter == 3 && totalCastSize > 15 || actingChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("actingChallenge()"), 1);
-    if (comedyChallengeCounter == 3 && totalCastSize > 15 || comedyChallengeCounter == 2 && totalCastSize <= 15)
+    if (comedyChallengeCounter == 3 && totalCastSize > 15 || comedyChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("comedyChallenge()"), 1);
     if (marketingChallengeCounter == 3 && totalCastSize > 15 || marketingChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("marketingChallenge()"), 1);
@@ -119,7 +119,7 @@ function miniChallenge() {
         challenges.splice(challenges.indexOf("danceChallenge()"), 1);
     if (designChallengeCounter == 3 && totalCastSize > 15 || designChallengeCounter == 2 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("designChallenge()"), 1);
-    if (improvChallengeCounter == 3 && totalCastSize > 15 || improvChallengeCounter == 2 && totalCastSize <= 15)
+    if (improvChallengeCounter == 3 && totalCastSize > 15 || improvChallengeCounter == 3 && totalCastSize <= 15)
         challenges.splice(challenges.indexOf("improvChallenge()"), 1);
     if (singingChallengeCounter == 1 || rusicalCounter == 1 && totalCastSize > 15 || singingChallengeCounter == 1 || rusicalCounter == 1 && totalCastSize <=15)
         challenges.splice(challenges.indexOf("singingChallenge()"), 1);
@@ -283,7 +283,7 @@ function comedyChallenge() {
     document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new ComedyChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 80 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
     challenge.rankPerformances();
@@ -609,10 +609,10 @@ function runwayChallenge() {
     let challenge = new RunwayChallenge();
     challenge.generateDescription();
     challenge.rankPerformances();
-    let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 8; });
-    let great = currentCast.filter(function (queen) { return queen.performanceScore > 8 && queen.performanceScore <= 16; });
-    let good = currentCast.filter(function (queen) { return queen.performanceScore > 16 && queen.performanceScore <= 26; });
-    let bad = currentCast.filter(function (queen) { return queen.performanceScore > 26; });
+    let slay = currentCast.filter(function (queen) { return queen.performanceScore < 6; });
+    let great = currentCast.filter(function (queen) { return queen.performanceScore >= 6 && queen.performanceScore < 16; });
+    let good = currentCast.filter(function (queen) { return queen.performanceScore >= 16 && queen.performanceScore < 26; });
+    let bad = currentCast.filter(function (queen) { return queen.performanceScore >= 26; });
     createRunwayDesc(slay, great, good, bad);
     challengeScreen.createButton("Proceed", "judging()");
 }
@@ -661,7 +661,7 @@ function improvChallenge() {
     document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new ImprovChallenge();
     challenge.generateDescription();
-    if (randomNumber(0, 100) >= 60 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
+    if (randomNumber(0, 100) >= 80 && currentCast.length == 10 || currentCast.length == 12 || currentCast.length == 8  && !isPairChallenge && regularFormat){
         isPairChallenge = true;
         pairMaking();
     challenge.rankPerformances();
@@ -1009,7 +1009,6 @@ function talentshow() {
     challengeScreen.clean();
     challengeScreen.createHeader("Maxi-challenge");
     challengeScreen.createBold("", "Description");
-    document.body.style.backgroundImage = "url('image/mainstage.webp')";
     let challenge = new TalentShow();
     challenge.generateDescription();
     queenTalents();
@@ -1026,11 +1025,11 @@ function queensPerformances() {
     let performanceScreen = new Scene();
     performanceScreen.createHorizontalLine();
     performanceScreen.createBigText("Queens' performances...");
-    let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 6; });
-    let great = currentCast.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 14; });
-    let good = currentCast.filter(function (queen) { return queen.performanceScore > 14 && queen.performanceScore <= 24; });
-    let bad = currentCast.filter(function (queen) { return queen.performanceScore > 24 && queen.performanceScore <= 29; });
-    let flop = currentCast.filter(function (queen) { return queen.performanceScore > 29 && queen.performanceScore <= 50; });
+    let slay = currentCast.filter(function (queen) { return queen.performanceScore < 6; });
+    let great = currentCast.filter(function (queen) { return queen.performanceScore >= 6 && queen.performanceScore < 14; });
+    let good = currentCast.filter(function (queen) { return queen.performanceScore >= 14 && queen.performanceScore < 24; });
+    let bad = currentCast.filter(function (queen) { return queen.performanceScore >= 24 && queen.performanceScore < 28; });
+    let flop = currentCast.filter(function (queen) { return queen.performanceScore >= 28 && queen.performanceScore < 50; });
     createPerformanceDesc(slay, great, good, bad, flop);
     if (isDesignChallenge == true || episodeChallenges[episodeChallenges.length - 1] == "Design") {
         performanceScreen.createButton("Proceed", "judging()");
@@ -1493,6 +1492,33 @@ function createChallenge(challenges, miniChallengeScreen) {
     //rumix
     else if (all_winners && episodeCount == 1 || currentCast.length == 5 && !rumixCounter && lftc)
         miniChallengeScreen.createButton("Proceed", "rumix()");
+    //ball for s12 premiere
+    else if (s12Premiere && episodeCount == 4)
+        miniChallengeScreen.createButton("Proceed", "ball()");        
+    //ball for s13 premiere
+    else if (porkchopPremiere && episodeCount == 5)
+        miniChallengeScreen.createButton("Proceed", "ball()");         
+    //improv for all winners
+    else if (all_winners && episodeCount == 4)
+        miniChallengeScreen.createButton("Proceed", "improvChallenge()");
+    //comedy for all winners
+    else if (all_winners && episodeCount == 5)
+    miniChallengeScreen.createButton("Proceed", "comedyChallenge()");        
+    // gg for all winners
+    else if (all_winners && episodeCount == 6)
+    miniChallengeScreen.createButton("Proceed", "girlgroup()");   
+    // design for all winners
+    else if (all_winners && episodeCount == 7)
+    miniChallengeScreen.createButton("Proceed", "designChallenge()");   
+    // acting for all winners
+    else if (all_winners && episodeCount == 8)
+    miniChallengeScreen.createButton("Proceed", "actingChallenge()");   
+    // advert for all winners
+    else if (all_winners && episodeCount == 9)
+    miniChallengeScreen.createButton("Proceed", "marketingChallenge()");  
+    // comedy for all winners
+    else if (all_winners && episodeCount == 10)
+    miniChallengeScreen.createButton("Proceed", "comedyChallenge()"); 
     //snatch game for +12 cast
     else if ( all_winners && episodeCount == 2 || totalCastSize >= 12 && (currentCast.length == 10 || currentCast.length == 8) && (lftc || canFinale || teamsF || top4 || top5 || allstars3Finale) && !snatchCounter && !team || totalCastSize >= 12 && currentCast.length == 9 && (top3 || allstars3Finale) && !snatchCounter)
         miniChallengeScreen.createButton("Proceed", "snatchGame()");
@@ -2832,13 +2858,6 @@ function finaleTop3Judging() {
         currentCast[i].getASLipsync();
     }
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(currentCast);
-    if (event != false) {
-        let eventQueen = currentCast.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = currentCast.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = currentCast.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = currentCast.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -2899,13 +2918,6 @@ function finaleTop4Judging() {
         currentCast[i].getASLipsync();
     }
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(currentCast);
-    if (event != false) {
-        let eventQueen = currentCast.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = currentCast.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = currentCast.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = currentCast.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -3001,13 +3013,6 @@ function finaleTeamJudging() {
         currentCast[i].getASLipsync();
     }
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(currentCast);
-    if (event != false) {
-        let eventQueen = currentCast.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = currentCast.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = currentCast.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = currentCast.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -3723,12 +3728,12 @@ function contestantProgress() {
     trackRecords.appendChild(header);
     let th = document.createElement("th");
     th.innerHTML = "Contestant";
-    th.setAttribute("style","width: 170px;");
+    th.setAttribute("style", "font-weight: bold; width: 100px;");
     th.setAttribute("rowspan", "2");
     header.appendChild(th);
     let th_i = document.createElement("th");
     th_i.innerHTML = "Photo";
-    th_i.setAttribute("style","width: 100px;");
+    th_i.setAttribute("style", "font-weight: bold;");
     th_i.setAttribute("rowspan", "2");
     header.appendChild(th_i);
     for (let i = 0; i < episodeChallenges.length; i++) {
@@ -3768,7 +3773,7 @@ function contestantProgress() {
         name.innerHTML = winnerQueen.getName();
         winner.appendChild(name);
         let photo = document.createElement("td");
-        photo.setAttribute("style", "background: url("+ winnerQueen.image +"); background-size: 102px 102px; background-position: center;");
+        photo.setAttribute("style", "background: url("+ winnerQueen.image +"); background-size: cover; background-position: center; background-repeat: no-repeat;");
         photo.setAttribute("class", "placement");
         winner.appendChild(photo);
         for (let i = 0; i < winnerQueen.trackRecord.length + 1; i++) {
@@ -4059,7 +4064,7 @@ function contestantProgress() {
             name.innerHTML = currentCast[i].getName();
             contestant.appendChild(name);
             let photo = document.createElement("td");
-            photo.setAttribute("style", "background: url("+ currentCast[i].image +"); background-size: 102px 102px; background-position: center;");
+            photo.setAttribute("style", "background: url("+ currentCast[i].image +"); background-size: cover; background-position: center; background-repeat: no-repeat;");
             photo.setAttribute("class", "placement");
             contestant.appendChild(photo);
             for (let k = 0; k < currentCast[i].trackRecord.length + 1; k++) {
@@ -4349,7 +4354,7 @@ function contestantProgress() {
         name.innerHTML = eliminatedCast[i].getName();
         contestant.appendChild(name);
         let photo = document.createElement("td");
-        photo.setAttribute("style", "background: url("+ eliminatedCast[i].image +"); background-size: 102px 102px; background-position: center;");
+        photo.setAttribute("style", "background: url("+ eliminatedCast[i].image +"); background-size: cover; background-position: center; background-repeat: no-repeat;");
         photo.setAttribute("class", "placement");
         contestant.appendChild(photo);
         for (let k = 0; k < eliminatedCast[i].trackRecord.length + 1; k++) {
@@ -6435,13 +6440,6 @@ function bottom6() {
     screen.createBold("For you to lip-sync... for your lives! Good luck, and don't fuck it up.");
     let song = lsSong().toString();
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(bottomQueens);
-    if (event != false) {
-        let eventQueen = bottomQueens.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = bottomQueens.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -6892,7 +6890,7 @@ function winAndBtm2() {
         }
     } else {
         for (let i = 0; i < topQueens.length; i++)
-        topQueens[i].performanceScore -= (topQueens[i].runwayScore/1.4 - topQueens[i].favoritism/1.4);
+        topQueens[i].performanceScore -= ((topQueens[i].runwayScore*0.7) - (topQueens[i].favoritism*0.8));
     }
     topQueens.sort((a, b) => (a.performanceScore - b.performanceScore));
     if (isTeamChallenge) {
@@ -6912,7 +6910,7 @@ function winAndBtm2() {
             screen.createBold(names +" Condragulations, you're the winning team of today's challenge!");
             topQueens.splice(0);
             isTeamChallenge = false;
-        } else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 60) {
+        } else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 70) {
             topQueens[0].addToTrackRecord(" WIN");
             topQueens[0].favoritism += 5;
             topQueens[0].ppe += 5;
@@ -6939,7 +6937,7 @@ function winAndBtm2() {
         topQueens.splice(0, 1);
         }
     }//double win:
-    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 40 || isPairChallenge && randomNumber(0, 100) < 60) {
+    else if (topQueens[0].performanceScore == topQueens[1].performanceScore && randomNumber(0, 100) < 60 || isPairChallenge && randomNumber(0, 100) < 60) {
         topQueens[0].addToTrackRecord(" WIN");
         topQueens[0].favoritism += 5;
         topQueens[0].ppe += 5;
@@ -7718,7 +7716,7 @@ function lipSync() {
             }
         }
     } else {
-        if (score1 > 2 && score2 > 2 && randomNumber(0, 100) <= 99 && !doubleShantay && !noDouble && currentCast.length > 5) {
+        if (score1 > 4 && score2 > 4 && randomNumber(0, 100) <= 99 && !doubleShantay && !noDouble && currentCast.length > 5) {
             if (randomNumber(0, 100) >= 80) {
                 screen.createImage(bottomQueens[0].image, "tomato");
                 screen.createBold(bottomQueens[0].getName() + ", shantay you stay.");
@@ -8527,13 +8525,6 @@ function awLipsync() {
     screen.createBold("For you to lip-sync... for your legacy! Good luck, and don't fuck it up.");
     let song = lsSong().toString();
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(top2);
-    if (event != false) {
-        let eventQueen = top2.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = top2.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = top2.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = top2.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -8734,7 +8725,7 @@ class Queen {
         this.performanceScore = this._calculateScores(30, 40, this._danceStat + this._singingStat);
     }
     getBall() {
-        this.performanceScore = this._calculateScores(30, 40, this._runwayStat*0.75 + this._designStat);
+        this.performanceScore = this._calculateScores(35, 40, this._runwayStat*0.45 + (this._designStat*1));
     }
     getMakeover() {
         this.performanceScore = this._calculateScores(30, 40, this._runwayStat + this._brandingStat);
@@ -8743,7 +8734,7 @@ class Queen {
         this.performanceScore = this._calculateScores(30, 50, this._danceStat + this._brandingStat + this._singingStat);
     }
     getTalentShow() {
-        this.performanceScore = this._calculateScores(20, 30, randomNumber(1, 30));
+        this.performanceScore = this._calculateScores(40, 50, this._danceStat + this.lipsyncStat + this.brandingStat);
     }
     getFinale() {
         this.finaleScore = this.favoritism - this.unfavoritism;
@@ -8918,11 +8909,11 @@ let brooke = new Queen("Brooke Lynn Hytes", 8,11,8,11,15,20,15,9,12,"Brooke");
 let akeria = new Queen("A'keria Chanel Davenport",7,16,7,14,11,9,13,10,7,"AkeriaS11");
 let silky = new Queen("Silky Nutmeg Ganache", 9,11,14,10,6,6,9,10,18,"SilkyS11");
 let vanjies11 = new Queen("Vanessa Vanjie Matteo (S11)",9,5,9,5,7,8,10,10,7,"VanessaS11");
-let ninawest = new Queen("Nina West", 10,13,10,6,6,6,7,13,9,"NinaWest");
+let ninawest = new Queen("Nina West", 10,13,10,6,6,5,7,11,9,"NinaWest");
 let shuga = new Queen("Shuga Cain",6,8,8,7,6,8,9,7,6,"Shuga");
 let plastique= new Queen("Plastique Tiara",10,8,7,8,11,13,8,7,10,"Plastique");
 let rajah= new Queen("Ra'Jah O'Hara",4,6,7,6,8,12,10,6,7,"RajahS11");
-let scarlet= new Queen("Scarlet Envy",14,8,9,7,10,13,8,8,12,"ScarletS11");
+let scarlet= new Queen("Scarlet Envy",14,6,7,7,10,13,8,8,12,"ScarletS11");
 let ariel= new Queen("Ariel Versace",5,6,6,6,6,9,8,6,7,"Ariel");
 let mercedes= new Queen("Mercedes Iman Diamond",3,4,4,5,4,9,12,6,3,"Mercedes");
 let honey= new Queen("Honey Davenport",6,6,6,6,6,6,6,6,6,"HoneyDavenport");
@@ -8930,12 +8921,12 @@ let kahanna= new Queen("Kahanna Montrese",3,6,5,8,4,6,12,6,5,"Kahanna");
 let soju = new Queen("Soju",3,1,2,1,1,3,3,1,1,"Soju");
 let us_season11 = [yvie, brooke, akeria, silky, vanjies11, ninawest, shuga, plastique, rajah, scarlet, ariel, mercedes, honey, kahanna, soju];
 //SEASON 12: 
-let jaida = new Queen("Jaida Essence Hall", 9, 13, 9, 13, 12, 18, 13, 11, 15, "JaidaS12");
+let jaida = new Queen("Jaida Essence Hall", 9, 13, 9, 10, 12, 18, 13, 11, 16, "JaidaS12");
 let crystalm = new Queen("Crystal Methyd", 8, 10, 10, 10, 8, 9, 8, 13, 9,"Crystal");
-let gigi = new Queen("Gigi Goode", 10, 13, 13, 10, 14, 12, 10, 10, 17,"Gigi");
+let gigi = new Queen("Gigi Goode", 12, 10, 13, 10, 25, 12, 8, 10, 20,"Gigi");
 let jackie = new Queen("Jackie Cox", 10, 10, 10, 8, 7, 10, 11, 10, 8, "Jackie");
 let heidi = new Queen("Heidi N Closet", 9, 8, 8, 9, 8, 8, 14, 10, 9, "Heidi");
-let widow = new Queen("Widow Von'Du", 9, 7, 8, 10, 9, 10, 13, 5, 12, "Widow");
+let widow = new Queen("Widow Von'Du", 9, 7, 8, 12, 9, 10, 13, 8, 16, "Widow");
 let jan = new Queen("Jan", 6, 6, 6, 10, 9, 10, 8, 8, 14,"JanS12");
 let brita = new Queen("Brita", 5, 6, 5, 5, 6, 10, 13, 6, 5,"Brita");
 let aiden = new Queen("Aiden Zhane", 6, 4, 3, 3, 6, 7, 6, 6, 3,"Aiden");
@@ -8945,16 +8936,16 @@ let dahlia = new Queen("Dahlia Sin", 4, 5, 4, 4, 6, 8, 4, 6, 5,"Dahlia");
 let sherry = new Queen("Sherry Pie", 14, 13, 10, 6, 8, 10, 8, 10, 10,"Sherry")
 let us_season12 = [jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia, sherry];
 //SEASON 13
-let denali = new Queen("Denali Foxx", 7, 10, 9, 12, 8, 10, 13, 7, 15,"Denali");
+let denali = new Queen("Denali Foxx", 7, 10, 9, 12, 8, 9, 13, 6, 15,"Denali");
 let eliott = new Queen("Elliott with 2 Ts", 6, 6, 5, 9, 8, 8, 12, 8, 9,"Eliott");
 let gottmik = new Queen("Gottmik", 9, 11, 13, 4, 12, 13, 6, 9, 9,"Gottmik");
 let joey = new Queen("Joey Jay", 6, 6, 5, 5, 5, 5, 8, 7, 8,"Joey");
-let kahmora = new Queen("Kahmora Hall", 5, 6, 5, 6, 8, 12, 5, 8, 6,"Kahmora");
+let kahmora = new Queen("Kahmora Hall", 3, 3, 5, 6, 6, 10, 5, 8, 6,"Kahmora");
 let kandy = new Queen("Kandy Muse", 9, 11, 14, 7, 6, 10, 15, 13, 9,"KandyMuse");
 let lalari = new Queen("LaLa Ri", 6, 6, 6, 9, 1, 4, 15, 10, 8,"Lala");
 let liv = new Queen("Liv Lux Miyake-Mugler", 8, 11, 9, 11, 8, 12, 10, 7, 14,"Liv");
-let rose = new Queen("Rosé", 10, 11, 11, 10, 9, 10, 6, 15, 25,"Rose");
-let symone = new Queen("Symone", 14, 9, 7, 8, 8, 18, 17, 15, 20,"Symone");
+let rose = new Queen("Rosé", 10, 11, 11, 10, 8, 8, 6, 15, 25,"Rose");
+let symone = new Queen("Symone", 16, 9, 6, 8, 8, 18, 17, 15, 20,"Symone");
 let tamisha = new Queen("Tamisha Iman", 6, 6, 6, 6, 3, 6, 10, 8, 5,"Tamisha");
 let tina = new Queen("Tina Burner", 8, 8, 7, 7, 5, 5, 7, 10, 6,"Tina");
 let utica = new Queen("Utica Queen", 6, 6, 6, 4, 13, 11, 10, 6, 9,"Utica");
@@ -8990,7 +8981,7 @@ let poppy = new Queen("Princess Poppy", 3, 5, 5, 5, 5, 5, 5, 5, 5,"PrincessPoppy
 let robin = new Queen("Robin Fierce", 7, 7, 7, 7, 7, 7, 7, 7, 7,"RobinFierce");
 let salina = new Queen("Salina EsTitties", 6, 6, 6, 6, 6, 6, 7, 6, 6,"SalinaEsTitties");
 let sashaColby = new Queen("Sasha Colby", 13, 9, 8, 10, 9, 12, 12, 9, 10,"SashaColby");
-let spice = new Queen("Spice", 7, 7, 6, 8, 14, 15, 8, 8, 9,"Spice");
+let spice = new Queen("Spice", 7, 7, 6, 8, 12, 15, 8, 8, 9,"Spice");
 let sugar = new Queen("Sugar", 7, 7, 7, 7, 7, 7, 7, 7, 7,"Sugar");
 let us_season15 = [amethyst, anetra, auraMayari, irene, jax, loosey, luxx, malaysia, marcia, mistress, poppy, robin, salina, sashaColby, spice, sugar];
 //ALL STARS 1
@@ -9333,7 +9324,7 @@ let jimbouk = new Queen("Jimbo (UK)", 14, 13, 12, 7, 13, 12, 4, 10, 9,"JimboUKVS
 let jujubee = new Queen("Jujubee (UK)", 9, 11, 12, 9, 6, 7, 13, 11, 10,"JujubeeUKVSTW");
 let lemonuk = new Queen("Lemon (UK)", 10, 8, 9, 13, 9, 14, 13, 10, 8,"LemonUKVSTW");
 let mouk = new Queen("Mo Heart (UK)", 12, 12, 13, 11, 13, 15, 9, 10, 10,"MoUKVSTW");
-let panginauk = new Queen("Pangina Heals (UK)", 13, 14, 6, 14, 15, 15, 14, 13, 16,"PanginaUKVSTW");
+let panginauk = new Queen("Pangina Heals", 13, 14, 6, 17, 15, 20, 18, 15, 20,"PanginaUKVSTW");
 let ukvstw = [bagauk, bluuk, cheryluk, janeyuk, jimbouk, jujubee, lemonuk, mouk, panginauk];
 //CVSTW
 let rajahcan = new Queen("Rajah O Hara (CA)", 10, 11, 13, 11, 10, 12, 13, 8, 10,"RajahCVSTW");
@@ -9750,13 +9741,6 @@ function lipsyncSmackdown(word = "") {
                 screen.createBold("The time has come for you to lip-sync... for your rudemption! Good luck, and don't fuck it up.");
                 let song = lsSong().toString();
                 screen.createHorizontalLine();
-                let event = checkForLipsyncEvent(lipsync);
-                if (event != false) {
-                    let eventQueen = lipsync.find( (q) => {
-                        return q.getName() == event.queen.getName()
-                    });
-                    eventQueen.lipsyncScore += event.points;
-                }
                 toBlots(lipsync, song);
             screen.createBold("I've made my decision.");
             for (let i_1 = 0; i_1 < lipsync.length; i_1++) {
@@ -10301,11 +10285,11 @@ function queensofComedy(pord = "") {
         screen.createHorizontalLine();
         sortPerformances(pairQOF);
         screen.createBigText("Queens' performances...");
-        let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 6; });
-        let great = currentCast.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 14; });
-        let good = currentCast.filter(function (queen) { return queen.performanceScore > 14 && queen.performanceScore <= 24; });
-        let bad = currentCast.filter(function (queen) { return queen.performanceScore > 24 && queen.performanceScore <= 29; });
-        let flop = currentCast.filter(function (queen) { return queen.performanceScore > 29 && queen.performanceScore <= 50; });
+        let slay = allofthem.filter(function (queen) { return queen.performanceScore < 6; });
+        let great = allofthem.filter(function (queen) { return queen.performanceScore >= 6 && queen.performanceScore < 12; });
+        let good = allofthem.filter(function (queen) { return queen.performanceScore >= 12 && queen.performanceScore < 22; });
+        let bad = allofthem.filter(function (queen) { return queen.performanceScore >= 22 && queen.performanceScore < 28; });
+        let flop = allofthem.filter(function (queen) { return queen.performanceScore >= 28 && queen.performanceScore < 50; });
             createPerformanceDesc(slay, great, good, bad, flop);
         comedyChallengeCounter++;
         screen.createHorizontalLine();
@@ -10315,7 +10299,7 @@ function queensofComedy(pord = "") {
 function queensofComedyJudging(pairs, qofcomedy) {
     let screen = new Scene();
     screen.clean();
-    screen.createHeader("Critiques");
+    screen.createHeader("Judging");
         screen.createImage(pairs[0].QueenA.image, "aquamarine");
         screen.createImage(pairs[0].QueenB.image, "aquamarine");
         screen.createImage(pairs[1].QueenA.image, "aquamarine");
@@ -10390,13 +10374,6 @@ function queensofComedyJudging(pairs, qofcomedy) {
     screen.createBold("For you to lip-sync... for your LIFE!!! Good luck, and don't fuck it up.");
     let song = lsSong().toString();
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(top2);
-    if (event != false) {
-        let eventQueen = top2.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = top2.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = top2.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = top2.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -10414,7 +10391,7 @@ function queensOfComedyLipsynJudging() {
     let screen = new Scene();
     screen.clean();
     screen.createHeader("Ladies, I've made my decision...");
-    if (top2[0].lipsyncScore == top2[1].lipsyncScore && top2[0].lipsyncScore > 6 && top2[1].lipsyncScore > 6 && currentCast.length > 5) {
+    if (top2[0].lipsyncScore > 2 && top2[1].lipsyncScore > 2 && currentCast.length > 4) {
         screen.createImage(top2[0].image, "royalblue");
         screen.createImage(top2[1].image, "royalblue");
         screen.createBold("Condragulations, you're both winners baby!");
@@ -10658,12 +10635,12 @@ function kittygirlGroup(cena = "") {
         }
         screen.createHorizontalLine();
         screen.createBigText("Queens' performances...");
-        let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 6; });
-        let great = currentCast.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 14; });
-        let good = currentCast.filter(function (queen) { return queen.performanceScore > 14 && queen.performanceScore <= 24; });
-        let bad = currentCast.filter(function (queen) { return queen.performanceScore > 24 && queen.performanceScore <= 29; });
-        let flop = currentCast.filter(function (queen) { return queen.performanceScore > 29 && queen.performanceScore <= 50; });
-            createPerformanceDesc(slay, great, good, bad, flop);
+        let slay = allofthem.filter(function (queen) { return queen.performanceScore < 6; });
+        let great = allofthem.filter(function (queen) { return queen.performanceScore >= 6 && queen.performanceScore < 12; });
+        let good = allofthem.filter(function (queen) { return queen.performanceScore >= 12 && queen.performanceScore < 22; });
+        let bad = allofthem.filter(function (queen) { return queen.performanceScore >= 22 && queen.performanceScore < 28; });
+        let flop = allofthem.filter(function (queen) { return queen.performanceScore >= 28 && queen.performanceScore < 50; });
+        createPerformanceDesc(slay, great, good, bad, flop);
         screen.createHorizontalLine();
         screen.createButton("Proceed", "kittygirlGroupJudging()");
     }
@@ -10771,13 +10748,6 @@ function kittygirlGroupJudging() {
         screen.createBold("For you to lip-sync... for your legacy!!! Good luck, and don't fuck it up.");
         let song = lsSong().toString();
         screen.createHorizontalLine();
-        let event = checkForLipsyncEvent(top2);
-        if (event != false) {
-            let eventQueen = top2.find( (q) => {
-                return q.getName() == event.queen.getName()
-            });
-            eventQueen.lipsyncScore += event.points;
-        }
         let slay = top2.filter(function (queen) { return queen.lipsyncScore > 11; });
         let great = top2.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
         let good = top2.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -11297,12 +11267,12 @@ function queensConjoined(wass = "") {
         screen.createHorizontalLine();
         sortPerformances(currentCast);
         screen.createBigText("Queens' performances...");
-        let slay = currentCast.filter(function (queen) { return queen.performanceScore <= 6; });
-        let great = currentCast.filter(function (queen) { return queen.performanceScore > 6 && queen.performanceScore <= 14; });
-        let good = currentCast.filter(function (queen) { return queen.performanceScore > 14 && queen.performanceScore <= 24; });
-        let bad = currentCast.filter(function (queen) { return queen.performanceScore > 24 && queen.performanceScore <= 29; });
-        let flop = currentCast.filter(function (queen) { return queen.performanceScore > 29 && queen.performanceScore <= 50; });
-            createPerformanceDesc(slay, great, good, bad, flop);
+        let slay = currentCast.filter(function (queen) { return queen.performanceScore < 6; });
+        let great = currentCast.filter(function (queen) { return queen.performanceScore >= 6 && queen.performanceScore < 14; });
+        let good = currentCast.filter(function (queen) { return queen.performanceScore >= 14 && queen.performanceScore < 24; });
+        let bad = currentCast.filter(function (queen) { return queen.performanceScore >= 24 && queen.performanceScore < 28; });
+        let flop = currentCast.filter(function (queen) { return queen.performanceScore >= 28 && queen.performanceScore < 50; });
+        createPerformanceDesc(slay, great, good, bad, flop);
         makeoverCounter = true;
         screen.createHorizontalLine();
         screen.createButton("Proceed", "judging()");
@@ -13255,13 +13225,6 @@ function lipsyncDesc() {
     screen.createBold("For you to lip-sync... for your lives! Good luck, and don't fuck it up.");
     let song = lsSong().toString();
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(bottomQueens);
-    if (event != false) {
-        let eventQueen = bottomQueens.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = bottomQueens.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = bottomQueens.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -13347,13 +13310,6 @@ function asLipsyncDesc() {
     screen.createBold("For you to lip-sync... for your legacy! Good luck, and don't fuck it up.");
     let song = lsSong().toString();
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(top2);
-    if (event != false) {
-        let eventQueen = top2.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = top2.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = top2.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = top2.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -13379,13 +13335,6 @@ function lsaLipsyncDesc() {
         top2[i].getASLipsync();
     }
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(top2);
-    if (event != false) {
-        let eventQueen = top2.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = top2.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = top2.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = top2.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -13411,13 +13360,6 @@ function finaleLipSyncsDesc1() {
     }
     let song = lsSong().toString();
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(firstLS);
-    if (event != false) {
-        let eventQueen = firstLS.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = firstLS.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = firstLS.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = firstLS.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -13446,13 +13388,6 @@ function finaleLipSyncsDesc2() {
     }
     let song = lsSong().toString();
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(secondLS);
-    if (event != false) {
-        let eventQueen = secondLS.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = secondLS.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = secondLS.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = secondLS.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -13493,13 +13428,6 @@ function finaleLipSyncsDesc3() {
     }
     let song = lsSong().toString();
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(finalLS);
-    if (event != false) {
-        let eventQueen = finalLS.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = finalLS.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = finalLS.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = finalLS.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -13527,13 +13455,6 @@ function finaleCanadaLipsync() {
     screen.createBold(finalLS[0].getName() + " and " + finalLS[1].getName() + " will lip-sync for the finale...!");
     let song = lsSong().toString();
     screen.createHorizontalLine();
-    let event = checkForLipsyncEvent(finalLS);
-    if (event != false) {
-        let eventQueen = finalLS.find( (q) => {
-            return q.getName() == event.queen.getName()
-        });
-        eventQueen.lipsyncScore += event.points;
-    }
     let slay = finalLS.filter(function (queen) { return queen.lipsyncScore > 11; });
     let great = finalLS.filter(function (queen) { return queen.lipsyncScore >= 8 && queen.lipsyncScore < 12; });
     let good = finalLS.filter(function (queen) { return queen.lipsyncScore >= 4 && queen.lipsyncScore < 8; });
@@ -13968,27 +13889,7 @@ function doublePremChoose() {
     }
 
 }
-function checkForLipsyncEvent(lipsyncContestants) {
-    let screen = new Scene();
-    if (randomNumber(0, 1000) >= 900) {
-        let queen = lipsyncContestants[randomNumber(0, lipsyncContestants.length - 1)];
-        let event = lipsyncsEventsBad[randomNumber(0, lipsyncsEventsBad.length - 2)];
-        if (randomNumber(0, 1000) == 777) {
-            event = lipsyncsEventsBad[5];
-        }
-        screen.createImage(queen.image, "red");
-        screen.createBold("Oh no! " + queen.getName() + " " + event.event);
-        return {queen: queen, points: event.penalization}
-    } else if (randomNumber(0, 1000) >= 900) {
-        let queen = lipsyncContestants[randomNumber(0, lipsyncContestants.length - 1)];
-        let event = lipsyncsEventsGood[randomNumber(0, lipsyncsEventsGood.length - 1)];
-        screen.createImage(queen.image, "green");
-        screen.createBold(queen.getName() + " " + event.event);
-        return {queen: queen, points: event.points}
-    } else {
-        return false
-    }
-}
+
 function stillImmune() {
     if ((s14Premiere || s6Premiere) && premiereCounter <= 2) {
         return false
